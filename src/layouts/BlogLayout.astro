@@ -8,6 +8,7 @@
  */
 
 import Layout from "./Layout.astro";
+import Icon from "../components/ui/Icon.astro";
 import { SITE_CONFIG } from "../data/site-config";
 
 export interface Props {
@@ -19,12 +20,12 @@ export interface Props {
 
 <Layout title={title} description={description} ogImage={Astro.props.ogImage}>
   <!-- Header del blog -->
-  <div class="bg-gradient-to-r from-rosa-light via-lavanda-light to-rosa-light py-12 sm:py-16">
+  <div class="bg-gradient-to-r from-rose-gold-light via-lavender-light to-rose-gold-light py-12 sm:py-16">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 text-center">
-      <h1 class="text-3xl sm:text-4xl lg:text-5xl font-heading font-bold text-texto mb-3">
+      <h1 class="text-3xl sm:text-4xl lg:text-5xl font-heading font-bold text-text-primary mb-3">
         Blog
       </h1>
-      <p class="text-texto-secondary text-lg">
+      <p class="text-text-secondary text-lg">
         Tips, novedades y todo lo que necesitás saber para el mejor día de spa.
       </p>
     </div>
@@ -38,24 +39,24 @@ export interface Props {
   </div>
 
   <!-- Footer del blog con links de navegación -->
-  <div class="bg-crema-dark/20 border-t border-crema-dark/50">
+  <div class="bg-cream-dark/20 border-t border-cream-dark/50">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 py-8">
       <div class="flex items-center justify-between">
         <a
           href="/blog"
-          class="text-rosa-dark hover:text-rosa font-semibold transition-colors duration-200 min-h-[44px] inline-flex items-center gap-2 no-underline"
+          class="text-rose-gold-dark hover:text-rose-gold font-semibold transition-colors duration-200 min-h-[44px] inline-flex items-center gap-2 no-underline"
         >
-          <span aria-hidden="true">←</span>
+          <Icon name="arrow-left" />
           Volver al blog
         </a>
         <a
-          href={`https://wa.me/${SITE_CONFIG.whatsapp}?text=${encodeURIComponent("¡Hola! 😊 Quería consultarles sobre los servicios del blog.")}`}
+          href={`https://wa.me/${SITE_CONFIG.whatsapp}?text=${encodeURIComponent("¡Hola! Quería consultarles sobre los servicios del blog.")}`}
           target="_blank"
           rel="noopener noreferrer"
           class="text-whatsapp hover:text-whatsapp-dark font-semibold transition-colors duration-200 min-h-[44px] inline-flex items-center gap-2 no-underline"
           aria-label="Contactar por WhatsApp"
         >
-          <span aria-hidden="true">💬</span>
+          <Icon name="chat-circle" />
           Consultar
         </a>
       </div>
@@ -66,25 +67,25 @@ export interface Props {
   <style is:global>
     .prose h2 {
       font-family: 'Playfair Display', serif;
-      color: #2D1B2E;
+      color: #1A1A2E;
       font-size: 1.75rem;
       margin-top: 2rem;
       margin-bottom: 1rem;
     }
     .prose h3 {
       font-family: 'Playfair Display', serif;
-      color: #2D1B2E;
+      color: #1A1A2E;
       font-size: 1.35rem;
       margin-top: 1.5rem;
       margin-bottom: 0.75rem;
     }
     .prose p {
-      color: #6B4C6D;
+      color: #4A4A5A;
       line-height: 1.8;
       margin-bottom: 1.25rem;
     }
     .prose ul, .prose ol {
-      color: #6B4C6D;
+      color: #4A4A5A;
       padding-left: 1.5rem;
       margin-bottom: 1.25rem;
     }
@@ -92,7 +93,7 @@ export interface Props {
       margin-bottom: 0.5rem;
     }
     .prose a {
-      color: #D47DA0;
+      color: #C0728F;
       text-decoration: underline;
       text-underline-offset: 2px;
     }
@@ -108,7 +109,7 @@ export interface Props {
       padding-left: 1rem;
       margin: 1.5rem 0;
       font-style: italic;
-      color: #2D1B2E;
+      color: #1A1A2E;
     }
     .prose hr {
       border-color: #F5E6D3;

@@ -4,8 +4,8 @@
  * Princesas & Divinas — Button Component
  * ─────────────────────────────────────────────
  * Variantes:
- *   - primary   → fondo rosa gold, texto blanco
- *   - secondary → outline lavanda, texto texto
+ *   - primary   → fondo rose-gold, texto blanco
+ *   - secondary → outline lavender, texto lavender-dark
  *   - whatsapp  → fondo verde WhatsApp, texto blanco
  *   - ghost     → sin fondo, solo texto
  *
@@ -44,13 +44,13 @@ const {
 // ── Estilos por variante ──────────────────────
 const variantStyles: Record<string, string> = {
   primary:
-    "bg-gradient-to-r from-rosa to-lavanda text-white shadow-lg shadow-rosa/30 hover:shadow-xl hover:shadow-rosa/40 hover:scale-[1.02]",
+    "bg-rose-gold text-white shadow-lg shadow-rose-gold/30 hover:shadow-xl hover:shadow-rose-gold/40 hover:scale-[1.02]",
   secondary:
-    "border-2 border-lavanda text-lavanda-dark bg-transparent hover:bg-lavanda-light/30 hover:border-lavanda-dark",
+    "border-2 border-lavender text-lavender-dark bg-transparent hover:bg-lavender-light/30 hover:border-lavender-dark",
   whatsapp:
     "bg-whatsapp text-white shadow-lg shadow-whatsapp/30 hover:bg-whatsapp-dark hover:shadow-xl hover:shadow-whatsapp/40 hover:scale-[1.02]",
   ghost:
-    "text-rosa-dark hover:text-rosa bg-transparent hover:bg-rosa-light/20",
+    "text-rose-gold-dark hover:text-rose-gold bg-transparent hover:bg-rose-gold-light/20",
 };
 
 const sizeStyles: Record<string, string> = {
@@ -60,7 +60,7 @@ const sizeStyles: Record<string, string> = {
 };
 
 const baseClasses =
-  "inline-flex items-center justify-center gap-2 font-bold transition-all duration-300 focus-visible:outline-2 focus-visible:outline-rosa cursor-pointer no-underline min-h-[44px] min-w-[44px]";
+  "inline-flex items-center justify-center gap-2 font-bold transition-all duration-300 focus-visible:outline-2 focus-visible:outline-rose-gold cursor-pointer no-underline min-h-[44px] min-w-[44px]";
 
 const classes = `${baseClasses} ${variantStyles[variant]} ${sizeStyles[size]} ${className}`;
 ---

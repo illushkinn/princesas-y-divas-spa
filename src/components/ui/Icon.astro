@@ -1,0 +1,62 @@
+---
+/**
+ * ─────────────────────────────────────────────
+ * Princesas & Divinas — Phosphor Icon Component
+ * ─────────────────────────────────────────────
+ * Renderiza inline SVG icons de Phosphor Icons.
+ * Cero JS runtime — todo se resuelve en build.
+ *
+ * Uso:
+ *   <Icon name="crown" />
+ *   <Icon name="heart" size="2em" class="text-rosa" />
+ *
+ * Props:
+ *   - name:  Nombre del icono en Phosphor (ej: "whatsapp-logo", "crown")
+ *   - size:  Tamaño (default "1.5em")
+ *   - class: Clases Tailwind adicionales
+ */
+
+import fs from "node:fs";
+import path from "node:path";
+
+export interface Props {
+  name: string;
+  size?: string;
+  class?: string;
+}
+
+const { name, size = "1.5em", class: className = "" } = Astro.props;
+
+// ── Cargar SVG desde Phosphor ──────────────────
+const iconPath = path.resolve(
+  "node_modules/@phosphor-icons/core/assets/regular",
+  `${name}.svg`
+);
+
+let svgContent = "";
+try {
+  svgContent = fs.readFileSync(iconPath, "utf-8");
+} catch {
+  // Si no existe el icono, renderizar un fallback invisible
+  svgContent = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"></svg>';
+}
+
+// Extraer viewBox del SVG
+const viewBoxMatch = svgContent.match(/viewBox="([^"]+)"/);
+const viewBox = viewBoxMatch ? viewBoxMatch[1] : "0 0 256 256";
+
+// Extraer el contenido interno (paths, circles, etc.)
+const innerContent = svgContent.replace(/<svg[^>]*>/, "").replace(/<\/svg>/, "");
+---
+
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  viewBox={viewBox}
+  fill="currentColor"
+  width={size}
+  height={size}
+  class={className}
+  aria-hidden="true"
+>
+  {innerContent}
+</svg>

@@ -6,36 +6,25 @@
  * Grid masonry con lazy-loading y lightbox.
  * En mobile: columnas simples.
  * En desktop: masonry con 2-3 columnas.
- *
- * ⚠️ NO se usa JS — el lightbox se abre al
- *    hacer click en la imagen (navegación nativa).
- *    Para un lightbox real, agregá una librería
- *    JS minimalista (ver T11 — Lighthouse).
- *
- * ACTUALMENTE: usa fotos placeholder de picsum.
- * Reemplazar con fotos reales en /public/images/
  */
 
+import Icon from "../ui/Icon.astro";
 import { GALLERY } from "../../data/gallery";
-
-// No usamos JS para filtrar — es HTML estático.
-// Si querés filtros interactivos, necesitás
-// un island de Astro con Alpine.js o similar.
 ---
 
 <section
   id="galeria"
-  class="py-16 sm:py-20 lg:py-24 bg-crema-dark/30"
+  class="py-16 sm:py-20 lg:py-24 bg-cream"
   aria-label="Galería de fotos"
 >
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <!-- Heading -->
     <div class="text-center mb-12 sm:mb-16">
-      <span class="text-4xl sm:text-5xl block mb-4" aria-hidden="true">📸</span>
-      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-heading font-bold text-texto mb-4">
+      <Icon name="camera" size="3em" class="block mb-4 mx-auto text-rose-gold-dark" aria-hidden="true" />
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-heading font-bold text-text-primary mb-4">
         Galería
       </h2>
-      <p class="text-lg sm:text-xl text-texto-secondary max-w-2xl mx-auto">
+      <p class="text-lg sm:text-xl text-text-secondary max-w-2xl mx-auto">
         Mirá cómo disfrutan las princesas en nuestro spa.
       </p>
     </div>
@@ -51,7 +40,7 @@ import { GALLERY } from "../../data/gallery";
             class="block break-inside-avoid rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 group"
             aria-label={`Ver foto: ${item.alt}`}
           >
-            <div class="relative overflow-hidden bg-crema-dark">
+            <div class="relative overflow-hidden bg-cream-dark">
               <img
                 src={item.src}
                 alt={item.alt}
@@ -77,8 +66,8 @@ import { GALLERY } from "../../data/gallery";
 
     <!-- Nota sobre fotos reales -->
     <div class="mt-8 text-center">
-      <p class="text-sm text-texto-secondary italic">
-        📸 Fotos reales próximamente — mientras tanto, disfrutá estas imágenes de muestra.
+      <p class="text-sm text-text-secondary italic">
+        Fotos reales próximamente — mientras tanto, disfrutá estas imágenes de muestra.
       </p>
     </div>
   </div>

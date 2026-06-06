@@ -11,6 +11,7 @@
  */
 
 import Layout from "../../layouts/Layout.astro";
+import Icon from "../../components/ui/Icon.astro";
 import { getCollection, getEntry, render } from "astro:content";
 import { SITE_CONFIG } from "../../data/site-config";
 
@@ -85,9 +86,9 @@ const shareText = encodeURIComponent(
 );
 
 const categoryLabels: Record<string, string> = {
-  tips: "💡 Tips",
-  eventos: "🎉 Eventos",
-  promociones: "🔥 Promos",
+  tips: "Tips",
+  eventos: "Eventos",
+  promociones: "Promos",
 };
 ---
 
@@ -111,27 +112,27 @@ const categoryLabels: Record<string, string> = {
   />
 
   <!-- Post Header -->
-  <div class="bg-gradient-to-r from-rosa-light via-lavanda-light to-rosa-light py-12 sm:py-16">
+  <div class="bg-gradient-to-r from-rose-gold-light via-lavender-light to-rose-gold-light py-12 sm:py-16">
     <div class="max-w-3xl mx-auto px-4 sm:px-6">
       <!-- Breadcrumb -->
-      <nav class="text-sm text-texto-secondary/60 mb-4" aria-label="Breadcrumb">
-        <a href="/" class="hover:text-rosa-dark transition-colors">Inicio</a>
+      <nav class="text-sm text-text-secondary/60 mb-4" aria-label="Breadcrumb">
+        <a href="/" class="hover:text-rose-gold-dark transition-colors">Inicio</a>
         <span class="mx-2" aria-hidden="true">›</span>
-        <a href="/blog" class="hover:text-rosa-dark transition-colors">Blog</a>
+        <a href="/blog" class="hover:text-rose-gold-dark transition-colors">Blog</a>
         <span class="mx-2" aria-hidden="true">›</span>
-        <span class="text-texto font-semibold">{post.data.title}</span>
+        <span class="text-text-primary font-semibold">{post.data.title}</span>
       </nav>
 
       <!-- Category badge -->
-      <span class="inline-block bg-white/60 text-texto text-sm font-semibold px-3 py-1 rounded-full mb-4">
+      <span class="inline-block bg-white/60 text-text-primary text-sm font-semibold px-3 py-1 rounded-full mb-4">
         {categoryLabels[post.data.category] || post.data.category}
       </span>
 
-      <h1 class="text-3xl sm:text-4xl lg:text-5xl font-heading font-bold text-texto leading-tight mb-4">
+      <h1 class="text-3xl sm:text-4xl lg:text-5xl font-heading font-bold text-text-primary leading-tight mb-4">
         {post.data.title}
       </h1>
 
-      <div class="flex flex-wrap items-center gap-4 text-sm text-texto-secondary/70">
+      <div class="flex flex-wrap items-center gap-4 text-sm text-text-secondary/70">
         <time datetime={post.data.date.toISOString()}>
           {post.data.date.toLocaleDateString("es-AR", {
             year: "numeric",
@@ -146,7 +147,7 @@ const categoryLabels: Record<string, string> = {
   </div>
 
   <!-- Post Content -->
-  <div class="bg-crema py-8 sm:py-12">
+  <div class="bg-cream py-8 sm:py-12">
     <div class="max-w-3xl mx-auto px-4 sm:px-6">
       <!-- Cover image -->
       {post.data.coverImage && (
@@ -166,7 +167,7 @@ const categoryLabels: Record<string, string> = {
       </article>
 
       <!-- Share & Navigation -->
-      <div class="mt-12 pt-8 border-t border-crema-dark/50">
+      <div class="mt-12 pt-8 border-t border-cream-dark/50">
         <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
           <!-- Compartir por WhatsApp -->
           <a
@@ -185,9 +186,9 @@ const categoryLabels: Record<string, string> = {
           <!-- Volver -->
           <a
             href="/blog"
-            class="inline-flex items-center gap-2 text-rosa-dark hover:text-rosa font-semibold transition-colors duration-200 min-h-[44px]"
+            class="inline-flex items-center gap-2 text-rose-gold-dark hover:text-rose-gold font-semibold transition-colors duration-200 min-h-[44px]"
           >
-            <span aria-hidden="true">←</span>
+            <Icon name="arrow-left" />
             Volver al blog
           </a>
         </div>
@@ -200,25 +201,25 @@ const categoryLabels: Record<string, string> = {
 <style is:global>
   .prose h2 {
     font-family: 'Playfair Display', serif;
-    color: #2D1B2E;
+    color: #1A1A2E;
     font-size: 1.75rem;
     margin-top: 2rem;
     margin-bottom: 1rem;
   }
   .prose h3 {
     font-family: 'Playfair Display', serif;
-    color: #2D1B2E;
+    color: #1A1A2E;
     font-size: 1.35rem;
     margin-top: 1.5rem;
     margin-bottom: 0.75rem;
   }
   .prose p {
-    color: #6B4C6D;
+    color: #4A4A5A;
     line-height: 1.8;
     margin-bottom: 1.25rem;
   }
   .prose ul, .prose ol {
-    color: #6B4C6D;
+    color: #4A4A5A;
     padding-left: 1.5rem;
     margin-bottom: 1.25rem;
   }
@@ -226,7 +227,7 @@ const categoryLabels: Record<string, string> = {
     margin-bottom: 0.5rem;
   }
   .prose a {
-    color: #D47DA0;
+    color: #C0728F;
     text-decoration: underline;
     text-underline-offset: 2px;
   }
@@ -242,7 +243,7 @@ const categoryLabels: Record<string, string> = {
     padding-left: 1rem;
     margin: 1.5rem 0;
     font-style: italic;
-    color: #2D1B2E;
+    color: #1A1A2E;
   }
   .prose hr {
     border-color: #F5E6D3;
@@ -255,7 +256,7 @@ const categoryLabels: Record<string, string> = {
   }
   .prose th {
     background: #F2C5DB;
-    color: #2D1B2E;
+    color: #1A1A2E;
     font-weight: 700;
     padding: 0.75rem 1rem;
     text-align: left;
@@ -263,7 +264,7 @@ const categoryLabels: Record<string, string> = {
   .prose td {
     padding: 0.75rem 1rem;
     border-bottom: 1px solid #F5E6D3;
-    color: #6B4C6D;
+    color: #4A4A5A;
   }
   .prose tr:nth-child(even) td {
     background: #FFF8F0;

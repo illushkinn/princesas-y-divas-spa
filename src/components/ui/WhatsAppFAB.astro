@@ -14,7 +14,7 @@ import { SITE_CONFIG } from "../../data/site-config";
 import Button from "./Button.astro";
 
 const waLink = `https://wa.me/${SITE_CONFIG.whatsapp}?text=${encodeURIComponent(
-  "¡Hola! 😊 Quería consultarles sobre los servicios de spa infantil."
+  "¡Hola! Quería consultarles sobre los servicios de spa infantil."
 )}`;
 ---
 
@@ -22,7 +22,7 @@ const waLink = `https://wa.me/${SITE_CONFIG.whatsapp}?text=${encodeURIComponent(
 <div class="fixed bottom-6 right-6 z-50 group">
   <!-- Tooltip (desktop) -->
   <span
-    class="absolute bottom-16 right-0 bg-texto text-white text-sm px-4 py-2 rounded-xl shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none whitespace-nowrap"
+    class="absolute bottom-16 right-0 bg-text-primary text-white text-sm px-4 py-2 rounded-xl shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none whitespace-nowrap"
     aria-hidden="true"
   >
     Reservá por WhatsApp

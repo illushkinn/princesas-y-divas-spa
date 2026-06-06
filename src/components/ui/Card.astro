@@ -37,9 +37,9 @@ const baseClasses =
 const variantClasses: Record<string, string> = {
   default: "",
   service:
-    "hover:-translate-y-1 hover:shadow-rosa/20",
+    "hover:-translate-y-1 hover:shadow-rose-gold/20",
   testimonial:
-    "border border-crema-dark",
+    "border border-cream-dark",
   blog:
     "hover:-translate-y-1",
 };
@@ -59,7 +59,7 @@ const classes = `${baseClasses} ${variantClasses[variant]} ${className}`;
           sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
         />
         {badge && (
-          <span class="absolute top-3 left-3 bg-rosa text-white text-xs font-bold px-3 py-1 rounded-full shadow-md">
+          <span class="absolute top-3 left-3 bg-rose-gold text-white text-xs font-bold px-3 py-1 rounded-full shadow-md">
             {badge}
           </span>
         )}
@@ -71,7 +71,7 @@ const classes = `${baseClasses} ${variantClasses[variant]} ${className}`;
     <!-- Precio (variante service) -->
     {price && (
       <div class="mb-3">
-        <span class="text-2xl font-bold font-heading text-rosa-dark">
+        <span class="text-2xl font-bold font-heading text-rose-gold-dark">
           {price}
         </span>
       </div>

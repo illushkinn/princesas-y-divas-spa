@@ -24,7 +24,7 @@ export interface Service {
 export const SERVICES: Service[] = [
   {
     id: "spa-infantil",
-    name: "✨ Spa Infantil",
+    name: "Spa Infantil",
     description:
       "La experiencia completa: bath de burbujas, mascarillas divertidas, peinado con glitter, maquillaje artístico y uñas decoradas.",
     price: 15000,
@@ -43,7 +43,7 @@ export const SERVICES: Service[] = [
   },
   {
     id: "fiesta-princesa",
-    name: "👑 Fiesta Princesa",
+    name: "Fiesta Princesa",
     description:
       "Todo el spa + vestimenta de princesa, corona, varita mágica y photocall temático. Ideal para cumpleaños inolvidables.",
     price: 25000,
@@ -63,7 +63,7 @@ export const SERVICES: Service[] = [
   },
   {
     id: "experiencia-deluxe",
-    name: "💎 Experiencia Deluxe",
+    name: "Experiencia Deluxe",
     description:
       "La experiencia más completa con manicura semipermanente, peinado con extensiones, maquillaje profesional y sesión de fotos con álbum digital.",
     price: 38000,
@@ -83,7 +83,7 @@ export const SERVICES: Service[] = [
   },
   {
     id: "taller-belleza",
-    name: "🎀 Taller de Belleza",
+    name: "Taller de Belleza",
     description:
       "Taller grupal donde aprenden a maquillarse, peinarse y hacerse las uñas. Ideal para cumpleaños de 8+ años.",
     price: 12000,
@@ -101,7 +101,7 @@ export const SERVICES: Service[] = [
   },
   {
     id: "maquillaje-artistico",
-    name: "🦋 Maquillaje Artístico",
+    name: "Maquillaje Artístico",
     description:
       "Solo maquillaje artístico: princesas, mariposas, unicornios, glitter y purpurina. Perfecto como adicional.",
     price: 5000,
@@ -118,7 +118,7 @@ export const SERVICES: Service[] = [
   },
   {
     id: "peinados-glitter",
-    name: "🌟 Peinados con Glitter",
+    name: "Peinados con Glitter",
     description:
       "Peinado con glitter, accesorios brillantes, trenzas y rodete. El toque final perfecto.",
     price: 4500,

@@ -40,7 +40,7 @@ Cada experiencia es distinta, pero en general incluye:
 - **Llegá 10 minutos antes** para que se familiarice con el espacio
 - **No hace falta traer nada** — nosotras proveemos todo
 - **Sacá muchas fotos** — el photocall está incluido
-- **Las mamás pueden quedarse** — tenemos cafecito y wifi 😊
+- **Las mamás pueden quedarse** — tenemos cafecito y wifi
 
 ## Reservá tu experiencia
 

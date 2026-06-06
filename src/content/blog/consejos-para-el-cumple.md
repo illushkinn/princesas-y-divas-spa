@@ -16,10 +16,10 @@ Organizar el cumpleaños de tu hija puede ser estresante, pero en Princesas & Di
 Las fiestas tradicionales están buenas, pero un spa infantil es **una experiencia diferente**. Las nenas se van maquilladas, peinadas, con las uñas pintadas y sintiéndose princesas por un día.
 
 Además:
-- ✅ **Nosotras nos ocupamos de todo** — vos solo venís y disfrutás
-- ✅ **Actividades guiadas** — no hay momentos aburridos
-- ✅ **Grupos reducidos** — hasta 10 nenas para mejor atención
-- ✅ **Regalo incluido** — cada nena se lleva su bolsita de recuerdo
+- **Nosotras nos ocupamos de todo** — vos solo venís y disfrutás
+- **Actividades guiadas** — no hay momentos aburridos
+- **Grupos reducidos** — hasta 10 nenas para mejor atención
+- **Regalo incluido** — cada nena se lleva su bolsita de recuerdo
 
 ## ¿Cuántas nenas invitar?
 
@@ -47,11 +47,11 @@ Nuestro servicio más elegido para cumpleaños incluye:
 
 Cada mes renovamos nuestras temáticas. Algunas de las más pedidas:
 
-- 🦄 **Unicornios** — arcoíris, glitter y purpurina
-- 🧜‍♀️ **Sirenas** — colores pastel, estrellas de mar
-- 👸 **Princesas Disney** — tu princesa favorita
-- 🦋 **Mariposas** — flores y colores vibrantes
-- 🌟 **Estrellas** — dorado y plateado, brillo total
+- **Unicornios** — arcoíris, glitter y purpurina
+- **Sirenas** — colores pastel, estrellas de mar
+- **Princesas Disney** — tu princesa favorita
+- **Mariposas** — flores y colores vibrantes
+- **Estrellas** — dorado y plateado, brillo total
 
 ## ¿Cómo reservar?
 

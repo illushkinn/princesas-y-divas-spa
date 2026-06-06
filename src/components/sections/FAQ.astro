@@ -7,9 +7,10 @@
  * Cero JS — es HTML nativo.
  * Animación suave vía CSS transition.
  *
- * ✅ Incluye FAQ schema JSON-LD.
+ * Incluye FAQ schema JSON-LD.
  */
 
+import Icon from "../ui/Icon.astro";
 import { FAQ } from "../../data/faq";
 import { SITE_CONFIG } from "../../data/site-config";
 
@@ -30,7 +31,7 @@ const faqSchema = {
 
 <section
   id="faq"
-  class="py-16 sm:py-20 lg:py-24 bg-crema-dark/30"
+  class="py-16 sm:py-20 lg:py-24 bg-cream"
   aria-label="Preguntas frecuentes"
 >
   <!-- JSON-LD Schema -->
@@ -39,11 +40,11 @@ const faqSchema = {
   <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
     <!-- Heading -->
     <div class="text-center mb-12 sm:mb-16">
-      <span class="text-4xl sm:text-5xl block mb-4" aria-hidden="true">❓</span>
-      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-heading font-bold text-texto mb-4">
+      <Icon name="question" size="3em" class="block mb-4 mx-auto text-rose-gold-dark" aria-hidden="true" />
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-heading font-bold text-text-primary mb-4">
         Preguntas Frecuentes
       </h2>
-      <p class="text-lg sm:text-xl text-texto-secondary max-w-2xl mx-auto">
+      <p class="text-lg sm:text-xl text-text-secondary max-w-2xl mx-auto">
         Todo lo que necesitás saber antes de reservar.
       </p>
     </div>
@@ -52,17 +53,17 @@ const faqSchema = {
     <div class="space-y-3">
       {
         FAQ.map((item) => (
-          <details class="group bg-white rounded-xl shadow-sm border border-crema-dark overflow-hidden transition-shadow duration-300 hover:shadow-md open:shadow-md">
-            <summary class="flex items-center justify-between gap-4 px-5 py-4 sm:px-6 sm:py-5 cursor-pointer list-none min-h-[44px] font-semibold text-texto hover:text-rosa-dark transition-colors duration-200">
+          <details class="group bg-white rounded-xl shadow-sm border border-cream-dark overflow-hidden transition-shadow duration-300 hover:shadow-md open:shadow-md">
+            <summary class="flex items-center justify-between gap-4 px-5 py-4 sm:px-6 sm:py-5 cursor-pointer list-none min-h-[44px] font-semibold text-text-primary hover:text-rose-gold-dark transition-colors duration-200">
               <span class="text-base sm:text-lg pr-4">{item.question}</span>
-              <span class="shrink-0 text-rosa-dark transition-transform duration-300 group-open:rotate-45" aria-hidden="true">
+              <span class="shrink-0 text-rose-gold-dark transition-transform duration-300 group-open:rotate-45" aria-hidden="true">
                 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
                 </svg>
               </span>
             </summary>
-            <div class="px-5 pb-5 sm:px-6 sm:pb-6 border-t border-crema-dark/50">
-              <p class="mt-4 text-texto-secondary leading-relaxed">
+            <div class="px-5 pb-5 sm:px-6 sm:pb-6 border-t border-cream-dark/50">
+              <p class="mt-4 text-text-secondary leading-relaxed">
                 {item.answer}
               </p>
             </div>
@@ -73,11 +74,11 @@ const faqSchema = {
 
     <!-- CTA si no encontró respuesta -->
     <div class="text-center mt-10">
-      <p class="text-texto-secondary mb-3">
-        ¿Tenés otra consulta? Respondemos al toque por WhatsApp 💬
+      <p class="text-text-secondary mb-3">
+        ¿Tenés otra consulta? Respondemos al toque por WhatsApp
       </p>
       <a
-        href={`https://wa.me/${SITE_CONFIG.whatsapp}?text=${encodeURIComponent("¡Hola! 😊 Tengo una consulta sobre los servicios de spa infantil...")}`}
+        href={`https://wa.me/${SITE_CONFIG.whatsapp}?text=${encodeURIComponent("¡Hola! Tengo una consulta sobre los servicios de spa infantil...")}`}
         target="_blank"
         rel="noopener noreferrer"
         class="inline-flex items-center gap-2 text-whatsapp hover:text-whatsapp-dark font-bold transition-colors duration-200 min-h-[44px]"

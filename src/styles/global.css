@@ -5,27 +5,26 @@
 
 /* ── Design Tokens ─────────────────────────── */
 @theme {
-  /* Rosa gold palette */
-  --color-rosa: #E8A0BF;
-  --color-rosa-light: #F2C5DB;
-  --color-rosa-dark: #D47DA0;
-  --color-rosa-gold: #E8A0BF;
+  /* Rose Gold palette */
+  --color-rose-gold: #E8A0BF;
+  --color-rose-gold-dark: #C0728F;
+  --color-rose-gold-light: #F2C5DB;
 
-  /* Lavanda palette */
-  --color-lavanda: #C9A7EB;
-  --color-lavanda-light: #E0CCF5;
-  --color-lavanda-dark: #B088D4;
+  /* Lavender palette */
+  --color-lavender: #C9A7EB;
+  --color-lavender-dark: #9B7FBF;
+  --color-lavender-light: #E0CCF5;
 
-  /* Dorado palette */
-  --color-dorado: #D4AF37;
-  --color-dorado-light: #E8CC6A;
-  --color-dorado-dark: #B8942E;
+  /* Gold — SOLO sobre fondos oscuros (detalles decorativos) */
+  --color-gold: #D4AF37;
+  --color-gold-light: #E8CC6A;
+  --color-gold-dark: #B8942E;
 
   /* Neutros */
-  --color-crema: #FFF8F0;
-  --color-crema-dark: #F5E6D3;
-  --color-texto: #2D1B2E;
-  --color-texto-secondary: #6B4C6D;
+  --color-cream: #FFF8F0;
+  --color-cream-dark: #F5E6D3;
+  --color-text-primary: #1A1A2E;
+  --color-text-secondary: #4A4A5A;
 
   /* WhatsApp green */
   --color-whatsapp: #25D366;
@@ -34,6 +33,22 @@
   /* Fonts */
   --font-heading: 'Playfair Display', serif;
   --font-body: 'Nunito', sans-serif;
+
+  /* Legacy aliases (backward compat) */
+  --color-rosa: #E8A0BF;
+  --color-rosa-light: #F2C5DB;
+  --color-rosa-dark: #C0728F;
+  --color-rosa-gold: #E8A0BF;
+  --color-lavanda: #C9A7EB;
+  --color-lavanda-light: #E0CCF5;
+  --color-lavanda-dark: #9B7FBF;
+  --color-dorado: #D4AF37;
+  --color-dorado-light: #E8CC6A;
+  --color-dorado-dark: #B8942E;
+  --color-crema: #FFF8F0;
+  --color-crema-dark: #F5E6D3;
+  --color-texto: #1A1A2E;
+  --color-texto-secondary: #4A4A5A;
 }
 
 /* ── Base Styles ───────────────────────────── */
@@ -43,8 +58,8 @@ html {
 
 body {
   font-family: var(--font-body);
-  color: var(--color-texto);
-  background-color: var(--color-crema);
+  color: var(--color-text-primary);
+  background-color: var(--color-cream);
   -webkit-font-smoothing: antialiased;
 }
 
@@ -54,7 +69,7 @@ h1, h2, h3, h4, h5, h6 {
 
 /* ── Focus visible (accesibilidad) ─────────── */
 :focus-visible {
-  outline: 2px solid var(--color-rosa);
+  outline: 2px solid var(--color-rose-gold);
   outline-offset: 2px;
   border-radius: 4px;
 }
@@ -64,14 +79,14 @@ h1, h2, h3, h4, h5, h6 {
   width: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: var(--color-crema-dark);
+  background: var(--color-cream-dark);
 }
 ::-webkit-scrollbar-thumb {
-  background: var(--color-rosa-light);
+  background: var(--color-rose-gold-light);
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--color-rosa);
+  background: var(--color-rose-gold);
 }
 
 /* ── Animaciones ───────────────────────────── */

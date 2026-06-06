@@ -6,7 +6,7 @@
  * Formulario de reserva → Formspree.
  *
  * ⚠️ IMPORTANTE: Reemplazá la URL de Formspree
- *    antes del lanzamiento (ver T12b).
+ *    antes del lanzamiento (ver T12b checklist).
  *
  * Cómo funciona:
  *   - POST nativo (sin fetch, sin JS)
@@ -18,6 +18,7 @@
  * link a WhatsApp.
  */
 
+import Icon from "../ui/Icon.astro";
 import { SERVICES } from "../../data/services";
 import { SITE_CONFIG } from "../../data/site-config";
 
@@ -25,23 +26,22 @@ import { SITE_CONFIG } from "../../data/site-config";
 const FORMSPREE_ACTION = "https://formspree.io/f/xxxxx";
 
 // ── Hosted page de gracias ────────────────────
-// Creá una página /gracias o usá redirect de Formspree
 const THANKS_REDIRECT = `${SITE_CONFIG.url}/gracias`;
 ---
 
 <section
   id="reservar"
-  class="py-16 sm:py-20 lg:py-24 bg-crema"
+  class="py-16 sm:py-20 lg:py-24 bg-cream"
   aria-label="Formulario de reserva"
 >
   <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
     <!-- Heading -->
     <div class="text-center mb-12 sm:mb-16">
-      <span class="text-4xl sm:text-5xl block mb-4" aria-hidden="true">📝</span>
-      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-heading font-bold text-texto mb-4">
+      <Icon name="note" size="3em" class="block mb-4 mx-auto text-rose-gold-dark" aria-hidden="true" />
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-heading font-bold text-text-primary mb-4">
         Reservá tu experiencia
       </h2>
-      <p class="text-lg sm:text-xl text-texto-secondary max-w-2xl mx-auto">
+      <p class="text-lg sm:text-xl text-text-secondary max-w-2xl mx-auto">
         Completá el formulario y te confirmamos disponibilidad por WhatsApp.
       </p>
     </div>
@@ -50,7 +50,7 @@ const THANKS_REDIRECT = `${SITE_CONFIG.url}/gracias`;
     <form
       action={FORMSPREE_ACTION}
       method="POST"
-      class="bg-white rounded-2xl shadow-lg p-6 sm:p-8 lg:p-10 border border-crema-dark"
+      class="bg-white rounded-2xl shadow-lg p-6 sm:p-8 lg:p-10 border border-cream-dark"
       aria-label="Formulario de reserva de spa"
     >
       <!-- Honeypot (invisible para humanos) -->
@@ -64,13 +64,13 @@ const THANKS_REDIRECT = `${SITE_CONFIG.url}/gracias`;
 
       <!-- Fila: Datos de la mamá -->
       <fieldset class="mb-8">
-        <legend class="text-xl font-heading font-bold text-rosa-dark mb-4 flex items-center gap-2">
-          <span aria-hidden="true">👩</span> Datos de la mamá / adulto responsable
+        <legend class="text-xl font-heading font-bold text-rose-gold-dark mb-4 flex items-center gap-2">
+          <Icon name="user" /> Datos de la mamá / adulto responsable
         </legend>
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
-            <label for="nombre-mama" class="block text-sm font-semibold text-texto mb-1.5">
-              Nombre completo <span class="text-rosa-dark" aria-hidden="true">*</span>
+            <label for="nombre-mama" class="block text-sm font-semibold text-text-primary mb-1.5">
+              Nombre completo <span class="text-rose-gold-dark" aria-hidden="true">*</span>
             </label>
             <input
               type="text"
@@ -78,13 +78,13 @@ const THANKS_REDIRECT = `${SITE_CONFIG.url}/gracias`;
               name="nombre_mama"
               required
               placeholder="Ej: María García"
-              class="w-full px-4 py-3 rounded-xl border border-crema-dark bg-crema/50 focus:bg-white focus:border-rosa focus:ring-2 focus:ring-rosa/20 outline-none transition-all duration-200 min-h-[44px]"
+              class="w-full px-4 py-3 rounded-xl border border-cream-dark bg-cream/50 focus:bg-white focus:border-rose-gold focus:ring-2 focus:ring-rose-gold/20 outline-none transition-all duration-200 min-h-[44px]"
               aria-required="true"
             />
           </div>
           <div>
-            <label for="telefono" class="block text-sm font-semibold text-texto mb-1.5">
-              Teléfono / WhatsApp <span class="text-rosa-dark" aria-hidden="true">*</span>
+            <label for="telefono" class="block text-sm font-semibold text-text-primary mb-1.5">
+              Teléfono / WhatsApp <span class="text-rose-gold-dark" aria-hidden="true">*</span>
             </label>
             <input
               type="tel"
@@ -93,12 +93,12 @@ const THANKS_REDIRECT = `${SITE_CONFIG.url}/gracias`;
               required
               placeholder="Ej: 11 2345-6789"
               pattern="[0-9\s\-\(\)\+]{7,20}"
-              class="w-full px-4 py-3 rounded-xl border border-crema-dark bg-crema/50 focus:bg-white focus:border-rosa focus:ring-2 focus:ring-rosa/20 outline-none transition-all duration-200 min-h-[44px]"
+              class="w-full px-4 py-3 rounded-xl border border-cream-dark bg-cream/50 focus:bg-white focus:border-rose-gold focus:ring-2 focus:ring-rose-gold/20 outline-none transition-all duration-200 min-h-[44px]"
               aria-required="true"
             />
           </div>
           <div class="sm:col-span-2">
-            <label for="email" class="block text-sm font-semibold text-texto mb-1.5">
+            <label for="email" class="block text-sm font-semibold text-text-primary mb-1.5">
               Email
             </label>
             <input
@@ -106,7 +106,7 @@ const THANKS_REDIRECT = `${SITE_CONFIG.url}/gracias`;
               id="email"
               name="email"
               placeholder="Ej: maria@ejemplo.com"
-              class="w-full px-4 py-3 rounded-xl border border-crema-dark bg-crema/50 focus:bg-white focus:border-rosa focus:ring-2 focus:ring-rosa/20 outline-none transition-all duration-200 min-h-[44px]"
+              class="w-full px-4 py-3 rounded-xl border border-cream-dark bg-cream/50 focus:bg-white focus:border-rose-gold focus:ring-2 focus:ring-rose-gold/20 outline-none transition-all duration-200 min-h-[44px]"
             />
           </div>
         </div>
@@ -114,13 +114,13 @@ const THANKS_REDIRECT = `${SITE_CONFIG.url}/gracias`;
 
       <!-- Fila: Datos de la niña -->
       <fieldset class="mb-8">
-        <legend class="text-xl font-heading font-bold text-rosa-dark mb-4 flex items-center gap-2">
-          <span aria-hidden="true">👧</span> Datos de la niña
+        <legend class="text-xl font-heading font-bold text-rose-gold-dark mb-4 flex items-center gap-2">
+          <Icon name="dress" /> Datos de la niña
         </legend>
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
-            <label for="nombre-nina" class="block text-sm font-semibold text-texto mb-1.5">
-              Nombre de la niña <span class="text-rosa-dark" aria-hidden="true">*</span>
+            <label for="nombre-nina" class="block text-sm font-semibold text-text-primary mb-1.5">
+              Nombre de la niña <span class="text-rose-gold-dark" aria-hidden="true">*</span>
             </label>
             <input
               type="text"
@@ -128,13 +128,13 @@ const THANKS_REDIRECT = `${SITE_CONFIG.url}/gracias`;
               name="nombre_nina"
               required
               placeholder="Ej: Sofía"
-              class="w-full px-4 py-3 rounded-xl border border-crema-dark bg-crema/50 focus:bg-white focus:border-rosa focus:ring-2 focus:ring-rosa/20 outline-none transition-all duration-200 min-h-[44px]"
+              class="w-full px-4 py-3 rounded-xl border border-cream-dark bg-cream/50 focus:bg-white focus:border-rose-gold focus:ring-2 focus:ring-rose-gold/20 outline-none transition-all duration-200 min-h-[44px]"
               aria-required="true"
             />
           </div>
           <div>
-            <label for="edad-nina" class="block text-sm font-semibold text-texto mb-1.5">
-              Edad de la niña <span class="text-rosa-dark" aria-hidden="true">*</span>
+            <label for="edad-nina" class="block text-sm font-semibold text-text-primary mb-1.5">
+              Edad de la niña <span class="text-rose-gold-dark" aria-hidden="true">*</span>
             </label>
             <input
               type="number"
@@ -144,7 +144,7 @@ const THANKS_REDIRECT = `${SITE_CONFIG.url}/gracias`;
               min="2"
               max="15"
               placeholder="Ej: 7"
-              class="w-full px-4 py-3 rounded-xl border border-crema-dark bg-crema/50 focus:bg-white focus:border-rosa focus:ring-2 focus:ring-rosa/20 outline-none transition-all duration-200 min-h-[44px]"
+              class="w-full px-4 py-3 rounded-xl border border-cream-dark bg-cream/50 focus:bg-white focus:border-rose-gold focus:ring-2 focus:ring-rose-gold/20 outline-none transition-all duration-200 min-h-[44px]"
               aria-required="true"
             />
           </div>
@@ -153,19 +153,19 @@ const THANKS_REDIRECT = `${SITE_CONFIG.url}/gracias`;
 
       <!-- Fila: Servicio + Fecha + Horario -->
       <fieldset class="mb-8">
-        <legend class="text-xl font-heading font-bold text-rosa-dark mb-4 flex items-center gap-2">
-          <span aria-hidden="true">📋</span> Detalles de la reserva
+        <legend class="text-xl font-heading font-bold text-rose-gold-dark mb-4 flex items-center gap-2">
+          <Icon name="calendar" /> Detalles de la reserva
         </legend>
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
-            <label for="servicio" class="block text-sm font-semibold text-texto mb-1.5">
-              Servicio <span class="text-rosa-dark" aria-hidden="true">*</span>
+            <label for="servicio" class="block text-sm font-semibold text-text-primary mb-1.5">
+              Servicio <span class="text-rose-gold-dark" aria-hidden="true">*</span>
             </label>
             <select
               id="servicio"
               name="servicio"
               required
-              class="w-full px-4 py-3 rounded-xl border border-crema-dark bg-crema/50 focus:bg-white focus:border-rosa focus:ring-2 focus:ring-rosa/20 outline-none transition-all duration-200 min-h-[44px]"
+              class="w-full px-4 py-3 rounded-xl border border-cream-dark bg-cream/50 focus:bg-white focus:border-rose-gold focus:ring-2 focus:ring-rose-gold/20 outline-none transition-all duration-200 min-h-[44px]"
               aria-required="true"
             >
               <option value="">Seleccioná un servicio...</option>
@@ -175,27 +175,27 @@ const THANKS_REDIRECT = `${SITE_CONFIG.url}/gracias`;
             </select>
           </div>
           <div>
-            <label for="fecha" class="block text-sm font-semibold text-texto mb-1.5">
-              Fecha preferida <span class="text-rosa-dark" aria-hidden="true">*</span>
+            <label for="fecha" class="block text-sm font-semibold text-text-primary mb-1.5">
+              Fecha preferida <span class="text-rose-gold-dark" aria-hidden="true">*</span>
             </label>
             <input
               type="date"
               id="fecha"
               name="fecha_preferida"
               required
-              class="w-full px-4 py-3 rounded-xl border border-crema-dark bg-crema/50 focus:bg-white focus:border-rosa focus:ring-2 focus:ring-rosa/20 outline-none transition-all duration-200 min-h-[44px]"
+              class="w-full px-4 py-3 rounded-xl border border-cream-dark bg-cream/50 focus:bg-white focus:border-rose-gold focus:ring-2 focus:ring-rose-gold/20 outline-none transition-all duration-200 min-h-[44px]"
               aria-required="true"
             />
           </div>
           <div>
-            <label for="horario" class="block text-sm font-semibold text-texto mb-1.5">
-              Horario preferido <span class="text-rosa-dark" aria-hidden="true">*</span>
+            <label for="horario" class="block text-sm font-semibold text-text-primary mb-1.5">
+              Horario preferido <span class="text-rose-gold-dark" aria-hidden="true">*</span>
             </label>
             <select
               id="horario"
               name="horario_preferido"
               required
-              class="w-full px-4 py-3 rounded-xl border border-crema-dark bg-crema/50 focus:bg-white focus:border-rosa focus:ring-2 focus:ring-rosa/20 outline-none transition-all duration-200 min-h-[44px]"
+              class="w-full px-4 py-3 rounded-xl border border-cream-dark bg-cream/50 focus:bg-white focus:border-rose-gold focus:ring-2 focus:ring-rose-gold/20 outline-none transition-all duration-200 min-h-[44px]"
               aria-required="true"
             >
               <option value="">Seleccioná un horario...</option>
@@ -205,8 +205,8 @@ const THANKS_REDIRECT = `${SITE_CONFIG.url}/gracias`;
             </select>
           </div>
           <div>
-            <label for="cantidad" class="block text-sm font-semibold text-texto mb-1.5">
-              Cantidad de niñas <span class="text-rosa-dark" aria-hidden="true">*</span>
+            <label for="cantidad" class="block text-sm font-semibold text-text-primary mb-1.5">
+              Cantidad de niñas <span class="text-rose-gold-dark" aria-hidden="true">*</span>
             </label>
             <input
               type="number"
@@ -216,7 +216,7 @@ const THANKS_REDIRECT = `${SITE_CONFIG.url}/gracias`;
               min="1"
               max="20"
               placeholder="Ej: 6"
-              class="w-full px-4 py-3 rounded-xl border border-crema-dark bg-crema/50 focus:bg-white focus:border-rosa focus:ring-2 focus:ring-rosa/20 outline-none transition-all duration-200 min-h-[44px]"
+              class="w-full px-4 py-3 rounded-xl border border-cream-dark bg-cream/50 focus:bg-white focus:border-rose-gold focus:ring-2 focus:ring-rose-gold/20 outline-none transition-all duration-200 min-h-[44px]"
               aria-required="true"
             />
           </div>
@@ -225,7 +225,7 @@ const THANKS_REDIRECT = `${SITE_CONFIG.url}/gracias`;
 
       <!-- Comentarios -->
       <div class="mb-8">
-        <label for="comentarios" class="block text-sm font-semibold text-texto mb-1.5">
+        <label for="comentarios" class="block text-sm font-semibold text-text-primary mb-1.5">
           Comentarios adicionales
         </label>
         <textarea
@@ -233,7 +233,7 @@ const THANKS_REDIRECT = `${SITE_CONFIG.url}/gracias`;
           name="comentarios"
           rows={4}
           placeholder="Ej: Mi hija es alérgica al látex. Prefiere maquillaje de unicornio. Cumpleaños de 7 años..."
-          class="w-full px-4 py-3 rounded-xl border border-crema-dark bg-crema/50 focus:bg-white focus:border-rosa focus:ring-2 focus:ring-rosa/20 outline-none transition-all duration-200 resize-y min-h-[44px]"
+          class="w-full px-4 py-3 rounded-xl border border-cream-dark bg-cream/50 focus:bg-white focus:border-rose-gold focus:ring-2 focus:ring-rose-gold/20 outline-none transition-all duration-200 resize-y min-h-[44px]"
         ></textarea>
       </div>
 
@@ -241,24 +241,24 @@ const THANKS_REDIRECT = `${SITE_CONFIG.url}/gracias`;
       <div class="flex flex-col sm:flex-row items-center gap-4">
         <button
           type="submit"
-          class="w-full sm:w-auto bg-gradient-to-r from-rosa to-lavanda text-white font-bold px-10 py-4 rounded-2xl shadow-lg shadow-rosa/30 hover:shadow-xl hover:shadow-rosa/40 hover:scale-[1.02] transition-all duration-300 min-h-[44px] text-lg cursor-pointer"
+          class="w-full sm:w-auto bg-rose-gold text-white font-bold px-10 py-4 rounded-2xl shadow-lg shadow-rose-gold/30 hover:shadow-xl hover:shadow-rose-gold/40 hover:scale-[1.02] transition-all duration-300 min-h-[44px] text-lg cursor-pointer"
         >
-          Enviar reserva ✨
+          Enviar reserva
         </button>
-        <p class="text-sm text-texto-secondary">
+        <p class="text-sm text-text-secondary">
           Te respondemos por WhatsApp en menos de 1 hora.
         </p>
       </div>
     </form>
 
     <!-- Fallback si el form no funciona -->
-    <div class="mt-8 text-center p-6 bg-rosa-light/30 rounded-2xl border border-rosa-light">
-      <p class="text-texto mb-2 font-semibold">
-        ¿El formulario no funciona? 😕
+    <div class="mt-8 text-center p-6 bg-rose-gold-light/30 rounded-2xl border border-rose-gold-light">
+      <p class="text-text-primary mb-2 font-semibold">
+        ¿El formulario no funciona?
       </p>
       <a
         href={`https://wa.me/${SITE_CONFIG.whatsapp}?text=${encodeURIComponent(
-          "¡Hola! 😊 Quiero reservar un día de spa para mi hija. Te cuento los detalles por acá."
+          "¡Hola! Quiero reservar un día de spa para mi hija. Te cuento los detalles por acá."
         )}`}
         target="_blank"
         rel="noopener noreferrer"

@@ -9,6 +9,7 @@
 
 import Layout from "../../layouts/Layout.astro";
 import BlogCard from "../../components/sections/BlogCard.astro";
+import Icon from "../../components/ui/Icon.astro";
 import { getCollection } from "astro:content";
 import { SITE_CONFIG } from "../../data/site-config";
 
@@ -22,9 +23,9 @@ const posts = allPosts.sort(
 // Categorías disponibles
 const categories = [
   { id: "all", label: "Todas" },
-  { id: "tips", label: "💡 Tips" },
-  { id: "eventos", label: "🎉 Eventos" },
-  { id: "promociones", label: "🔥 Promos" },
+  { id: "tips", label: "Tips" },
+  { id: "eventos", label: "Eventos" },
+  { id: "promociones", label: "Promos" },
 ];
 ---
 
@@ -33,20 +34,20 @@ const categories = [
   description="Tips, novedades y todo lo que necesitás saber para el mejor día de spa para tu hija."
 >
   <!-- Blog Header -->
-  <div class="bg-gradient-to-r from-rosa-light via-lavanda-light to-rosa-light py-12 sm:py-16">
+  <div class="bg-gradient-to-r from-rose-gold-light via-lavender-light to-rose-gold-light py-12 sm:py-16">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 text-center">
-      <span class="text-4xl sm:text-5xl block mb-4" aria-hidden="true">📝</span>
-      <h1 class="text-3xl sm:text-4xl lg:text-5xl font-heading font-bold text-texto mb-3">
+      <Icon name="note" size="3em" class="block mb-4 mx-auto text-rose-gold-dark" aria-hidden="true" />
+      <h1 class="text-3xl sm:text-4xl lg:text-5xl font-heading font-bold text-text-primary mb-3">
         Blog
       </h1>
-      <p class="text-texto-secondary text-lg max-w-2xl mx-auto">
+      <p class="text-text-secondary text-lg max-w-2xl mx-auto">
         Tips, novedades y todo lo que necesitás saber para el mejor día de spa para tu hija.
       </p>
     </div>
   </div>
 
   <!-- Filter tabs (estático — sin JS) -->
-  <div class="bg-white border-b border-crema-dark/50 sticky top-16 sm:top-20 z-30">
+  <div class="bg-white border-b border-cream-dark/50 sticky top-16 sm:top-20 z-30">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 py-4">
       <nav class="flex flex-wrap gap-2" aria-label="Filtrar por categoría">
         {categories.map((cat) => (
@@ -54,8 +55,8 @@ const categories = [
             href={cat.id === "all" ? "/blog" : `/blog/categoria/${cat.id}`}
             class={`px-4 py-2 rounded-full text-sm font-semibold transition-all duration-200 min-h-[44px] inline-flex items-center no-underline ${
               cat.id === "all"
-                ? "bg-rosa text-white shadow-md"
-                : "bg-crema-dark/50 text-texto-secondary hover:bg-rosa-light/30 hover:text-rosa-dark"
+                ? "bg-rose-gold text-white shadow-md"
+                : "bg-cream-dark/50 text-text-secondary hover:bg-rose-gold-light/30 hover:text-rose-gold-dark"
             }`}
             aria-label={`Filtrar por: ${cat.label}`}
           >
@@ -67,7 +68,7 @@ const categories = [
   </div>
 
   <!-- Posts grid -->
-  <div class="bg-crema py-12 sm:py-16">
+  <div class="bg-cream py-12 sm:py-16">
     <div class="max-w-7xl mx-auto px-4 sm:px-6">
       {posts.length > 0 ? (
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
@@ -85,18 +86,18 @@ const categories = [
         </div>
       ) : (
         <div class="text-center py-16">
-          <span class="text-6xl block mb-4" aria-hidden="true">📝</span>
-          <h2 class="text-2xl font-heading font-bold text-texto mb-2">
+          <Icon name="note" size="4em" class="block mb-4 mx-auto text-rose-gold-dark" aria-hidden="true" />
+          <h2 class="text-2xl font-heading font-bold text-text-primary mb-2">
             Próximamente más contenido
           </h2>
-          <p class="text-texto-secondary mb-6">
+          <p class="text-text-secondary mb-6">
             Estamos preparando nuevos artículos para vos.
           </p>
           <a
             href="/"
-            class="inline-flex items-center gap-2 text-rosa-dark hover:text-rosa font-semibold transition-colors duration-200 min-h-[44px]"
+            class="inline-flex items-center gap-2 text-rose-gold-dark hover:text-rose-gold font-semibold transition-colors duration-200 min-h-[44px]"
           >
-            Volver al inicio <span aria-hidden="true">→</span>
+            Volver al inicio <Icon name="arrow-right" />
           </a>
         </div>
       )}

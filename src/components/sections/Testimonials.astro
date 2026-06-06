@@ -7,29 +7,25 @@
  * En desktop: grid de 3 columnas.
  *
  * ⚠️ NO se usa JS — el "carousel" es CSS scroll snap.
- *    Para auto-play o dots, agregá un island.
  */
 
+import Icon from "../ui/Icon.astro";
 import { TESTIMONIALS } from "../../data/testimonials";
-
-function stars(rating: number): string {
-  return "⭐".repeat(rating) + "☆".repeat(5 - rating);
-}
 ---
 
 <section
   id="testimonios"
-  class="py-16 sm:py-20 lg:py-24 bg-crema"
+  class="py-16 sm:py-20 lg:py-24 bg-cream"
   aria-label="Testimonios de clientas"
 >
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <!-- Heading -->
     <div class="text-center mb-12 sm:mb-16">
-      <span class="text-4xl sm:text-5xl block mb-4" aria-hidden="true">💬</span>
-      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-heading font-bold text-texto mb-4">
+      <Icon name="chat-circle" size="3em" class="block mb-4 mx-auto text-rose-gold-dark" aria-hidden="true" />
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-heading font-bold text-text-primary mb-4">
         Lo que dicen las mamás
       </h2>
-      <p class="text-lg sm:text-xl text-texto-secondary max-w-2xl mx-auto">
+      <p class="text-lg sm:text-xl text-text-secondary max-w-2xl mx-auto">
         Más de 30 familias ya vivieron la experiencia. Esto es lo que opinan.
       </p>
     </div>
@@ -43,7 +39,7 @@ function stars(rating: number): string {
       {
         TESTIMONIALS.map((t) => (
           <article
-            class="snap-start shrink-0 w-[85vw] md:w-auto md:shrink bg-white rounded-2xl p-6 shadow-md border border-crema-dark flex flex-col"
+            class="snap-start shrink-0 w-[85vw] md:w-auto md:shrink bg-white rounded-2xl p-6 shadow-md border border-cream-dark flex flex-col"
             role="listitem"
           >
             <!-- Header: foto + nombre + rating -->
@@ -51,30 +47,37 @@ function stars(rating: number): string {
               <img
                 src={t.photo}
                 alt={`Foto de ${t.name}`}
-                class="w-12 h-12 rounded-full object-cover border-2 border-rosa-light"
+                class="w-12 h-12 rounded-full object-cover border-2 border-rose-gold-light"
                 loading="lazy"
                 width={48}
                 height={48}
               />
               <div>
-                <h3 class="font-bold text-texto">{t.name}</h3>
+                <h3 class="font-bold text-text-primary">{t.name}</h3>
                 {t.service && (
-                  <p class="text-xs text-rosa-dark">{t.service}</p>
+                  <p class="text-xs text-rose-gold-dark">{t.service}</p>
                 )}
               </div>
             </div>
 
-            <!-- Rating -->
-            <div class="mb-3 text-sm" aria-label={`${t.rating} de 5 estrellas`}>
-              {stars(t.rating)}
+            <!-- Rating — estrellas en rose-gold-dark (NUNCA gold sobre fondo claro) -->
+            <div class="mb-3 flex gap-0.5" aria-label={`${t.rating} de 5 estrellas`}>
+              {Array.from({ length: 5 }, (_, i) => (
+                <Icon
+                  key={i}
+                  name={i < t.rating ? "star" : "star-four"}
+                  size="1em"
+                  class={i < t.rating ? "text-rose-gold-dark" : "text-cream-dark"}
+                />
+              ))}
             </div>
 
             <!-- Texto -->
-            <blockquote class="text-texto-secondary leading-relaxed flex-1">
+            <blockquote class="text-text-secondary leading-relaxed flex-1">
               <p class="italic">
-                <span class="text-rosa-dark text-lg leading-none" aria-hidden="true">"</span>
+                <span class="text-rose-gold-dark text-lg leading-none" aria-hidden="true">"</span>
                 {t.text}
-                <span class="text-rosa-dark text-lg leading-none" aria-hidden="true">"</span>
+                <span class="text-rose-gold-dark text-lg leading-none" aria-hidden="true">"</span>
               </p>
             </blockquote>
           </article>
@@ -84,7 +87,7 @@ function stars(rating: number): string {
 
     <!-- Indicador de scroll (solo mobile) -->
     <div class="mt-6 text-center md:hidden">
-      <span class="text-sm text-texto-secondary">
+      <span class="text-sm text-text-secondary">
         ← Deslizá para ver más →
       </span>
     </div>
