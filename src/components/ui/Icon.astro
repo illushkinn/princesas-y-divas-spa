@@ -11,9 +11,10 @@
  *   <Icon name="heart" size="2em" class="text-rosa" />
  *
  * Props:
- *   - name:  Nombre del icono en Phosphor (ej: "whatsapp-logo", "crown")
- *   - size:  Tamaño (default "1.5em")
- *   - class: Clases Tailwind adicionales
+ *   - name:   Nombre del icono en Phosphor (ej: "whatsapp-logo", "crown")
+ *   - size:   Tamaño (default "1.5em")
+ *   - class:  Clases Tailwind adicionales
+ *   - weight: Peso del icono: "regular" (default), "fill", "bold", "light", "thin", "duotone"
  */
 
 import fs from "node:fs";
@@ -23,14 +24,15 @@ export interface Props {
   name: string;
   size?: string;
   class?: string;
+  weight?: "regular" | "fill" | "bold" | "light" | "thin" | "duotone";
 }
 
-const { name, size = "1.5em", class: className = "" } = Astro.props;
+const { name, size = "1.5em", class: className = "", weight = "regular" } = Astro.props;
 
 // ── Cargar SVG desde Phosphor ──────────────────
 const iconPath = path.resolve(
-  "node_modules/@phosphor-icons/core/assets/regular",
-  `${name}.svg`
+  `node_modules/@phosphor-icons/core/assets/${weight}`,
+  weight === "fill" ? `${name}-fill.svg` : `${name}.svg`
 );
 
 let svgContent = "";
