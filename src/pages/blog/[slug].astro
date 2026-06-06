@@ -116,9 +116,9 @@ const categoryLabels: Record<string, string> = {
     <div class="max-w-3xl mx-auto px-4 sm:px-6">
       <!-- Breadcrumb -->
       <nav class="text-sm text-text-secondary/60 mb-4" aria-label="Breadcrumb">
-        <a href="/" class="hover:text-rose-gold-dark transition-colors">Inicio</a>
+        <a href="/" class="hover:text-rose-functional transition-colors">Inicio</a>
         <span class="mx-2" aria-hidden="true">›</span>
-        <a href="/blog" class="hover:text-rose-gold-dark transition-colors">Blog</a>
+        <a href="/blog" class="hover:text-rose-functional transition-colors">Blog</a>
         <span class="mx-2" aria-hidden="true">›</span>
         <span class="text-text-primary font-semibold">{post.data.title}</span>
       </nav>
@@ -174,7 +174,7 @@ const categoryLabels: Record<string, string> = {
             href={`https://wa.me/?text=${shareText}`}
             target="_blank"
             rel="noopener noreferrer"
-            class="inline-flex items-center gap-2 bg-whatsapp text-white px-5 py-3 rounded-xl font-semibold shadow-md hover:bg-whatsapp-dark transition-all duration-200 min-h-[44px] no-underline"
+            class="inline-flex items-center gap-2 bg-whatsapp-functional text-white px-5 py-3 rounded-xl font-semibold shadow-md hover:bg-whatsapp-dark transition-all duration-200 min-h-[44px] no-underline"
             aria-label="Compartir este artículo por WhatsApp"
           >
             <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -186,7 +186,7 @@ const categoryLabels: Record<string, string> = {
           <!-- Volver -->
           <a
             href="/blog"
-            class="inline-flex items-center gap-2 text-rose-gold-dark hover:text-rose-gold font-semibold transition-colors duration-200 min-h-[44px]"
+            class="inline-flex items-center gap-2 text-rose-functional hover:text-rose-functional-hover font-semibold transition-colors duration-200 min-h-[44px]"
           >
             <Icon name="arrow-left" />
             Volver al blog
@@ -227,12 +227,12 @@ const categoryLabels: Record<string, string> = {
     margin-bottom: 0.5rem;
   }
   .prose a {
-    color: #C0728F;
-    text-decoration: underline;
-    text-underline-offset: 2px;
-  }
-  .prose a:hover {
-    color: #E8A0BF;
+      color: #B0476B;
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+    .prose a:hover {
+      color: #8B3A62;
   }
   .prose img {
     border-radius: 1rem;

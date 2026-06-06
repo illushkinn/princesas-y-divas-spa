@@ -26,6 +26,15 @@ const W_PORTRAIT = (id: number) => `https://picsum.photos/seed/pdp${id}/600/800`
 
 export const GALLERY: GalleryItem[] = [
   {
+    id: "logo",
+    src: "/images/logo-spa.jpg",
+    alt: "Logo Princesas & Divinas — Spa Infantil",
+    caption: "Princesas & Divinas — Tu spa infantil en CABA",
+    category: "instalaciones",
+    width: 1080,
+    height: 1080,
+  },
+  {
     id: "g1",
     src: W(1),
     alt: "Sala de spa infantil decorada",

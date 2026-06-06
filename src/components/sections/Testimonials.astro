@@ -21,7 +21,7 @@ import { TESTIMONIALS } from "../../data/testimonials";
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <!-- Heading -->
     <div class="text-center mb-12 sm:mb-16">
-      <Icon name="chat-circle" size="3em" class="block mb-4 mx-auto text-rose-gold-dark" aria-hidden="true" />
+      <Icon name="chat-circle" size="3em" class="block mb-4 mx-auto text-rose-functional" aria-hidden="true" />
       <h2 class="text-3xl sm:text-4xl lg:text-5xl font-heading font-bold text-text-primary mb-4">
         Lo que dicen las mamás
       </h2>
@@ -55,7 +55,7 @@ import { TESTIMONIALS } from "../../data/testimonials";
               <div>
                 <h3 class="font-bold text-text-primary">{t.name}</h3>
                 {t.service && (
-                  <p class="text-xs text-rose-gold-dark">{t.service}</p>
+                  <p class="text-xs text-rose-functional">{t.service}</p>
                 )}
               </div>
             </div>
@@ -67,7 +67,7 @@ import { TESTIMONIALS } from "../../data/testimonials";
                   key={i}
                   name={i < t.rating ? "star" : "star-four"}
                   size="1em"
-                  class={i < t.rating ? "text-rose-gold-dark" : "text-cream-dark"}
+                  class={i < t.rating ? "text-rose-functional" : "text-cream-dark"}
                 />
               ))}
             </div>
@@ -75,9 +75,9 @@ import { TESTIMONIALS } from "../../data/testimonials";
             <!-- Texto -->
             <blockquote class="text-text-secondary leading-relaxed flex-1">
               <p class="italic">
-                <span class="text-rose-gold-dark text-lg leading-none" aria-hidden="true">"</span>
+                <span class="text-rose-functional text-lg leading-none" aria-hidden="true">"</span>
                 {t.text}
-                <span class="text-rose-gold-dark text-lg leading-none" aria-hidden="true">"</span>
+                <span class="text-rose-functional text-lg leading-none" aria-hidden="true">"</span>
               </p>
             </blockquote>
           </article>

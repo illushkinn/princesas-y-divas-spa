@@ -32,7 +32,7 @@ const categoryLabels: Record<string, string> = {
 const categoryColors: Record<string, string> = {
   tips: "bg-lavender/20 text-lavender-dark",
   eventos: "bg-rose-gold/20 text-rose-gold-dark",
-  promociones: "bg-gold/20 text-gold-dark",
+  promociones: "bg-gold/20 text-gold-functional",
 };
 ---
 
@@ -60,7 +60,7 @@ const categoryColors: Record<string, string> = {
     <h3 class="text-lg font-heading font-bold text-text-primary mb-2 line-clamp-2">
       <a
         href={`/blog/${slug}`}
-        class="hover:text-rose-gold-dark transition-colors duration-200 no-underline"
+        class="hover:text-rose-functional transition-colors duration-200 no-underline"
         aria-label={`Leer más: ${title}`}
       >
         {title}
@@ -81,7 +81,7 @@ const categoryColors: Record<string, string> = {
       )}
       <a
         href={`/blog/${slug}`}
-        class="text-sm font-semibold text-rose-gold-dark hover:text-rose-gold transition-colors duration-200 min-h-[44px] inline-flex items-center gap-1"
+        class="text-sm font-semibold text-rose-functional hover:text-rose-functional-hover transition-colors duration-200 min-h-[44px] inline-flex items-center gap-1"
         aria-label={`Leer más sobre ${title}`}
       >
         Leer más

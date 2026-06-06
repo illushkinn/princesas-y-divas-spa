@@ -40,7 +40,7 @@ const faqSchema = {
   <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
     <!-- Heading -->
     <div class="text-center mb-12 sm:mb-16">
-      <Icon name="question" size="3em" class="block mb-4 mx-auto text-rose-gold-dark" aria-hidden="true" />
+      <Icon name="question" size="3em" class="block mb-4 mx-auto text-rose-functional" aria-hidden="true" />
       <h2 class="text-3xl sm:text-4xl lg:text-5xl font-heading font-bold text-text-primary mb-4">
         Preguntas Frecuentes
       </h2>
@@ -54,9 +54,9 @@ const faqSchema = {
       {
         FAQ.map((item) => (
           <details class="group bg-white rounded-xl shadow-sm border border-cream-dark overflow-hidden transition-shadow duration-300 hover:shadow-md open:shadow-md">
-            <summary class="flex items-center justify-between gap-4 px-5 py-4 sm:px-6 sm:py-5 cursor-pointer list-none min-h-[44px] font-semibold text-text-primary hover:text-rose-gold-dark transition-colors duration-200">
+            <summary class="flex items-center justify-between gap-4 px-5 py-4 sm:px-6 sm:py-5 cursor-pointer list-none min-h-[44px] font-semibold text-text-primary hover:text-rose-functional transition-colors duration-200">
               <span class="text-base sm:text-lg pr-4">{item.question}</span>
-              <span class="shrink-0 text-rose-gold-dark transition-transform duration-300 group-open:rotate-45" aria-hidden="true">
+              <span class="shrink-0 text-rose-functional transition-transform duration-300 group-open:rotate-45" aria-hidden="true">
                 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
                 </svg>

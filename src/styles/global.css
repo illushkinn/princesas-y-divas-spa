@@ -26,6 +26,13 @@
   --color-text-primary: #1A1A2E;
   --color-text-secondary: #4A4A5A;
 
+  /* Functional colors — WCAG AA compliant (4.5:1+ con blanco) */
+  --color-rose-functional: #B0476B;
+  --color-rose-functional-hover: #8B3A62;
+  --color-lavender-functional: #7B5EA7;
+  --color-gold-functional: #B8942E;
+  --color-whatsapp-functional: #1DA851;
+
   /* WhatsApp green */
   --color-whatsapp: #25D366;
   --color-whatsapp-dark: #1DA851;

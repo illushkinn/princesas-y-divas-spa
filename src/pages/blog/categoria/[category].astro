@@ -73,8 +73,8 @@ const categories = [
             href={cat.id === "all" ? "/blog" : `/blog/categoria/${cat.id}`}
             class={`px-4 py-2 rounded-full text-sm font-semibold transition-all duration-200 min-h-[44px] inline-flex items-center no-underline ${
               cat.id === category
-                ? "bg-rose-gold text-white shadow-md"
-                : "bg-cream-dark/50 text-text-secondary hover:bg-rose-gold-light/30 hover:text-rose-gold-dark"
+                ? "bg-rose-functional text-white shadow-md"
+                : "bg-cream-dark/50 text-text-secondary hover:bg-rose-functional/10 hover:text-rose-functional"
             }`}
             aria-label={`Filtrar por: ${cat.label}`}
           >
@@ -104,7 +104,7 @@ const categories = [
         </div>
       ) : (
         <div class="text-center py-16">
-          <Icon name="note" size="4em" class="block mb-4 mx-auto text-rose-gold-dark" aria-hidden="true" />
+          <Icon name="note" size="4em" class="block mb-4 mx-auto text-rose-functional" aria-hidden="true" />
           <h2 class="text-2xl font-heading font-bold text-text-primary mb-2">
             Aún no hay artículos en esta categoría
           </h2>
@@ -113,7 +113,7 @@ const categories = [
           </p>
           <a
             href="/blog"
-            class="inline-flex items-center gap-2 text-rose-gold-dark hover:text-rose-gold font-semibold transition-colors duration-200 min-h-[44px]"
+            class="inline-flex items-center gap-2 text-rose-functional hover:text-rose-functional-hover font-semibold transition-colors duration-200 min-h-[44px]"
           >
             Ver todos los artículos <Icon name="arrow-right" />
           </a>

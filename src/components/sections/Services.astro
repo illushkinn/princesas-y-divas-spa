@@ -36,7 +36,7 @@ function waServiceLink(serviceName: string, capacity: string): string {
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <!-- Heading -->
     <div class="text-center mb-12 sm:mb-16">
-      <Icon name="sparkle" size="3em" class="block mb-4 mx-auto text-rose-gold-dark" aria-hidden="true" />
+      <Icon name="sparkle" size="3em" class="block mb-4 mx-auto text-rose-functional" aria-hidden="true" />
       <h2 class="text-3xl sm:text-4xl lg:text-5xl font-heading font-bold text-text-primary mb-4">
         Nuestros Servicios
       </h2>
@@ -76,7 +76,7 @@ function waServiceLink(serviceName: string, capacity: string): string {
 
               <!-- PRECIO — visible y destacado -->
               <div class="mb-4">
-                <span class="text-3xl font-bold font-heading text-rose-gold-dark">
+                <span class="text-3xl font-bold font-heading text-rose-functional">
                   {formatPrice(service.price)}
                 </span>
               </div>
@@ -101,12 +101,12 @@ function waServiceLink(serviceName: string, capacity: string): string {
               <ul class="space-y-1.5 mb-6">
                 {service.features.slice(0, 4).map((f) => (
                   <li class="flex items-start gap-2 text-sm text-text-secondary">
-                    <Icon name="checks" class="text-rose-gold-dark mt-0.5 shrink-0" />
+                    <Icon name="checks" class="text-rose-functional mt-0.5 shrink-0" />
                     {f}
                   </li>
                 ))}
                 {service.features.length > 4 && (
-                  <li class="text-sm text-rose-gold-dark font-semibold">
+                  <li class="text-sm text-rose-functional font-semibold">
                     +{service.features.length - 4} más
                   </li>
                 )}

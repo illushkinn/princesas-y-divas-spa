@@ -17,7 +17,7 @@ export interface Service {
   duration: string;        // ej: "2 horas"
   capacity: string;        // ej: "Hasta 6 niñas"
   category: string;        // agrupación visual
-  image: string;           // placeholder
+  image: string;           // placeholder: reemplazar con fotos reales de cada servicio
   features: string[];      // qué incluye
 }
 
@@ -31,7 +31,7 @@ export const SERVICES: Service[] = [
     duration: "2 horas",
     capacity: "Hasta 6 niñas",
     category: "spa",
-    image: "/images/spa-infantil.jpg",
+    image: "/images/logo-spa.jpg",
     features: [
       "Bath de burbujas con pétalos",
       "Mascarilla facial divertida",
@@ -50,7 +50,7 @@ export const SERVICES: Service[] = [
     duration: "3 horas",
     capacity: "Hasta 10 niñas",
     category: "fiestas",
-    image: "/images/fiesta-princesa.jpg",
+    image: "/images/logo-spa.jpg",
     features: [
       "Todo lo del Spa Infantil",
       "Vestido de princesa incluido",
@@ -70,7 +70,7 @@ export const SERVICES: Service[] = [
     duration: "4 horas",
     capacity: "Hasta 15 niñas",
     category: "fiestas",
-    image: "/images/experiencia-deluxe.jpg",
+    image: "/images/logo-spa.jpg",
     features: [
       "Todo lo de la Fiesta Princesa",
       "Manicura semipermanente",
@@ -90,7 +90,7 @@ export const SERVICES: Service[] = [
     duration: "1.5 horas",
     capacity: "Hasta 8 niñas",
     category: "talleres",
-    image: "/images/taller-belleza.jpg",
+    image: "/images/logo-spa.jpg",
     features: [
       "Kit de maquillaje infantil",
       "Clase guiada por profesional",
@@ -108,7 +108,7 @@ export const SERVICES: Service[] = [
     duration: "30 min",
     capacity: "Individual",
     category: "spa",
-    image: "/images/maquillaje-artistico.jpg",
+    image: "/images/logo-spa.jpg",
     features: [
       "Diseño a elección",
       "Glitter y purpurina",
@@ -125,7 +125,7 @@ export const SERVICES: Service[] = [
     duration: "30 min",
     capacity: "Individual",
     category: "spa",
-    image: "/images/peinados-glitter.jpg",
+    image: "/images/logo-spa.jpg",
     features: [
       "Peinado personalizado",
       "Glitter y purpurina",

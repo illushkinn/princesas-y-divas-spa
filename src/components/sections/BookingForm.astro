@@ -37,7 +37,7 @@ const THANKS_REDIRECT = `${SITE_CONFIG.url}/gracias`;
   <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
     <!-- Heading -->
     <div class="text-center mb-12 sm:mb-16">
-      <Icon name="note" size="3em" class="block mb-4 mx-auto text-rose-gold-dark" aria-hidden="true" />
+      <Icon name="note" size="3em" class="block mb-4 mx-auto text-rose-functional" aria-hidden="true" />
       <h2 class="text-3xl sm:text-4xl lg:text-5xl font-heading font-bold text-text-primary mb-4">
         Reservá tu experiencia
       </h2>
@@ -64,13 +64,13 @@ const THANKS_REDIRECT = `${SITE_CONFIG.url}/gracias`;
 
       <!-- Fila: Datos de la mamá -->
       <fieldset class="mb-8">
-        <legend class="text-xl font-heading font-bold text-rose-gold-dark mb-4 flex items-center gap-2">
+        <legend class="text-xl font-heading font-bold text-rose-functional mb-4 flex items-center gap-2">
           <Icon name="user" /> Datos de la mamá / adulto responsable
         </legend>
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
             <label for="nombre-mama" class="block text-sm font-semibold text-text-primary mb-1.5">
-              Nombre completo <span class="text-rose-gold-dark" aria-hidden="true">*</span>
+              Nombre completo <span class="text-rose-functional" aria-hidden="true">*</span>
             </label>
             <input
               type="text"
@@ -84,7 +84,7 @@ const THANKS_REDIRECT = `${SITE_CONFIG.url}/gracias`;
           </div>
           <div>
             <label for="telefono" class="block text-sm font-semibold text-text-primary mb-1.5">
-              Teléfono / WhatsApp <span class="text-rose-gold-dark" aria-hidden="true">*</span>
+              Teléfono / WhatsApp <span class="text-rose-functional" aria-hidden="true">*</span>
             </label>
             <input
               type="tel"
@@ -114,13 +114,13 @@ const THANKS_REDIRECT = `${SITE_CONFIG.url}/gracias`;
 
       <!-- Fila: Datos de la niña -->
       <fieldset class="mb-8">
-        <legend class="text-xl font-heading font-bold text-rose-gold-dark mb-4 flex items-center gap-2">
+        <legend class="text-xl font-heading font-bold text-rose-functional mb-4 flex items-center gap-2">
           <Icon name="dress" /> Datos de la niña
         </legend>
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
             <label for="nombre-nina" class="block text-sm font-semibold text-text-primary mb-1.5">
-              Nombre de la niña <span class="text-rose-gold-dark" aria-hidden="true">*</span>
+              Nombre de la niña <span class="text-rose-functional" aria-hidden="true">*</span>
             </label>
             <input
               type="text"
@@ -134,7 +134,7 @@ const THANKS_REDIRECT = `${SITE_CONFIG.url}/gracias`;
           </div>
           <div>
             <label for="edad-nina" class="block text-sm font-semibold text-text-primary mb-1.5">
-              Edad de la niña <span class="text-rose-gold-dark" aria-hidden="true">*</span>
+              Edad de la niña <span class="text-rose-functional" aria-hidden="true">*</span>
             </label>
             <input
               type="number"
@@ -153,13 +153,13 @@ const THANKS_REDIRECT = `${SITE_CONFIG.url}/gracias`;
 
       <!-- Fila: Servicio + Fecha + Horario -->
       <fieldset class="mb-8">
-        <legend class="text-xl font-heading font-bold text-rose-gold-dark mb-4 flex items-center gap-2">
+        <legend class="text-xl font-heading font-bold text-rose-functional mb-4 flex items-center gap-2">
           <Icon name="calendar" /> Detalles de la reserva
         </legend>
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
             <label for="servicio" class="block text-sm font-semibold text-text-primary mb-1.5">
-              Servicio <span class="text-rose-gold-dark" aria-hidden="true">*</span>
+              Servicio <span class="text-rose-functional" aria-hidden="true">*</span>
             </label>
             <select
               id="servicio"
@@ -176,7 +176,7 @@ const THANKS_REDIRECT = `${SITE_CONFIG.url}/gracias`;
           </div>
           <div>
             <label for="fecha" class="block text-sm font-semibold text-text-primary mb-1.5">
-              Fecha preferida <span class="text-rose-gold-dark" aria-hidden="true">*</span>
+              Fecha preferida <span class="text-rose-functional" aria-hidden="true">*</span>
             </label>
             <input
               type="date"
@@ -189,7 +189,7 @@ const THANKS_REDIRECT = `${SITE_CONFIG.url}/gracias`;
           </div>
           <div>
             <label for="horario" class="block text-sm font-semibold text-text-primary mb-1.5">
-              Horario preferido <span class="text-rose-gold-dark" aria-hidden="true">*</span>
+              Horario preferido <span class="text-rose-functional" aria-hidden="true">*</span>
             </label>
             <select
               id="horario"
@@ -206,7 +206,7 @@ const THANKS_REDIRECT = `${SITE_CONFIG.url}/gracias`;
           </div>
           <div>
             <label for="cantidad" class="block text-sm font-semibold text-text-primary mb-1.5">
-              Cantidad de niñas <span class="text-rose-gold-dark" aria-hidden="true">*</span>
+              Cantidad de niñas <span class="text-rose-functional" aria-hidden="true">*</span>
             </label>
             <input
               type="number"
@@ -241,7 +241,7 @@ const THANKS_REDIRECT = `${SITE_CONFIG.url}/gracias`;
       <div class="flex flex-col sm:flex-row items-center gap-4">
         <button
           type="submit"
-          class="w-full sm:w-auto bg-rose-gold text-white font-bold px-10 py-4 rounded-2xl shadow-lg shadow-rose-gold/30 hover:shadow-xl hover:shadow-rose-gold/40 hover:scale-[1.02] transition-all duration-300 min-h-[44px] text-lg cursor-pointer"
+          class="w-full sm:w-auto bg-rose-functional text-white font-bold px-10 py-4 rounded-2xl shadow-lg shadow-rose-functional/30 hover:bg-rose-functional-hover hover:shadow-xl hover:shadow-rose-functional/40 hover:scale-[1.02] transition-all duration-300 min-h-[44px] text-lg cursor-pointer"
         >
           Enviar reserva
         </button>
