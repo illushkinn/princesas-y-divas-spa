@@ -1,0 +1,123 @@
+---
+/**
+ * ─────────────────────────────────────────────
+ * Princesas & Divinas — Blog / Filtro por Categoría
+ * ─────────────────────────────────────────────
+ * Página que lista posts de una categoría específica.
+ * Categorías: tips, eventos, promociones
+ */
+
+import Layout from "../../../layouts/Layout.astro";
+import BlogCard from "../../../components/sections/BlogCard.astro";
+import { getCollection } from "astro:content";
+import { SITE_CONFIG } from "../../../data/site-config";
+
+export async function getStaticPaths() {
+  return [
+    { params: { category: "tips" } },
+    { params: { category: "eventos" } },
+    { params: { category: "promociones" } },
+  ];
+}
+
+const { category } = Astro.params;
+
+const allPosts = await getCollection("blog");
+const posts = allPosts
+  .filter((post) => post.data.category === category)
+  .sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
+
+const categoryLabels: Record<string, string> = {
+  tips: "💡 Tips",
+  eventos: "🎉 Eventos",
+  promociones: "🔥 Promos",
+};
+
+const categoryDescriptions: Record<string, string> = {
+  tips: "Consejos útiles para que la experiencia de spa sea perfecta.",
+  eventos: "Novedades, eventos especiales y fechas importantes.",
+  promociones: "Descuentos, ofertas y promos imperdibles.",
+};
+
+const categories = [
+  { id: "all", label: "Todas" },
+  { id: "tips", label: "💡 Tips" },
+  { id: "eventos", label: "🎉 Eventos" },
+  { id: "promociones", label: "🔥 Promos" },
+];
+---
+
+<Layout
+  title={`${categoryLabels[category] || category} — Blog ${SITE_CONFIG.name}`}
+  description={categoryDescriptions[category] || `Artículos de ${category}`}
+>
+  <!-- Blog Header -->
+  <div class="bg-gradient-to-r from-rosa-light via-lavanda-light to-rosa-light py-12 sm:py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 text-center">
+      <h1 class="text-3xl sm:text-4xl lg:text-5xl font-heading font-bold text-texto mb-3">
+        {categoryLabels[category] || category}
+      </h1>
+      <p class="text-texto-secondary text-lg max-w-2xl mx-auto">
+        {categoryDescriptions[category]}
+      </p>
+    </div>
+  </div>
+
+  <!-- Filter tabs -->
+  <div class="bg-white border-b border-crema-dark/50 sticky top-16 sm:top-20 z-30">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 py-4">
+      <nav class="flex flex-wrap gap-2" aria-label="Filtrar por categoría">
+        {categories.map((cat) => (
+          <a
+            href={cat.id === "all" ? "/blog" : `/blog/categoria/${cat.id}`}
+            class={`px-4 py-2 rounded-full text-sm font-semibold transition-all duration-200 min-h-[44px] inline-flex items-center no-underline ${
+              cat.id === category
+                ? "bg-rosa text-white shadow-md"
+                : "bg-crema-dark/50 text-texto-secondary hover:bg-rosa-light/30 hover:text-rosa-dark"
+            }`}
+            aria-label={`Filtrar por: ${cat.label}`}
+          >
+            {cat.label}
+          </a>
+        ))}
+      </nav>
+    </div>
+  </div>
+
+  <!-- Posts grid -->
+  <div class="bg-crema py-12 sm:py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+      {posts.length > 0 ? (
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+          {posts.map((post) => (
+            <BlogCard
+              title={post.data.title}
+              slug={post.id.replace(/\.md$/, "")}
+              category={post.data.category}
+              date={post.data.date.toISOString()}
+              excerpt={post.data.excerpt}
+              coverImage={post.data.coverImage}
+              author={post.data.author}
+            />
+          ))}
+        </div>
+      ) : (
+        <div class="text-center py-16">
+          <span class="text-6xl block mb-4" aria-hidden="true">📝</span>
+          <h2 class="text-2xl font-heading font-bold text-texto mb-2">
+            Aún no hay artículos en esta categoría
+          </h2>
+          <p class="text-texto-secondary mb-6">
+            Pronto vamos a publicar contenido acá.
+          </p>
+          <a
+            href="/blog"
+            class="inline-flex items-center gap-2 text-rosa-dark hover:text-rosa font-semibold transition-colors duration-200 min-h-[44px]"
+          >
+            Ver todos los artículos <span aria-hidden="true">→</span>
+          </a>
+        </div>
+      )}
+    </div>
+  </div>
+</Layout>

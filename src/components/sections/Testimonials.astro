@@ -1,0 +1,92 @@
+---
+/**
+ * ─────────────────────────────────────────────
+ * Princesas & Divinas — Testimonios Section
+ * ─────────────────────────────────────────────
+ * En mobile: scroll horizontal (carousel CSS).
+ * En desktop: grid de 3 columnas.
+ *
+ * ⚠️ NO se usa JS — el "carousel" es CSS scroll snap.
+ *    Para auto-play o dots, agregá un island.
+ */
+
+import { TESTIMONIALS } from "../../data/testimonials";
+
+function stars(rating: number): string {
+  return "⭐".repeat(rating) + "☆".repeat(5 - rating);
+}
+---
+
+<section
+  id="testimonios"
+  class="py-16 sm:py-20 lg:py-24 bg-crema"
+  aria-label="Testimonios de clientas"
+>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Heading -->
+    <div class="text-center mb-12 sm:mb-16">
+      <span class="text-4xl sm:text-5xl block mb-4" aria-hidden="true">💬</span>
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-heading font-bold text-texto mb-4">
+        Lo que dicen las mamás
+      </h2>
+      <p class="text-lg sm:text-xl text-texto-secondary max-w-2xl mx-auto">
+        Más de 30 familias ya vivieron la experiencia. Esto es lo que opinan.
+      </p>
+    </div>
+
+    <!-- Mobile: scroll horizontal (CSS carousel) -->
+    <div
+      class="flex md:grid md:grid-cols-2 lg:grid-cols-3 gap-6 overflow-x-auto snap-x snap-mandatory pb-4 md:pb-0 md:overflow-visible scroll-pl-4"
+      role="list"
+      aria-label="Lista de testimonios"
+    >
+      {
+        TESTIMONIALS.map((t) => (
+          <article
+            class="snap-start shrink-0 w-[85vw] md:w-auto md:shrink bg-white rounded-2xl p-6 shadow-md border border-crema-dark flex flex-col"
+            role="listitem"
+          >
+            <!-- Header: foto + nombre + rating -->
+            <div class="flex items-center gap-4 mb-4">
+              <img
+                src={t.photo}
+                alt={`Foto de ${t.name}`}
+                class="w-12 h-12 rounded-full object-cover border-2 border-rosa-light"
+                loading="lazy"
+                width={48}
+                height={48}
+              />
+              <div>
+                <h3 class="font-bold text-texto">{t.name}</h3>
+                {t.service && (
+                  <p class="text-xs text-rosa-dark">{t.service}</p>
+                )}
+              </div>
+            </div>
+
+            <!-- Rating -->
+            <div class="mb-3 text-sm" aria-label={`${t.rating} de 5 estrellas`}>
+              {stars(t.rating)}
+            </div>
+
+            <!-- Texto -->
+            <blockquote class="text-texto-secondary leading-relaxed flex-1">
+              <p class="italic">
+                <span class="text-rosa-dark text-lg leading-none" aria-hidden="true">"</span>
+                {t.text}
+                <span class="text-rosa-dark text-lg leading-none" aria-hidden="true">"</span>
+              </p>
+            </blockquote>
+          </article>
+        ))
+      }
+    </div>
+
+    <!-- Indicador de scroll (solo mobile) -->
+    <div class="mt-6 text-center md:hidden">
+      <span class="text-sm text-texto-secondary">
+        ← Deslizá para ver más →
+      </span>
+    </div>
+  </div>
+</section>

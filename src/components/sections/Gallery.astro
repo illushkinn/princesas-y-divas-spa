@@ -1,0 +1,85 @@
+---
+/**
+ * ─────────────────────────────────────────────
+ * Princesas & Divinas — Galería Section
+ * ─────────────────────────────────────────────
+ * Grid masonry con lazy-loading y lightbox.
+ * En mobile: columnas simples.
+ * En desktop: masonry con 2-3 columnas.
+ *
+ * ⚠️ NO se usa JS — el lightbox se abre al
+ *    hacer click en la imagen (navegación nativa).
+ *    Para un lightbox real, agregá una librería
+ *    JS minimalista (ver T11 — Lighthouse).
+ *
+ * ACTUALMENTE: usa fotos placeholder de picsum.
+ * Reemplazar con fotos reales en /public/images/
+ */
+
+import { GALLERY } from "../../data/gallery";
+
+// No usamos JS para filtrar — es HTML estático.
+// Si querés filtros interactivos, necesitás
+// un island de Astro con Alpine.js o similar.
+---
+
+<section
+  id="galeria"
+  class="py-16 sm:py-20 lg:py-24 bg-crema-dark/30"
+  aria-label="Galería de fotos"
+>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Heading -->
+    <div class="text-center mb-12 sm:mb-16">
+      <span class="text-4xl sm:text-5xl block mb-4" aria-hidden="true">📸</span>
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-heading font-bold text-texto mb-4">
+        Galería
+      </h2>
+      <p class="text-lg sm:text-xl text-texto-secondary max-w-2xl mx-auto">
+        Mirá cómo disfrutan las princesas en nuestro spa.
+      </p>
+    </div>
+
+    <!-- Grid masonry-style -->
+    <div class="columns-1 sm:columns-2 lg:columns-3 gap-4 space-y-4">
+      {
+        GALLERY.map((item) => (
+          <a
+            href={item.src}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="block break-inside-avoid rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 group"
+            aria-label={`Ver foto: ${item.alt}`}
+          >
+            <div class="relative overflow-hidden bg-crema-dark">
+              <img
+                src={item.src}
+                alt={item.alt}
+                loading="lazy"
+                class="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-110"
+                decoding="async"
+                width={item.width}
+                height={item.height}
+              />
+              <!-- Overlay con caption -->
+              <div class="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+                {item.caption && (
+                  <span class="text-white text-sm font-medium">
+                    {item.caption}
+                  </span>
+                )}
+              </div>
+            </div>
+          </a>
+        ))
+      }
+    </div>
+
+    <!-- Nota sobre fotos reales -->
+    <div class="mt-8 text-center">
+      <p class="text-sm text-texto-secondary italic">
+        📸 Fotos reales próximamente — mientras tanto, disfrutá estas imágenes de muestra.
+      </p>
+    </div>
+  </div>
+</section>

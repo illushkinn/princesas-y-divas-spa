@@ -1,0 +1,104 @@
+/* =============================================
+   Princesas & Divinas — Tailwind CSS v4 Theme
+   ============================================= */
+@import "tailwindcss";
+
+/* ── Design Tokens ─────────────────────────── */
+@theme {
+  /* Rosa gold palette */
+  --color-rosa: #E8A0BF;
+  --color-rosa-light: #F2C5DB;
+  --color-rosa-dark: #D47DA0;
+  --color-rosa-gold: #E8A0BF;
+
+  /* Lavanda palette */
+  --color-lavanda: #C9A7EB;
+  --color-lavanda-light: #E0CCF5;
+  --color-lavanda-dark: #B088D4;
+
+  /* Dorado palette */
+  --color-dorado: #D4AF37;
+  --color-dorado-light: #E8CC6A;
+  --color-dorado-dark: #B8942E;
+
+  /* Neutros */
+  --color-crema: #FFF8F0;
+  --color-crema-dark: #F5E6D3;
+  --color-texto: #2D1B2E;
+  --color-texto-secondary: #6B4C6D;
+
+  /* WhatsApp green */
+  --color-whatsapp: #25D366;
+  --color-whatsapp-dark: #1DA851;
+
+  /* Fonts */
+  --font-heading: 'Playfair Display', serif;
+  --font-body: 'Nunito', sans-serif;
+}
+
+/* ── Base Styles ───────────────────────────── */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--color-texto);
+  background-color: var(--color-crema);
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+}
+
+/* ── Focus visible (accesibilidad) ─────────── */
+:focus-visible {
+  outline: 2px solid var(--color-rosa);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* ── Scrollbar personalizada (opcional) ────── */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-crema-dark);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-rosa-light);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-rosa);
+}
+
+/* ── Animaciones ───────────────────────────── */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse-gentle {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+.animate-pulse-gentle {
+  animation: pulse-gentle 2s ease-in-out infinite;
+}

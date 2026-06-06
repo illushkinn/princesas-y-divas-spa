@@ -1,0 +1,118 @@
+---
+/**
+ * ─────────────────────────────────────────────
+ * Princesas & Divinas — Blog Layout
+ * ─────────────────────────────────────────────
+ * Layout específico para páginas del blog.
+ * Extiende Layout.astro con estilos de lectura.
+ */
+
+import Layout from "./Layout.astro";
+import { SITE_CONFIG } from "../data/site-config";
+
+export interface Props {
+  title: string;
+  description: string;
+  ogImage?: string;
+}
+---
+
+<Layout title={title} description={description} ogImage={Astro.props.ogImage}>
+  <!-- Header del blog -->
+  <div class="bg-gradient-to-r from-rosa-light via-lavanda-light to-rosa-light py-12 sm:py-16">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 text-center">
+      <h1 class="text-3xl sm:text-4xl lg:text-5xl font-heading font-bold text-texto mb-3">
+        Blog
+      </h1>
+      <p class="text-texto-secondary text-lg">
+        Tips, novedades y todo lo que necesitás saber para el mejor día de spa.
+      </p>
+    </div>
+  </div>
+
+  <!-- Slot del contenido del blog -->
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 py-8 sm:py-12">
+    <article class="prose prose-lg max-w-none">
+      <slot name="content" />
+    </article>
+  </div>
+
+  <!-- Footer del blog con links de navegación -->
+  <div class="bg-crema-dark/20 border-t border-crema-dark/50">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 py-8">
+      <div class="flex items-center justify-between">
+        <a
+          href="/blog"
+          class="text-rosa-dark hover:text-rosa font-semibold transition-colors duration-200 min-h-[44px] inline-flex items-center gap-2 no-underline"
+        >
+          <span aria-hidden="true">←</span>
+          Volver al blog
+        </a>
+        <a
+          href={`https://wa.me/${SITE_CONFIG.whatsapp}?text=${encodeURIComponent("¡Hola! 😊 Quería consultarles sobre los servicios del blog.")}`}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="text-whatsapp hover:text-whatsapp-dark font-semibold transition-colors duration-200 min-h-[44px] inline-flex items-center gap-2 no-underline"
+          aria-label="Contactar por WhatsApp"
+        >
+          <span aria-hidden="true">💬</span>
+          Consultar
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Estilos para contenido del blog -->
+  <style is:global>
+    .prose h2 {
+      font-family: 'Playfair Display', serif;
+      color: #2D1B2E;
+      font-size: 1.75rem;
+      margin-top: 2rem;
+      margin-bottom: 1rem;
+    }
+    .prose h3 {
+      font-family: 'Playfair Display', serif;
+      color: #2D1B2E;
+      font-size: 1.35rem;
+      margin-top: 1.5rem;
+      margin-bottom: 0.75rem;
+    }
+    .prose p {
+      color: #6B4C6D;
+      line-height: 1.8;
+      margin-bottom: 1.25rem;
+    }
+    .prose ul, .prose ol {
+      color: #6B4C6D;
+      padding-left: 1.5rem;
+      margin-bottom: 1.25rem;
+    }
+    .prose li {
+      margin-bottom: 0.5rem;
+    }
+    .prose a {
+      color: #D47DA0;
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+    .prose a:hover {
+      color: #E8A0BF;
+    }
+    .prose img {
+      border-radius: 1rem;
+      margin: 1.5rem 0;
+    }
+    .prose blockquote {
+      border-left: 4px solid #E8A0BF;
+      padding-left: 1rem;
+      margin: 1.5rem 0;
+      font-style: italic;
+      color: #2D1B2E;
+    }
+    .prose hr {
+      border-color: #F5E6D3;
+      margin: 2rem 0;
+    }
+  </style>
+</Layout>

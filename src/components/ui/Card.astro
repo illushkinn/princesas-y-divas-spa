@@ -1,0 +1,83 @@
+---
+/**
+ * ─────────────────────────────────────────────
+ * Princesas & Divinas — Card Component
+ * ─────────────────────────────────────────────
+ * Card reusable con slot para contenido.
+ * Variantes: default, service, testimonial, blog
+ *
+ * Uso:
+ *   <Card variant="service" image={url} badge="Nuevo" price="$15000">
+ *     <h3 slot="title">Título</h3>
+ *     <p>Descripción</p>
+ *   </Card>
+ */
+
+export interface Props {
+  variant?: "default" | "service" | "testimonial" | "blog";
+  className?: string;
+  image?: string;
+  imageAlt?: string;
+  badge?: string;
+  price?: string;
+}
+
+const {
+  variant = "default",
+  className = "",
+  image,
+  imageAlt = "",
+  badge,
+  price,
+} = Astro.props;
+
+const baseClasses =
+  "bg-white rounded-2xl shadow-md overflow-hidden transition-all duration-300 hover:shadow-xl";
+
+const variantClasses: Record<string, string> = {
+  default: "",
+  service:
+    "hover:-translate-y-1 hover:shadow-rosa/20",
+  testimonial:
+    "border border-crema-dark",
+  blog:
+    "hover:-translate-y-1",
+};
+
+const classes = `${baseClasses} ${variantClasses[variant]} ${className}`;
+---
+
+<article class={classes}>
+  {
+    image && (
+      <div class="relative overflow-hidden aspect-[4/3]">
+        <img
+          src={image}
+          alt={imageAlt}
+          loading="lazy"
+          class="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+        />
+        {badge && (
+          <span class="absolute top-3 left-3 bg-rosa text-white text-xs font-bold px-3 py-1 rounded-full shadow-md">
+            {badge}
+          </span>
+        )}
+      </div>
+    )
+  }
+
+  <div class="p-6">
+    <!-- Precio (variante service) -->
+    {price && (
+      <div class="mb-3">
+        <span class="text-2xl font-bold font-heading text-rosa-dark">
+          {price}
+        </span>
+      </div>
+    )}
+
+    <!-- Slot principal -->
+    <slot />
+  </div>
+</article>

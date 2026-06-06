@@ -1,0 +1,164 @@
+---
+/**
+ * ─────────────────────────────────────────────
+ * Princesas & Divinas — Layout Principal
+ * ─────────────────────────────────────────────
+ * Header con nav + footer + WhatsApp FAB + SEO.
+ * Todas las páginas usan este layout.
+ *
+ * Props:
+ *   - title:      Meta title (default: site name)
+ *   - description: Meta description
+ *   - ogImage:    Open Graph image URL
+ *   - noIndex:    true si no querés que indexe
+ */
+
+import { SITE_CONFIG, NAV_LINKS } from "../data/site-config";
+import "../styles/global.css";
+import WhatsAppFAB from "../components/ui/WhatsAppFAB.astro";
+
+export interface Props {
+  title?: string;
+  description?: string;
+  ogImage?: string;
+  noIndex?: boolean;
+}
+
+const {
+  title = `${SITE_CONFIG.name} | ${SITE_CONFIG.tagline}`,
+  description = SITE_CONFIG.description,
+  ogImage = `${SITE_CONFIG.url}/og-image.jpg`,
+  noIndex = false,
+} = Astro.props;
+
+// ── JSON-LD LocalBusiness Schema ─────────────
+const localBusinessSchema = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  name: SITE_CONFIG.name,
+  description: SITE_CONFIG.description,
+  image: ogImage,
+  telephone: `+${SITE_CONFIG.phone}`,
+  email: SITE_CONFIG.email,
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: `${SITE_CONFIG.address.street} ${SITE_CONFIG.address.number}`,
+    addressLocality: SITE_CONFIG.address.city,
+    addressRegion: SITE_CONFIG.address.province,
+    addressCountry: "AR",
+  },
+  geo: {
+    "@type": "GeoCoordinates",
+    latitude: -34.6037,
+    longitude: -58.4218,
+  },
+  openingHours: [
+    "Mo-Fr 10:00-19:00",
+    "Sa 10:00-17:00",
+  ],
+  url: SITE_CONFIG.url,
+  aggregateRating: {
+    "@type": "AggregateRating",
+    ratingValue: SITE_CONFIG.rating,
+    reviewCount: 30,
+  },
+  priceRange: SITE_CONFIG.priceRange,
+};
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    <meta name="theme-color" content="#E8A0BF" />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="es_AR" />
+    <meta property="og:site_name" content={SITE_CONFIG.name} />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
+
+    {noIndex && <meta name="robots" content="noindex, nofollow" />}
+
+    <!-- JSON-LD LocalBusiness -->
+    <script type="application/ld+json" set:html={JSON.stringify(localBusinessSchema)} />
+
+    <!-- Google Fonts (sin JS) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Nunito:wght@400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>{title}</title>
+  </head>
+  <body>
+    <!-- ── Header / Nav ────────────────────── -->
+    <header
+      class="fixed top-0 left-0 right-0 z-40 bg-crema/95 backdrop-blur-md border-b border-crema-dark/30"
+      role="banner"
+    >
+      <nav
+        class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16 sm:h-20"
+        role="navigation"
+        aria-label="Navegación principal"
+      >
+        <!-- Logo -->
+        <a
+          href="/"
+          class="text-xl sm:text-2xl font-heading font-bold text-rosa-dark hover:text-rosa transition-colors duration-200 no-underline min-h-[44px] flex items-center"
+          aria-label={SITE_CONFIG.name}
+        >
+          <span aria-hidden="true">👑</span>
+          <span class="ml-2">{SITE_CONFIG.name}</span>
+        </a>
+
+        <!-- Nav links (desktop) -->
+        <div class="hidden lg:flex items-center gap-1">
+          {NAV_LINKS.map((link) => (
+            <a
+              href={link.href}
+              class="px-3 py-2 rounded-lg text-sm font-semibold text-texto-secondary hover:text-rosa-dark hover:bg-rosa-light/20 transition-all duration-200 no-underline min-h-[44px] flex items-center"
+            >
+              {link.label}
+            </a>
+          ))}
+        </div>
+
+        <!-- Mobile menu button (solo nav, sin JS — es un link al menú completo) -->
+        <div class="lg:hidden">
+          <!-- En mobile, los links están en el contenido -->
+          <a
+            href="#servicios"
+            class="bg-gradient-to-r from-rosa to-lavanda text-white px-4 py-2 rounded-xl text-sm font-bold shadow-md hover:shadow-lg transition-all duration-200 min-h-[44px] flex items-center no-underline"
+            aria-label="Ver servicios"
+          >
+            Servicios
+          </a>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Spacer for fixed header -->
+    <div class="h-16 sm:h-20"></div>
+
+    <!-- ── Main Content ─────────────────────── -->
+    <main id="main-content" role="main">
+      <slot />
+    </main>
+
+    <!-- ── WhatsApp FAB (global) ────────────── -->
+    <WhatsAppFAB />
+  </body>
+</html>

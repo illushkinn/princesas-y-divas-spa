@@ -1,0 +1,80 @@
+---
+/**
+ * ─────────────────────────────────────────────
+ * Princesas & Divinas — Página de Gracias
+ * ─────────────────────────────────────────────
+ * Redirección post-formulario.
+ * Confirmación visual + CTA a WhatsApp.
+ */
+
+import Layout from "../layouts/Layout.astro";
+import Button from "../components/ui/Button.astro";
+import { SITE_CONFIG } from "../data/site-config";
+
+const waLink = `https://wa.me/${SITE_CONFIG.whatsapp}?text=${encodeURIComponent(
+  "¡Hola! 😊 Acabo de enviar el formulario de reserva. Quería confirmar si lo recibieron."
+)}`;
+---
+
+<Layout
+  title={`Gracias por tu reserva — ${SITE_CONFIG.name}`}
+  description="Gracias por contactarnos. Te respondemos en menos de 1 hora."
+  noIndex={true}
+>
+  <div class="min-h-[70vh] flex items-center justify-center bg-gradient-to-br from-rosa-light via-crema to-lavanda-light">
+    <div class="text-center px-4 max-w-lg animate-fade-in-up">
+      <div class="text-8xl mb-6" aria-hidden="true">
+        ✨
+      </div>
+
+      <h1 class="text-3xl sm:text-4xl font-heading font-bold text-texto mb-4">
+        ¡Gracias por tu reserva!
+      </h1>
+
+      <div class="bg-white rounded-2xl shadow-lg p-8 mb-8">
+        <p class="text-lg text-texto-secondary leading-relaxed mb-4">
+          Recibimos tu solicitud. Te vamos a responder por WhatsApp
+          en menos de <strong>1 hora</strong> para confirmar
+          la disponibilidad.
+        </p>
+
+        <div class="bg-crema rounded-xl p-4 text-sm text-texto-secondary text-left space-y-2">
+          <p class="flex items-start gap-2">
+            <span aria-hidden="true">📱</span>
+            <span>
+              <strong>Importante:</strong> Guardá nuestro número
+              <strong> {SITE_CONFIG.phoneDisplay} </strong>
+              para que no se pierda nuestro mensaje.
+            </span>
+          </p>
+          <p class="flex items-start gap-2">
+            <span aria-hidden="true">⏱️</span>
+            <span>Respondemos de lunes a sábados en nuestro horario de atención.</span>
+          </p>
+        </div>
+      </div>
+
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+        <Button
+          variant="whatsapp"
+          size="lg"
+          href={waLink}
+          target="_blank"
+          rel="noopener noreferrer"
+          ariaLabel="Confirmar por WhatsApp"
+        >
+          Confirmanos por WhatsApp
+        </Button>
+
+        <Button
+          variant="secondary"
+          size="lg"
+          href="/"
+          ariaLabel="Volver al inicio"
+        >
+          Volver al inicio
+        </Button>
+      </div>
+    </div>
+  </div>
+</Layout>

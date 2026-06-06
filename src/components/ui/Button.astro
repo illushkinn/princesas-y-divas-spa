@@ -1,0 +1,84 @@
+---
+/**
+ * ─────────────────────────────────────────────
+ * Princesas & Divinas — Button Component
+ * ─────────────────────────────────────────────
+ * Variantes:
+ *   - primary   → fondo rosa gold, texto blanco
+ *   - secondary → outline lavanda, texto texto
+ *   - whatsapp  → fondo verde WhatsApp, texto blanco
+ *   - ghost     → sin fondo, solo texto
+ *
+ * Uso:
+ *   <Button variant="primary" href="https://wa.me/...">
+ *     Reservá por WhatsApp
+ *   </Button>
+ *
+ *   <Button variant="secondary" type="submit">
+ *     Enviar
+ *   </Button>
+ */
+
+export interface Props {
+  variant?: "primary" | "secondary" | "whatsapp" | "ghost";
+  href?: string;
+  type?: "button" | "submit" | "reset";
+  size?: "sm" | "md" | "lg";
+  className?: string;
+  ariaLabel?: string;
+  target?: string;
+  rel?: string;
+}
+
+const {
+  variant = "primary",
+  href,
+  type = "button",
+  size = "md",
+  className = "",
+  ariaLabel,
+  target,
+  rel,
+} = Astro.props;
+
+// ── Estilos por variante ──────────────────────
+const variantStyles: Record<string, string> = {
+  primary:
+    "bg-gradient-to-r from-rosa to-lavanda text-white shadow-lg shadow-rosa/30 hover:shadow-xl hover:shadow-rosa/40 hover:scale-[1.02]",
+  secondary:
+    "border-2 border-lavanda text-lavanda-dark bg-transparent hover:bg-lavanda-light/30 hover:border-lavanda-dark",
+  whatsapp:
+    "bg-whatsapp text-white shadow-lg shadow-whatsapp/30 hover:bg-whatsapp-dark hover:shadow-xl hover:shadow-whatsapp/40 hover:scale-[1.02]",
+  ghost:
+    "text-rosa-dark hover:text-rosa bg-transparent hover:bg-rosa-light/20",
+};
+
+const sizeStyles: Record<string, string> = {
+  sm: "px-4 py-2 text-sm rounded-lg",
+  md: "px-6 py-3 text-base rounded-xl",
+  lg: "px-8 py-4 text-lg rounded-2xl",
+};
+
+const baseClasses =
+  "inline-flex items-center justify-center gap-2 font-bold transition-all duration-300 focus-visible:outline-2 focus-visible:outline-rosa cursor-pointer no-underline min-h-[44px] min-w-[44px]";
+
+const classes = `${baseClasses} ${variantStyles[variant]} ${sizeStyles[size]} ${className}`;
+---
+
+{
+  href ? (
+    <a
+      href={href}
+      class={classes}
+      aria-label={ariaLabel}
+      target={target}
+      rel={rel}
+    >
+      <slot />
+    </a>
+  ) : (
+    <button type={type} class={classes} aria-label={ariaLabel}>
+      <slot />
+    </button>
+  )
+}

@@ -1,0 +1,143 @@
+---
+/**
+ * ─────────────────────────────────────────────
+ * Princesas & Divinas — Servicios Section
+ * ─────────────────────────────────────────────
+ * Grid de servicios con precios visibles.
+ * Cada card tiene CTA a WhatsApp con mensaje
+ * pre-filled incluyendo el servicio y cantidad.
+ *
+ * DIFERENCIADOR CLAVE: los precios se muestran
+ * en AR$ en bold grande. Esto genera confianza
+ * y evita el "consultar precio" frustrante.
+ */
+
+import Card from "../ui/Card.astro";
+import Button from "../ui/Button.astro";
+import { SERVICES } from "../../data/services";
+import { SITE_CONFIG } from "../../data/site-config";
+
+function formatPrice(price: number): string {
+  return `AR$ ${price.toLocaleString("es-AR")}`;
+}
+
+function waServiceLink(serviceName: string, capacity: string): string {
+  const text = `¡Hola! 😊 Quiero información sobre el servicio "${serviceName}" para ${capacity.toLowerCase()}. ¿Me cuentan disponibilidad y precio?`;
+  return `https://wa.me/${SITE_CONFIG.whatsapp}?text=${encodeURIComponent(text)}`;
+}
+---
+
+<section
+  id="servicios"
+  class="py-16 sm:py-20 lg:py-24 bg-crema"
+  aria-label="Servicios"
+>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Heading -->
+    <div class="text-center mb-12 sm:mb-16">
+      <span class="text-4xl sm:text-5xl block mb-4" aria-hidden="true">💅</span>
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-heading font-bold text-texto mb-4">
+        Nuestros Servicios
+      </h2>
+      <p class="text-lg sm:text-xl text-texto-secondary max-w-2xl mx-auto">
+        Precios claros, sin sorpresas. Elegí la experiencia que más le guste a tu hija.
+      </p>
+    </div>
+
+    <!-- Grid de servicios -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+      {
+        SERVICES.map((service) => {
+          const waLink = waServiceLink(service.name, service.capacity);
+          return (
+            <Card
+              variant="service"
+              image={service.image}
+              imageAlt={service.name}
+              badge={service.category === "spa"
+                ? "💆‍♀️ Spa"
+                : service.category === "fiestas"
+                ? "🎉 Fiesta"
+                : "🎨 Taller"
+              }
+              price={""}
+            >
+              <div slot="title" class="flex flex-col gap-1 mb-3">
+                <h3 class="text-xl font-heading font-bold text-texto">
+                  {service.name}
+                </h3>
+              </div>
+
+              <!-- PRECIO — visible y destacado -->
+              <div class="mb-4">
+                <span class="text-3xl font-bold font-heading text-rosa-dark">
+                  {formatPrice(service.price)}
+                </span>
+              </div>
+
+              <p class="text-texto-secondary mb-4 line-clamp-3">
+                {service.description}
+              </p>
+
+              <!-- Meta: duración + capacidad -->
+              <div class="flex flex-wrap gap-3 mb-4 text-sm text-texto-secondary">
+                <span class="flex items-center gap-1 bg-crema-dark px-3 py-1 rounded-full">
+                  <span aria-hidden="true">⏱️</span>
+                  {service.duration}
+                </span>
+                <span class="flex items-center gap-1 bg-crema-dark px-3 py-1 rounded-full">
+                  <span aria-hidden="true">👧</span>
+                  {service.capacity}
+                </span>
+              </div>
+
+              <!-- Features list -->
+              <ul class="space-y-1.5 mb-6">
+                {service.features.slice(0, 4).map((f) => (
+                  <li class="flex items-start gap-2 text-sm text-texto-secondary">
+                    <span class="text-rosa-dark mt-0.5 shrink-0" aria-hidden="true">✦</span>
+                    {f}
+                  </li>
+                ))}
+                {service.features.length > 4 && (
+                  <li class="text-sm text-rosa-dark font-semibold">
+                    +{service.features.length - 4} más
+                  </li>
+                )}
+              </ul>
+
+              <Button
+                variant="primary"
+                size="md"
+                href={waLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                ariaLabel={`Consultar ${service.name} por WhatsApp`}
+                className="w-full"
+              >
+                Consultar
+              </Button>
+            </Card>
+          );
+        })
+      }
+    </div>
+
+    <!-- CTA final -->
+    <div class="text-center mt-12">
+      <p class="text-texto-secondary mb-4">
+        ¿No encontrás lo que buscás? Tenemos opciones personalizadas.
+      </p>
+      <Button
+        variant="whatsapp"
+        size="lg"
+        href={`https://wa.me/${SITE_CONFIG.whatsapp}?text=${encodeURIComponent("¡Hola! 😊 Quería consultarles por un servicio personalizado para un grupo de niñas.")}`}
+        target="_blank"
+        rel="noopener noreferrer"
+        ariaLabel="Consultar por WhatsApp para servicio personalizado"
+      >
+        Consultanos por WhatsApp
+      </Button>
+    </div>
+  </div>
+</section>

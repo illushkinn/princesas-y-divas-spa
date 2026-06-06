@@ -1,0 +1,41 @@
+---
+/**
+ * ─────────────────────────────────────────────
+ * Princesas & Divinas — Página Principal
+ * ─────────────────────────────────────────────
+ * Ensambla todas las secciones del sitio.
+ * ONE-PAGER: scroll suave entre secciones.
+ *
+ * Orden:
+ *   1. Hero
+ *   2. Services
+ *   3. Gallery
+ *   4. Testimonials
+ *   5. FAQ
+ *   6. Booking Form
+ *   7. Footer (en Layout)
+ */
+
+import Layout from "../layouts/Layout.astro";
+import Hero from "../components/sections/Hero.astro";
+import Services from "../components/sections/Services.astro";
+import Gallery from "../components/sections/Gallery.astro";
+import Testimonials from "../components/sections/Testimonials.astro";
+import FAQ from "../components/sections/FAQ.astro";
+import BookingForm from "../components/sections/BookingForm.astro";
+import Footer from "../components/sections/Footer.astro";
+import { SITE_CONFIG } from "../data/site-config";
+---
+
+<Layout
+  title={`${SITE_CONFIG.name} | ${SITE_CONFIG.tagline}`}
+  description={SITE_CONFIG.description}
+>
+  <Hero />
+  <Services />
+  <Gallery />
+  <Testimonials />
+  <FAQ />
+  <BookingForm />
+  <Footer />
+</Layout>

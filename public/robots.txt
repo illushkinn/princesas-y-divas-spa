@@ -1,0 +1,7 @@
+# ──────────────────────────────────────
+# Princesas & Divinas — robots.txt
+# ──────────────────────────────────────
+User-agent: *
+Allow: /
+
+Sitemap: https://princesasdivinas.vercel.app/sitemap-index.xml

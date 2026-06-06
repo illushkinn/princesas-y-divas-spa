@@ -1,0 +1,281 @@
+---
+/**
+ * ─────────────────────────────────────────────
+ * Princesas & Divinas — Booking Form
+ * ─────────────────────────────────────────────
+ * Formulario de reserva → Formspree.
+ *
+ * ⚠️ IMPORTANTE: Reemplazá la URL de Formspree
+ *    antes del lanzamiento (ver T12b).
+ *
+ * Cómo funciona:
+ *   - POST nativo (sin fetch, sin JS)
+ *   - Honeypot oculto anti-spam
+ *   - Campos con validación HTML5
+ *   - Redirige a /gracias después del envío
+ *
+ * Fallback: si el form no funciona, mostramos
+ * link a WhatsApp.
+ */
+
+import { SERVICES } from "../../data/services";
+import { SITE_CONFIG } from "../../data/site-config";
+
+// ── Formspree endpoint (PLACEHOLDER) ─────────
+const FORMSPREE_ACTION = "https://formspree.io/f/xxxxx";
+
+// ── Hosted page de gracias ────────────────────
+// Creá una página /gracias o usá redirect de Formspree
+const THANKS_REDIRECT = `${SITE_CONFIG.url}/gracias`;
+---
+
+<section
+  id="reservar"
+  class="py-16 sm:py-20 lg:py-24 bg-crema"
+  aria-label="Formulario de reserva"
+>
+  <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Heading -->
+    <div class="text-center mb-12 sm:mb-16">
+      <span class="text-4xl sm:text-5xl block mb-4" aria-hidden="true">📝</span>
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-heading font-bold text-texto mb-4">
+        Reservá tu experiencia
+      </h2>
+      <p class="text-lg sm:text-xl text-texto-secondary max-w-2xl mx-auto">
+        Completá el formulario y te confirmamos disponibilidad por WhatsApp.
+      </p>
+    </div>
+
+    <!-- Formulario -->
+    <form
+      action={FORMSPREE_ACTION}
+      method="POST"
+      class="bg-white rounded-2xl shadow-lg p-6 sm:p-8 lg:p-10 border border-crema-dark"
+      aria-label="Formulario de reserva de spa"
+    >
+      <!-- Honeypot (invisible para humanos) -->
+      <div style="display: none !important; position: absolute !important; left: -9999px !important;" aria-hidden="true">
+        <label for="honeypot">No llenar si sos humano</label>
+        <input type="text" id="honeypot" name="_honey" tabindex="-1" autocomplete="off" />
+      </div>
+
+      <!-- Redirect después de éxito -->
+      <input type="hidden" name="_redirect" value={THANKS_REDIRECT} />
+
+      <!-- Fila: Datos de la mamá -->
+      <fieldset class="mb-8">
+        <legend class="text-xl font-heading font-bold text-rosa-dark mb-4 flex items-center gap-2">
+          <span aria-hidden="true">👩</span> Datos de la mamá / adulto responsable
+        </legend>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div>
+            <label for="nombre-mama" class="block text-sm font-semibold text-texto mb-1.5">
+              Nombre completo <span class="text-rosa-dark" aria-hidden="true">*</span>
+            </label>
+            <input
+              type="text"
+              id="nombre-mama"
+              name="nombre_mama"
+              required
+              placeholder="Ej: María García"
+              class="w-full px-4 py-3 rounded-xl border border-crema-dark bg-crema/50 focus:bg-white focus:border-rosa focus:ring-2 focus:ring-rosa/20 outline-none transition-all duration-200 min-h-[44px]"
+              aria-required="true"
+            />
+          </div>
+          <div>
+            <label for="telefono" class="block text-sm font-semibold text-texto mb-1.5">
+              Teléfono / WhatsApp <span class="text-rosa-dark" aria-hidden="true">*</span>
+            </label>
+            <input
+              type="tel"
+              id="telefono"
+              name="telefono"
+              required
+              placeholder="Ej: 11 2345-6789"
+              pattern="[0-9\s\-\(\)\+]{7,20}"
+              class="w-full px-4 py-3 rounded-xl border border-crema-dark bg-crema/50 focus:bg-white focus:border-rosa focus:ring-2 focus:ring-rosa/20 outline-none transition-all duration-200 min-h-[44px]"
+              aria-required="true"
+            />
+          </div>
+          <div class="sm:col-span-2">
+            <label for="email" class="block text-sm font-semibold text-texto mb-1.5">
+              Email
+            </label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="Ej: maria@ejemplo.com"
+              class="w-full px-4 py-3 rounded-xl border border-crema-dark bg-crema/50 focus:bg-white focus:border-rosa focus:ring-2 focus:ring-rosa/20 outline-none transition-all duration-200 min-h-[44px]"
+            />
+          </div>
+        </div>
+      </fieldset>
+
+      <!-- Fila: Datos de la niña -->
+      <fieldset class="mb-8">
+        <legend class="text-xl font-heading font-bold text-rosa-dark mb-4 flex items-center gap-2">
+          <span aria-hidden="true">👧</span> Datos de la niña
+        </legend>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div>
+            <label for="nombre-nina" class="block text-sm font-semibold text-texto mb-1.5">
+              Nombre de la niña <span class="text-rosa-dark" aria-hidden="true">*</span>
+            </label>
+            <input
+              type="text"
+              id="nombre-nina"
+              name="nombre_nina"
+              required
+              placeholder="Ej: Sofía"
+              class="w-full px-4 py-3 rounded-xl border border-crema-dark bg-crema/50 focus:bg-white focus:border-rosa focus:ring-2 focus:ring-rosa/20 outline-none transition-all duration-200 min-h-[44px]"
+              aria-required="true"
+            />
+          </div>
+          <div>
+            <label for="edad-nina" class="block text-sm font-semibold text-texto mb-1.5">
+              Edad de la niña <span class="text-rosa-dark" aria-hidden="true">*</span>
+            </label>
+            <input
+              type="number"
+              id="edad-nina"
+              name="edad_nina"
+              required
+              min="2"
+              max="15"
+              placeholder="Ej: 7"
+              class="w-full px-4 py-3 rounded-xl border border-crema-dark bg-crema/50 focus:bg-white focus:border-rosa focus:ring-2 focus:ring-rosa/20 outline-none transition-all duration-200 min-h-[44px]"
+              aria-required="true"
+            />
+          </div>
+        </div>
+      </fieldset>
+
+      <!-- Fila: Servicio + Fecha + Horario -->
+      <fieldset class="mb-8">
+        <legend class="text-xl font-heading font-bold text-rosa-dark mb-4 flex items-center gap-2">
+          <span aria-hidden="true">📋</span> Detalles de la reserva
+        </legend>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div>
+            <label for="servicio" class="block text-sm font-semibold text-texto mb-1.5">
+              Servicio <span class="text-rosa-dark" aria-hidden="true">*</span>
+            </label>
+            <select
+              id="servicio"
+              name="servicio"
+              required
+              class="w-full px-4 py-3 rounded-xl border border-crema-dark bg-crema/50 focus:bg-white focus:border-rosa focus:ring-2 focus:ring-rosa/20 outline-none transition-all duration-200 min-h-[44px]"
+              aria-required="true"
+            >
+              <option value="">Seleccioná un servicio...</option>
+              {SERVICES.map((s) => (
+                <option value={s.id}>{s.name} — AR$ {s.price.toLocaleString("es-AR")}</option>
+              ))}
+            </select>
+          </div>
+          <div>
+            <label for="fecha" class="block text-sm font-semibold text-texto mb-1.5">
+              Fecha preferida <span class="text-rosa-dark" aria-hidden="true">*</span>
+            </label>
+            <input
+              type="date"
+              id="fecha"
+              name="fecha_preferida"
+              required
+              class="w-full px-4 py-3 rounded-xl border border-crema-dark bg-crema/50 focus:bg-white focus:border-rosa focus:ring-2 focus:ring-rosa/20 outline-none transition-all duration-200 min-h-[44px]"
+              aria-required="true"
+            />
+          </div>
+          <div>
+            <label for="horario" class="block text-sm font-semibold text-texto mb-1.5">
+              Horario preferido <span class="text-rosa-dark" aria-hidden="true">*</span>
+            </label>
+            <select
+              id="horario"
+              name="horario_preferido"
+              required
+              class="w-full px-4 py-3 rounded-xl border border-crema-dark bg-crema/50 focus:bg-white focus:border-rosa focus:ring-2 focus:ring-rosa/20 outline-none transition-all duration-200 min-h-[44px]"
+              aria-required="true"
+            >
+              <option value="">Seleccioná un horario...</option>
+              <option value="manana">Mañana (10:00 a 12:00)</option>
+              <option value="tarde">Tarde (14:00 a 17:00)</option>
+              <option value="completo">Día completo (10:00 a 17:00)</option>
+            </select>
+          </div>
+          <div>
+            <label for="cantidad" class="block text-sm font-semibold text-texto mb-1.5">
+              Cantidad de niñas <span class="text-rosa-dark" aria-hidden="true">*</span>
+            </label>
+            <input
+              type="number"
+              id="cantidad"
+              name="cantidad_ninas"
+              required
+              min="1"
+              max="20"
+              placeholder="Ej: 6"
+              class="w-full px-4 py-3 rounded-xl border border-crema-dark bg-crema/50 focus:bg-white focus:border-rosa focus:ring-2 focus:ring-rosa/20 outline-none transition-all duration-200 min-h-[44px]"
+              aria-required="true"
+            />
+          </div>
+        </div>
+      </fieldset>
+
+      <!-- Comentarios -->
+      <div class="mb-8">
+        <label for="comentarios" class="block text-sm font-semibold text-texto mb-1.5">
+          Comentarios adicionales
+        </label>
+        <textarea
+          id="comentarios"
+          name="comentarios"
+          rows={4}
+          placeholder="Ej: Mi hija es alérgica al látex. Prefiere maquillaje de unicornio. Cumpleaños de 7 años..."
+          class="w-full px-4 py-3 rounded-xl border border-crema-dark bg-crema/50 focus:bg-white focus:border-rosa focus:ring-2 focus:ring-rosa/20 outline-none transition-all duration-200 resize-y min-h-[44px]"
+        ></textarea>
+      </div>
+
+      <!-- Submit -->
+      <div class="flex flex-col sm:flex-row items-center gap-4">
+        <button
+          type="submit"
+          class="w-full sm:w-auto bg-gradient-to-r from-rosa to-lavanda text-white font-bold px-10 py-4 rounded-2xl shadow-lg shadow-rosa/30 hover:shadow-xl hover:shadow-rosa/40 hover:scale-[1.02] transition-all duration-300 min-h-[44px] text-lg cursor-pointer"
+        >
+          Enviar reserva ✨
+        </button>
+        <p class="text-sm text-texto-secondary">
+          Te respondemos por WhatsApp en menos de 1 hora.
+        </p>
+      </div>
+    </form>
+
+    <!-- Fallback si el form no funciona -->
+    <div class="mt-8 text-center p-6 bg-rosa-light/30 rounded-2xl border border-rosa-light">
+      <p class="text-texto mb-2 font-semibold">
+        ¿El formulario no funciona? 😕
+      </p>
+      <a
+        href={`https://wa.me/${SITE_CONFIG.whatsapp}?text=${encodeURIComponent(
+          "¡Hola! 😊 Quiero reservar un día de spa para mi hija. Te cuento los detalles por acá."
+        )}`}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="inline-flex items-center gap-2 text-whatsapp hover:text-whatsapp-dark font-bold transition-colors duration-200 min-h-[44px]"
+        aria-label="Escribinos directamente por WhatsApp"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          fill="currentColor"
+          class="w-5 h-5"
+          aria-hidden="true"
+        >
+          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+        </svg>
+        Escribinos directamente por WhatsApp
+      </a>
+    </div>
+  </div>
+</section>
