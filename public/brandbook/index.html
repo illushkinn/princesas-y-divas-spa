@@ -1,0 +1,2500 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Princesas &amp; Divinas — Brand Guide</title>
+<meta name="description" content="Brand guide de Princesas &amp; Divinas — El spa infantil más mágico de CABA.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Nunito:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+/* ======================================================
+   PRINCESAS & DIVINAS — BRAND GUIDE
+   ====================================================== */
+
+/* --- RESET & VARIABLES --- */
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --rose-functional:     #B0476B;
+  --rose-functional-hover:#8B3A62;
+  --rose-gold:           #E8A0BF;
+  --rose-gold-light:     #F2C5DB;
+  --lavender-functional: #7B5EA7;
+  --lavender:            #C9A7EB;
+  --lavender-light:      #E0CCF5;
+  --gold:                #D4AF37;
+  --gold-functional:     #B8942E;
+  --cream:               #FFF8F0;
+  --cream-dark:          #F5EDE0;
+  --text-primary:        #1A1A2E;
+  --text-secondary:      #4A4A5A;
+  --whatsapp:            #1DA851;
+  --white:               #FFFFFF;
+
+  --font-serif:   'Playfair Display', serif;
+  --font-sans:    'Nunito', sans-serif;
+
+  --max-width: 1200px;
+  --section-padding: 100px 24px;
+  --nav-height: 60px;
+
+  /* Image path — overridden in standalone version */
+  --logo-path: '/images/logo-spa.jpg';
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-sans);
+  color: var(--text-primary);
+  background: var(--cream);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* --- UTILITY --- */
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* --- TOP NAV --- */
+.top-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: var(--nav-height);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 32px;
+  z-index: 1000;
+  transition: background 0.4s ease, box-shadow 0.4s ease, color 0.4s ease;
+}
+
+.top-nav.scrolled {
+  background: rgba(255, 248, 240, 0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 1px 0 rgba(26, 26, 46, 0.06);
+}
+
+.top-nav .nav-brand {
+  font-family: var(--font-serif);
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  transition: color 0.4s ease;
+}
+
+.top-nav .nav-brand .brand-dash {
+  color: var(--rose-gold);
+}
+
+.top-nav:not(.scrolled) .nav-brand {
+  color: rgba(255,255,255,0.9);
+}
+
+.top-nav.scrolled .nav-brand {
+  color: var(--text-primary);
+}
+
+.top-nav .nav-sections {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+
+.top-nav .nav-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  color: rgba(255,255,255,0.4);
+  text-decoration: none;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.top-nav.scrolled .nav-link {
+  color: var(--text-secondary);
+  opacity: 0.4;
+}
+
+.top-nav.scrolled .nav-link:hover,
+.top-nav.scrolled .nav-link.active {
+  opacity: 1;
+  color: var(--rose-functional);
+  background: rgba(176, 71, 107, 0.08);
+}
+
+/* ======================================================
+   HERO / COVER
+   ====================================================== */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #8B3A62 0%, var(--rose-functional) 40%, var(--rose-gold) 100%);
+  color: white;
+  text-align: center;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at 20% 30%, rgba(255,255,255,0.12) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 70%, rgba(212,175,55,0.08) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 120px;
+  background: linear-gradient(to top, var(--cream), transparent);
+  pointer-events: none;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  padding: 24px;
+  will-change: transform;
+}
+
+.hero-logo {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 32px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+  border: 3px solid rgba(255,255,255,0.3);
+  transition: transform 0.6s ease;
+}
+
+.hero-logo:hover {
+  transform: scale(1.05);
+}
+
+.hero-label {
+  font-family: var(--font-sans);
+  font-weight: 400;
+  font-size: 12px;
+  letter-spacing: 8px;
+  text-transform: uppercase;
+  margin-bottom: 24px;
+  opacity: 0.7;
+}
+
+.hero h1 {
+  font-family: var(--font-serif);
+  font-size: clamp(44px, 10vw, 88px);
+  font-weight: 700;
+  line-height: 1;
+  margin-bottom: 8px;
+  letter-spacing: -2px;
+}
+
+.hero h1 .hero-ampersand {
+  font-style: italic;
+  color: var(--gold);
+  font-weight: 400;
+}
+
+.hero .tagline {
+  font-family: var(--font-sans);
+  font-size: clamp(16px, 2.5vw, 22px);
+  font-weight: 300;
+  opacity: 0.85;
+  margin-bottom: 16px;
+  letter-spacing: 1px;
+}
+
+.hero .meta {
+  font-size: 13px;
+  opacity: 0.55;
+  font-weight: 300;
+  letter-spacing: 2px;
+}
+
+.hero .meta .dot {
+  display: inline-block;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--gold);
+  margin: 0 12px;
+  vertical-align: middle;
+  opacity: 0.6;
+}
+
+/* Scroll indicator */
+.scroll-indicator {
+  position: absolute;
+  bottom: 48px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  z-index: 2;
+}
+
+.scroll-indicator span {
+  font-size: 10px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  opacity: 0.4;
+}
+
+.scroll-line {
+  width: 1px;
+  height: 40px;
+  background: linear-gradient(to bottom, rgba(255,255,255,0.5), transparent);
+  animation: scrollPulse 2s ease-in-out infinite;
+}
+
+@keyframes scrollPulse {
+  0%, 100% { opacity: 1; height: 40px; }
+  50% { opacity: 0.3; height: 60px; }
+}
+
+/* ======================================================
+   SECTION BASE
+   ====================================================== */
+.section {
+  padding: var(--section-padding);
+  position: relative;
+}
+
+.section-alt {
+  background: var(--white);
+}
+
+.section-header {
+  margin-bottom: 56px;
+  max-width: 640px;
+}
+
+.section-header.text-center {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.section-number {
+  font-family: var(--font-sans);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--rose-functional);
+  display: block;
+  margin-bottom: 12px;
+}
+
+.section-title {
+  font-family: var(--font-serif);
+  font-size: clamp(28px, 4vw, 40px);
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 8px;
+  color: var(--text-primary);
+}
+
+.section-subtitle {
+  font-family: var(--font-sans);
+  font-size: 16px;
+  color: var(--text-secondary);
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+.section-divider {
+  width: 60px;
+  height: 3px;
+  background: var(--rose-gold);
+  margin-top: 20px;
+  border-radius: 2px;
+}
+
+.section-divider.center {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* --- Fade in --- */
+.fade-in {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.fade-in-delay-1 { transition-delay: 0.1s; }
+.fade-in-delay-2 { transition-delay: 0.2s; }
+.fade-in-delay-3 { transition-delay: 0.3s; }
+.fade-in-delay-4 { transition-delay: 0.4s; }
+
+/* ======================================================
+   01 — IDENTIDAD DE MARCA
+   ====================================================== */
+.brand-essence-card {
+  background: linear-gradient(135deg, var(--rose-gold-light), var(--lavender-light));
+  border-radius: 20px;
+  padding: 40px 44px;
+  margin-bottom: 40px;
+}
+
+.brand-essence-card h3 {
+  font-family: var(--font-serif);
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--rose-functional);
+  margin-bottom: 12px;
+}
+
+.brand-essence-card p {
+  font-size: 16px;
+  color: var(--text-secondary);
+  line-height: 1.7;
+}
+
+.brand-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  margin-bottom: 40px;
+}
+
+.brand-trait {
+  background: var(--white);
+  border-radius: 16px;
+  padding: 28px 24px;
+  box-shadow: 0 2px 12px rgba(26, 26, 46, 0.04);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.brand-trait:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 28px rgba(26, 26, 46, 0.08);
+}
+
+.brand-trait .trait-icon {
+  font-size: 28px;
+  margin-bottom: 12px;
+  display: block;
+}
+
+.brand-trait .trait-name {
+  font-weight: 700;
+  font-size: 16px;
+  color: var(--rose-functional);
+  margin-bottom: 4px;
+}
+
+.brand-trait .trait-desc {
+  font-size: 13px;
+  color: var(--text-secondary);
+}
+
+.target-card {
+  background: var(--white);
+  border-radius: 16px;
+  padding: 32px 36px;
+  box-shadow: 0 2px 12px rgba(26, 26, 46, 0.04);
+  border-left: 4px solid var(--rose-functional);
+}
+
+.target-card h4 {
+  font-family: var(--font-serif);
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 12px;
+}
+
+.target-card ul {
+  list-style: none;
+}
+
+.target-card li {
+  font-size: 14px;
+  color: var(--text-secondary);
+  padding: 6px 0;
+  padding-left: 24px;
+  position: relative;
+}
+
+.target-card li::before {
+  content: '✦';
+  position: absolute;
+  left: 0;
+  color: var(--rose-gold);
+}
+
+/* ======================================================
+   02 — PALETA DE COLORES
+   ====================================================== */
+.color-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 16px;
+  margin: 0 0 40px;
+}
+
+.color-swatch {
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(26, 26, 46, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: default;
+}
+
+.color-swatch:hover {
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 12px 32px rgba(26, 26, 46, 0.12);
+}
+
+.color-swatch .swatch-visual {
+  height: 100px;
+  display: flex;
+  align-items: flex-end;
+  padding: 12px;
+  transition: height 0.3s ease;
+}
+
+.color-swatch:hover .swatch-visual {
+  height: 110px;
+}
+
+.color-swatch .swatch-visual .swatch-label {
+  background: rgba(255,255,255,0.9);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  padding: 3px 10px;
+  border-radius: 6px;
+  font-size: 10px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.color-swatch .swatch-info {
+  padding: 14px 14px;
+  background: white;
+}
+
+.color-swatch .swatch-info .cname {
+  font-weight: 700;
+  font-size: 12px;
+  margin-bottom: 2px;
+}
+
+.color-swatch .swatch-info .chex {
+  font-size: 11px;
+  color: var(--text-secondary);
+  font-family: 'SF Mono', 'Fira Code', 'Cascadia Code', monospace;
+  letter-spacing: 0.5px;
+}
+
+.color-swatch .swatch-info .cusage {
+  font-size: 10px;
+  color: var(--lavender-functional);
+  margin-top: 6px;
+  font-style: italic;
+}
+
+.color-notes {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.color-note-card {
+  background: var(--white);
+  border-radius: 16px;
+  padding: 28px 32px;
+  box-shadow: 0 2px 12px rgba(26, 26, 46, 0.04);
+}
+
+.color-note-card h4 {
+  font-family: var(--font-serif);
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--rose-functional);
+  margin-bottom: 10px;
+}
+
+.color-note-card p {
+  font-size: 13px;
+  color: var(--text-secondary);
+  line-height: 1.7;
+}
+
+/* ======================================================
+   03 — TIPOGRAFÍA
+   ====================================================== */
+.font-sample {
+  display: flex;
+  gap: 24px;
+  margin-bottom: 20px;
+  padding: 32px 36px;
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 2px 10px rgba(26, 26, 46, 0.04);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  align-items: center;
+}
+
+.font-sample:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(26, 26, 46, 0.08);
+}
+
+.font-sample .font-preview { flex: 1; }
+
+.font-sample .font-preview .demo-line {
+  font-size: clamp(28px, 4vw, 36px);
+  line-height: 1.3;
+}
+
+.font-sample .font-preview .demo-serif {
+  font-family: var(--font-serif);
+  font-weight: 700;
+}
+
+.font-sample .font-preview .demo-sans {
+  font-family: var(--font-sans);
+  font-weight: 700;
+}
+
+.font-sample .font-preview .demo-chars {
+  font-size: 13px;
+  color: var(--text-secondary);
+  opacity: 0.5;
+  margin-top: 8px;
+  font-family: var(--font-sans);
+  font-weight: 400;
+}
+
+.font-sample .font-details {
+  width: 200px;
+  flex-shrink: 0;
+}
+
+.font-sample .font-details .fname {
+  font-weight: 700;
+  font-size: 15px;
+  margin-bottom: 4px;
+  color: var(--text-primary);
+}
+
+.font-sample .font-details .fspecs {
+  font-size: 12px;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.font-sample .font-details .fusage {
+  font-size: 11px;
+  color: var(--lavender-functional);
+  margin-top: 10px;
+  font-style: italic;
+}
+
+.hierarchy-table-wrap {
+  overflow-x: auto;
+  margin: 32px 0;
+}
+
+.hierarchy-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 12px rgba(26, 26, 46, 0.04);
+}
+
+.hierarchy-table th {
+  padding: 14px 18px;
+  text-align: left;
+  background: var(--rose-functional);
+  color: white;
+  font-weight: 600;
+  font-size: 11px;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  font-family: var(--font-sans);
+}
+
+.hierarchy-table td {
+  padding: 12px 18px;
+  border-bottom: 1px solid var(--cream-dark);
+  font-size: 13px;
+}
+
+.hierarchy-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.hierarchy-table tbody tr {
+  transition: background 0.2s ease;
+}
+
+.hierarchy-table tbody tr:hover {
+  background: var(--cream);
+}
+
+/* ======================================================
+   04 — LOGO
+   ====================================================== */
+.logo-showcase {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  align-items: center;
+}
+
+.logo-display {
+  text-align: center;
+}
+
+.logo-display-img {
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(26, 26, 46, 0.08);
+  transition: transform 0.3s ease;
+}
+
+.logo-display-img:hover {
+  transform: scale(1.02);
+}
+
+.logo-display .logo-caption {
+  font-size: 12px;
+  color: var(--text-secondary);
+  margin-top: 8px;
+  font-weight: 400;
+}
+
+.logo-sizes {
+  display: flex;
+  gap: 40px;
+  align-items: flex-end;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 32px 0;
+}
+
+.logo-size-item {
+  text-align: center;
+}
+
+.logo-size-item img {
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(26, 26, 46, 0.06);
+}
+
+.logo-size-item .size-label {
+  font-size: 11px;
+  color: var(--text-secondary);
+  margin-top: 8px;
+}
+
+.logo-rules {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  margin-top: 40px;
+}
+
+.logo-rule-do,
+.logo-rule-dont {
+  background: var(--white);
+  border-radius: 16px;
+  padding: 28px 32px;
+  box-shadow: 0 2px 12px rgba(26, 26, 46, 0.04);
+}
+
+.logo-rule-do {
+  border-left: 4px solid var(--whatsapp);
+}
+
+.logo-rule-dont {
+  border-left: 4px solid var(--rose-functional);
+}
+
+.logo-rule-do h4,
+.logo-rule-dont h4 {
+  font-family: var(--font-serif);
+  font-size: 17px;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.logo-rule-do h4 { color: var(--whatsapp); }
+.logo-rule-dont h4 { color: var(--rose-functional); }
+
+.logo-rule-do ul,
+.logo-rule-dont ul {
+  list-style: none;
+}
+
+.logo-rule-do li,
+.logo-rule-dont li {
+  font-size: 14px;
+  color: var(--text-secondary);
+  padding: 5px 0;
+  padding-left: 24px;
+  position: relative;
+}
+
+.logo-rule-do li::before {
+  content: '✅';
+  position: absolute;
+  left: 0;
+  font-size: 13px;
+}
+
+.logo-rule-dont li::before {
+  content: '❌';
+  position: absolute;
+  left: 0;
+  font-size: 13px;
+}
+
+/* Clearance area */
+.clearance-demo {
+  background: var(--white);
+  border-radius: 16px;
+  padding: 48px;
+  margin-top: 32px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 2px 12px rgba(26, 26, 46, 0.04);
+  position: relative;
+}
+
+.clearance-box {
+  position: relative;
+  display: inline-block;
+  padding: 20%;
+  background: repeating-linear-gradient(
+    45deg,
+    transparent,
+    transparent 8px,
+    rgba(176, 71, 107, 0.06) 8px,
+    rgba(176, 71, 107, 0.06) 16px
+  );
+  border-radius: 12px;
+  border: 2px dashed var(--rose-functional);
+}
+
+.clearance-box img {
+  display: block;
+  border-radius: 8px;
+  max-width: 200px;
+  height: auto;
+}
+
+.clearance-label {
+  position: absolute;
+  top: 12px;
+  right: 16px;
+  font-size: 11px;
+  color: var(--rose-functional);
+  font-weight: 600;
+  background: rgba(255,255,255,0.9);
+  padding: 4px 10px;
+  border-radius: 6px;
+}
+
+/* ======================================================
+   05 — ICONOGRAFÍA
+   ====================================================== */
+.icon-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+  gap: 16px;
+  margin: 32px 0;
+}
+
+.icon-item {
+  background: var(--white);
+  border-radius: 14px;
+  padding: 24px 16px;
+  text-align: center;
+  box-shadow: 0 2px 10px rgba(26, 26, 46, 0.04);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.icon-item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(26, 26, 46, 0.08);
+}
+
+.icon-item .icon-svg {
+  font-size: 36px;
+  margin-bottom: 8px;
+  display: block;
+  color: var(--rose-functional);
+}
+
+.icon-item .icon-name {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.icon-item .icon-set {
+  font-size: 10px;
+  color: var(--text-secondary);
+  margin-top: 4px;
+}
+
+.icon-note {
+  background: var(--white);
+  border-radius: 16px;
+  padding: 24px 32px;
+  font-size: 13px;
+  color: var(--text-secondary);
+  box-shadow: 0 2px 12px rgba(26, 26, 46, 0.04);
+  text-align: center;
+}
+
+/* ======================================================
+   06 — COMPONENTES
+   ====================================================== */
+.component-showcase {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.component-group h3 {
+  font-family: var(--font-serif);
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 16px;
+}
+
+.component-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  align-items: center;
+}
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: 14px;
+  border: none;
+  cursor: default;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.btn-primary {
+  background: var(--rose-functional);
+  color: white;
+  padding: 12px 24px;
+  border-radius: 16px;
+}
+
+.btn-primary:hover {
+  background: var(--rose-functional-hover);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--lavender-functional);
+  border: 2px solid var(--lavender-functional);
+  padding: 10px 22px;
+  border-radius: 16px;
+}
+
+.btn-secondary:hover {
+  background: rgba(123, 94, 167, 0.06);
+}
+
+.btn-whatsapp {
+  background: var(--whatsapp);
+  color: white;
+  padding: 12px 24px;
+  border-radius: 999px;
+}
+
+.btn-whatsapp:hover {
+  background: #1A9A4A;
+}
+
+.btn-ghost {
+  background: transparent;
+  color: var(--rose-functional);
+  padding: 10px 22px;
+  border-radius: 16px;
+}
+
+.btn-ghost:hover {
+  background: rgba(176, 71, 107, 0.06);
+}
+
+/* Cards */
+.component-card {
+  background: white;
+  border-radius: 20px;
+  padding: 40px;
+  box-shadow: 0 4px 24px rgba(26, 26, 46, 0.06);
+  border: 1px solid var(--cream-dark);
+  max-width: 400px;
+}
+
+.component-card .card-title {
+  font-family: var(--font-serif);
+  font-weight: 700;
+  font-size: 20px;
+  margin-bottom: 8px;
+}
+
+.component-card .card-text {
+  font-size: 14px;
+  color: var(--text-secondary);
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+
+/* FAB */
+.fab-demo {
+  position: relative;
+  background: var(--cream-dark);
+  border-radius: 16px;
+  height: 200px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  padding: 24px;
+  overflow: hidden;
+}
+
+.fab-demo .fab-button {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: var(--whatsapp);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 30px;
+  box-shadow: 0 8px 32px rgba(29, 168, 81, 0.35);
+  border: none;
+  cursor: default;
+  transition: transform 0.3s ease;
+}
+
+.fab-demo .fab-button:hover {
+  transform: scale(1.1);
+}
+
+/* Form */
+.form-demo {
+  background: white;
+  border-radius: 16px;
+  padding: 32px;
+  box-shadow: 0 2px 12px rgba(26, 26, 46, 0.04);
+  max-width: 400px;
+}
+
+.form-demo .form-group {
+  margin-bottom: 16px;
+}
+
+.form-demo .form-label {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: var(--text-primary);
+}
+
+.form-demo .form-input {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1.5px solid var(--cream-dark);
+  border-radius: 12px;
+  font-family: var(--font-sans);
+  font-size: 14px;
+  color: var(--text-primary);
+  background: var(--cream);
+  outline: none;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-demo .form-input:focus {
+  border-color: var(--rose-functional);
+  box-shadow: 0 0 0 3px rgba(176, 71, 107, 0.12);
+}
+
+.form-demo .form-textarea {
+  min-height: 80px;
+  resize: vertical;
+}
+
+/* ======================================================
+   07 — TONO DE VOZ
+   ====================================================== */
+.tone-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  margin: 32px 0;
+}
+
+.tone-card {
+  background: white;
+  border-radius: 16px;
+  padding: 28px 32px;
+  box-shadow: 0 2px 12px rgba(26, 26, 46, 0.04);
+}
+
+.tone-card-do {
+  border-left: 4px solid var(--whatsapp);
+}
+
+.tone-card-dont {
+  border-left: 4px solid var(--rose-functional);
+}
+
+.tone-card h4 {
+  font-size: 14px;
+  font-weight: 700;
+  margin-bottom: 14px;
+  letter-spacing: 0.5px;
+}
+
+.tone-card-do h4 { color: var(--whatsapp); }
+.tone-card-dont h4 { color: var(--rose-functional); }
+
+.tone-card ul {
+  list-style: none;
+}
+
+.tone-card li {
+  font-size: 14px;
+  color: var(--text-secondary);
+  padding: 8px 0;
+  padding-left: 20px;
+  position: relative;
+  line-height: 1.5;
+}
+
+.tone-card-do li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: var(--whatsapp);
+  font-weight: 700;
+}
+
+.tone-card-dont li::before {
+  content: '✗';
+  position: absolute;
+  left: 0;
+  color: var(--rose-functional);
+  font-weight: 700;
+}
+
+.tone-guidelines {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+  margin-top: 24px;
+}
+
+.tone-pillar {
+  background: var(--white);
+  border-radius: 14px;
+  padding: 24px;
+  text-align: center;
+  box-shadow: 0 2px 10px rgba(26, 26, 46, 0.04);
+}
+
+.tone-pillar .pillar-icon {
+  font-size: 28px;
+  margin-bottom: 10px;
+  display: block;
+}
+
+.tone-pillar .pillar-name {
+  font-weight: 700;
+  font-size: 14px;
+  color: var(--rose-functional);
+  margin-bottom: 4px;
+}
+
+.tone-pillar .pillar-desc {
+  font-size: 12px;
+  color: var(--text-secondary);
+}
+
+/* ======================================================
+   08 — EJEMPLOS DE USO
+   ====================================================== */
+.examples-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+  margin: 32px 0;
+}
+
+.example-card {
+  background: white;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 2px 12px rgba(26, 26, 46, 0.04);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.example-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 32px rgba(26, 26, 46, 0.08);
+}
+
+.example-card .example-visual {
+  padding: 40px 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 200px;
+}
+
+.example-card .example-visual.web-preview {
+  background: linear-gradient(135deg, var(--rose-gold-light), var(--lavender-light));
+  text-align: center;
+}
+
+.example-card .example-visual.insta-preview {
+  background: var(--cream);
+  aspect-ratio: 1;
+  padding: 24px;
+}
+
+.example-card .example-visual.wa-preview {
+  background: #e5f5e5;
+  align-items: flex-start;
+}
+
+.example-card .example-visual.card-preview {
+  background: linear-gradient(135deg, var(--gold), var(--rose-functional));
+}
+
+.example-visual .mockup-card {
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+  width: 100%;
+  max-width: 280px;
+}
+
+.example-visual .mockup-card .mockup-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--cream-dark);
+}
+
+.example-visual .mockup-card .mockup-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--rose-gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.example-visual .mockup-card .mockup-name {
+  font-weight: 600;
+  font-size: 13px;
+}
+
+.example-visual .mockup-card .mockup-handle {
+  font-size: 11px;
+  color: var(--text-secondary);
+}
+
+.example-visual .mockup-card .mockup-body {
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+/* Instagram post mockup */
+.insta-post {
+  width: 100%;
+  max-width: 240px;
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+}
+
+.insta-post .insta-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px;
+}
+
+.insta-post .insta-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--rose-gold), var(--lavender));
+}
+
+.insta-post .insta-image {
+  height: 180px;
+  background: linear-gradient(135deg, var(--rose-gold-light), var(--lavender-light));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 40px;
+  color: var(--rose-functional);
+}
+
+.insta-post .insta-actions {
+  display: flex;
+  gap: 12px;
+  padding: 10px 12px;
+  font-size: 18px;
+  color: var(--text-primary);
+}
+
+/* WhatsApp message */
+.wa-message {
+  background: white;
+  border-radius: 8px 8px 8px 0;
+  padding: 12px 16px;
+  max-width: 260px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+  font-size: 14px;
+  line-height: 1.5;
+  position: relative;
+}
+
+.wa-message::before {
+  content: '';
+  position: absolute;
+  left: -8px;
+  bottom: 0;
+  width: 12px;
+  height: 12px;
+  background: white;
+  clip-path: polygon(0 0, 0% 100%, 100% 100%);
+}
+
+.wa-time {
+  text-align: right;
+  font-size: 10px;
+  color: var(--text-secondary);
+  margin-top: 6px;
+  opacity: 0.5;
+}
+
+/* Club Divinas card mockup */
+.club-card {
+  background: linear-gradient(135deg, var(--rose-functional), var(--lavender-functional));
+  color: white;
+  border-radius: 16px;
+  padding: 28px 24px;
+  width: 100%;
+  max-width: 280px;
+  box-shadow: 0 8px 32px rgba(176, 71, 107, 0.3);
+}
+
+.club-card .club-title {
+  font-family: var(--font-serif);
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.club-card .club-subtitle {
+  font-size: 11px;
+  opacity: 0.7;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+.club-card .club-stamps {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 6px;
+}
+
+.club-card .club-stamp {
+  aspect-ratio: 1;
+  border-radius: 50%;
+  border: 2px dashed rgba(255,255,255,0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  color: rgba(255,255,255,0.3);
+}
+
+.club-card .club-stamp.filled {
+  border-style: solid;
+  background: rgba(255,255,255,0.15);
+  color: var(--gold);
+}
+
+.example-card .example-label {
+  padding: 14px 20px;
+  border-top: 1px solid var(--cream-dark);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+/* ======================================================
+   09 — APLICACIONES
+   ====================================================== */
+.app-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 20px;
+  margin: 32px 0;
+}
+
+.app-item {
+  background: white;
+  border-radius: 16px;
+  padding: 28px 24px;
+  box-shadow: 0 2px 12px rgba(26, 26, 46, 0.04);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
+}
+
+.app-item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(26, 26, 46, 0.08);
+}
+
+.app-item .app-icon {
+  font-size: 36px;
+  margin-bottom: 12px;
+  display: block;
+}
+
+.app-item .app-name {
+  font-weight: 700;
+  font-size: 15px;
+  color: var(--text-primary);
+  margin-bottom: 4px;
+}
+
+.app-item .app-desc {
+  font-size: 12px;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+/* ======================================================
+   FOOTER / BACK COVER
+   ====================================================== */
+.footer {
+  background: linear-gradient(135deg, var(--text-primary) 0%, #2A2A4A 100%);
+  color: white;
+  padding: 100px 24px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 80px;
+  background: linear-gradient(to bottom, var(--cream), transparent);
+  pointer-events: none;
+}
+
+.footer .footer-logo {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 20px;
+  border: 2px solid rgba(255,255,255,0.15);
+}
+
+.footer .footer-brand {
+  font-family: var(--font-serif);
+  font-size: clamp(32px, 5vw, 48px);
+  font-weight: 700;
+  margin-bottom: 8px;
+  letter-spacing: -1px;
+}
+
+.footer .footer-brand .footer-ampersand {
+  font-style: italic;
+  color: var(--gold);
+  font-weight: 400;
+}
+
+.footer .footer-divider {
+  width: 50px;
+  height: 2px;
+  background: var(--rose-gold);
+  margin: 20px auto;
+  border-radius: 1px;
+}
+
+.footer .footer-tagline {
+  font-size: 15px;
+  opacity: 0.6;
+  font-weight: 300;
+  margin-bottom: 8px;
+}
+
+.footer .footer-text {
+  font-size: 13px;
+  opacity: 0.35;
+  max-width: 400px;
+  margin: 0 auto;
+  line-height: 1.8;
+  font-weight: 300;
+}
+
+.footer .footer-text strong {
+  opacity: 1;
+  font-weight: 400;
+}
+
+/* ======================================================
+   RESPONSIVE
+   ====================================================== */
+@media (max-width: 1024px) {
+  .app-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  :root {
+    --section-padding: 64px 20px;
+  }
+
+  .top-nav {
+    padding: 0 16px;
+  }
+
+  .top-nav .nav-sections {
+    gap: 2px;
+  }
+
+  .top-nav .nav-link {
+    width: 28px;
+    height: 28px;
+    font-size: 10px;
+  }
+
+  .hero-logo {
+    width: 100px;
+    height: 100px;
+  }
+
+  .hero h1 {
+    font-size: clamp(34px, 12vw, 52px);
+  }
+
+  .brand-essence-card {
+    padding: 28px 24px;
+  }
+
+  .brand-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .color-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .font-sample {
+    flex-direction: column;
+    padding: 24px 20px;
+  }
+
+  .font-sample .font-details {
+    width: 100%;
+  }
+
+  .tone-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .examples-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .logo-sizes {
+    gap: 24px;
+  }
+
+  .clearance-demo {
+    padding: 24px;
+  }
+
+  .clearance-box {
+    padding: 15%;
+  }
+
+  .clearance-box img {
+    max-width: 120px;
+  }
+
+  .icon-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .app-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .color-notes {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .color-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .icon-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .brand-essence-card {
+    padding: 20px 16px;
+  }
+
+  .section-header {
+    margin-bottom: 36px;
+  }
+}
+
+/* ======================================================
+   SECTION FOOTNOTES
+   ====================================================== */
+.section-footnote {
+  font-size: 11px;
+  color: var(--text-secondary);
+  opacity: 0.4;
+  margin-top: 40px;
+  padding-top: 16px;
+  border-top: 1px solid var(--cream-dark);
+  text-align: center;
+}
+
+/* HTML entity icons fallback */
+.icon-symbol {
+  font-size: 32px;
+  line-height: 1;
+}
+</style>
+</head>
+<body>
+
+<!-- ==================== TOP NAV ==================== -->
+<header class="top-nav" id="topNav">
+  <span class="nav-brand">Princesas <span class="brand-dash">&amp;</span> Divinas</span>
+  <nav class="nav-sections">
+    <a class="nav-link" href="#identidad" title="Identidad">01</a>
+    <a class="nav-link" href="#colores" title="Colores">02</a>
+    <a class="nav-link" href="#tipografia" title="Tipografía">03</a>
+    <a class="nav-link" href="#logo" title="Logo">04</a>
+    <a class="nav-link" href="#iconografia" title="Iconos">05</a>
+    <a class="nav-link" href="#componentes" title="Componentes">06</a>
+    <a class="nav-link" href="#tono" title="Tono">07</a>
+    <a class="nav-link" href="#ejemplos" title="Ejemplos">08</a>
+    <a class="nav-link" href="#aplicaciones" title="Apps">09</a>
+  </nav>
+</header>
+
+<!-- ================================================================
+     HERO / COVER
+     ================================================================ -->
+<section class="hero" id="hero">
+  <div class="hero-content">
+    <img src="/images/logo-spa.jpg" alt="Princesas &amp; Divinas Logo" class="hero-logo" id="heroLogo">
+    <div class="hero-label">Brand Guide</div>
+    <h1>Princesas <span class="hero-ampersand">&amp;</span> Divinas</h1>
+    <p class="tagline">El spa infantil más mágico de CABA</p>
+    <p class="meta">
+      <span>Identidad de Marca</span>
+      <span class="dot"></span>
+      <span>2026</span>
+    </p>
+  </div>
+  <div class="scroll-indicator">
+    <span>Desplazar</span>
+    <div class="scroll-line"></div>
+  </div>
+</section>
+
+<!-- ================================================================
+     01 — IDENTIDAD DE MARCA
+     ================================================================ -->
+<section class="section" id="identidad">
+  <div class="container">
+    <div class="section-header fade-in">
+      <span class="section-number">01</span>
+      <h2 class="section-title">Identidad de Marca</h2>
+      <p class="section-subtitle">La esencia de Princesas &amp; Divinas</p>
+      <div class="section-divider"></div>
+    </div>
+
+    <div class="brand-essence-card fade-in">
+      <h3>✨ Magia, cuidado y diversión para princesas</h3>
+      <p>
+        <strong>Princesas &amp; Divinas</strong> es un spa infantil ubicado en CABA, donde la magia, el cuidado y la diversión
+        se encuentran para crear experiencias únicas. Cada detalle está pensado para que las princesas vivan momentos
+        inolvidables mientras las mamás confían en un espacio seguro, elegante y profesional.
+      </p>
+    </div>
+
+    <div class="brand-grid">
+      <div class="brand-trait fade-in fade-in-delay-1">
+        <span class="trait-icon">🌙</span>
+        <div class="trait-name">Soñadora</div>
+        <div class="trait-desc">Cada experiencia es un cuento de hadas hecho realidad. Invitamos a soñar.</div>
+      </div>
+      <div class="brand-trait fade-in fade-in-delay-2">
+        <span class="trait-icon">👑</span>
+        <div class="trait-name">Elegante</div>
+        <div class="trait-desc">Sin perder la calidez, todo tiene un toque de distinción y buen gusto.</div>
+      </div>
+      <div class="brand-trait fade-in fade-in-delay-3">
+        <span class="trait-icon">✨</span>
+        <div class="trait-name">Divertida</div>
+        <div class="trait-desc">La alegría es el ingrediente secreto. Juegos, risas y magia en cada visita.</div>
+      </div>
+      <div class="brand-trait fade-in fade-in-delay-4">
+        <span class="trait-icon">🛡️</span>
+        <div class="trait-name">Confiable</div>
+        <div class="trait-desc">Mamás tranquilas porque sus princesas están en las mejores manos.</div>
+      </div>
+    </div>
+
+    <div class="target-card fade-in">
+      <h4>🎯 Target</h4>
+      <ul>
+        <li><strong>Mamás</strong> de 25 a 45 años</li>
+        <li>Residentes de <strong>CABA</strong> (Belgrano, Palermo, Recoleta, Nuñez)</li>
+        <li>Poder adquisitivo <strong>medio-alto</strong></li>
+        <li>Valoran la calidad, la estética y la seguridad</li>
+        <li>Buscan experiencias únicas para sus hijas</li>
+        <li>Activas en Instagram y WhatsApp</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ================================================================
+     02 — PALETA DE COLORES
+     ================================================================ -->
+<section class="section section-alt" id="colores">
+  <div class="container">
+    <div class="section-header fade-in">
+      <span class="section-number">02</span>
+      <h2 class="section-title">Paleta de Colores</h2>
+      <p class="section-subtitle">Los colores que definen la magia</p>
+      <div class="section-divider"></div>
+    </div>
+
+    <div class="color-grid fade-in">
+      <!-- Rose Functional -->
+      <div class="color-swatch">
+        <div class="swatch-visual" style="background:#B0476B;">
+          <span class="swatch-label">Primary</span>
+        </div>
+        <div class="swatch-info">
+          <div class="cname">Rose Functional</div>
+          <div class="chex">#B0476B</div>
+          <div class="cusage">Botones, CTAs, texto destacado</div>
+        </div>
+      </div>
+      <!-- Rose Functional Hover -->
+      <div class="color-swatch">
+        <div class="swatch-visual" style="background:#8B3A62;">
+          <span class="swatch-label">Hover</span>
+        </div>
+        <div class="swatch-info">
+          <div class="cname">Rose Functional Hover</div>
+          <div class="chex">#8B3A62</div>
+          <div class="cusage">Hover de botones primarios</div>
+        </div>
+      </div>
+      <!-- Rose Gold -->
+      <div class="color-swatch">
+        <div class="swatch-visual" style="background:#E8A0BF;">
+          <span class="swatch-label">Decorativo</span>
+        </div>
+        <div class="swatch-info">
+          <div class="cname">Rose Gold</div>
+          <div class="chex">#E8A0BF</div>
+          <div class="cusage">Fondos decorativos, íconos</div>
+        </div>
+      </div>
+      <!-- Rose Gold Light -->
+      <div class="color-swatch">
+        <div class="swatch-visual" style="background:#F2C5DB;">
+          <span class="swatch-label">Fondo</span>
+        </div>
+        <div class="swatch-info">
+          <div class="cname">Rose Gold Light</div>
+          <div class="chex">#F2C5DB</div>
+          <div class="cusage">Fondos suaves, secciones</div>
+        </div>
+      </div>
+      <!-- Lavender Functional -->
+      <div class="color-swatch">
+        <div class="swatch-visual" style="background:#7B5EA7;">
+          <span class="swatch-label">Secondary</span>
+        </div>
+        <div class="swatch-info">
+          <div class="cname">Lavender Functional</div>
+          <div class="chex">#7B5EA7</div>
+          <div class="cusage">Botones secondary, acentos</div>
+        </div>
+      </div>
+      <!-- Lavender -->
+      <div class="color-swatch">
+        <div class="swatch-visual" style="background:#C9A7EB;">
+          <span class="swatch-label">Decorativo</span>
+        </div>
+        <div class="swatch-info">
+          <div class="cname">Lavender</div>
+          <div class="chex">#C9A7EB</div>
+          <div class="cusage">Fondos decorativos</div>
+        </div>
+      </div>
+      <!-- Lavender Light -->
+      <div class="color-swatch">
+        <div class="swatch-visual" style="background:#E0CCF5;">
+          <span class="swatch-label">Fondo</span>
+        </div>
+        <div class="swatch-info">
+          <div class="cname">Lavender Light</div>
+          <div class="chex">#E0CCF5</div>
+          <div class="cusage">Fondos suaves, secciones</div>
+        </div>
+      </div>
+      <!-- Gold -->
+      <div class="color-swatch">
+        <div class="swatch-visual" style="background:#D4AF37;">
+          <span class="swatch-label">Acento</span>
+        </div>
+        <div class="swatch-info">
+          <div class="cname">Gold</div>
+          <div class="chex">#D4AF37</div>
+          <div class="cusage">SOLO sobre fondos oscuros</div>
+        </div>
+      </div>
+      <!-- Gold Functional -->
+      <div class="color-swatch">
+        <div class="swatch-visual" style="background:#B8942E;">
+          <span class="swatch-label">Texto</span>
+        </div>
+        <div class="swatch-info">
+          <div class="cname">Gold Functional</div>
+          <div class="chex">#B8942E</div>
+          <div class="cusage">Texto decorativo</div>
+        </div>
+      </div>
+      <!-- Cream -->
+      <div class="color-swatch">
+        <div class="swatch-visual" style="background:#FFF8F0;border:1px solid #F5EDE0;">
+          <span class="swatch-label" style="color:#1A1A2E;">Fondo</span>
+        </div>
+        <div class="swatch-info">
+          <div class="cname">Cream</div>
+          <div class="chex">#FFF8F0</div>
+          <div class="cusage">Fondo de página</div>
+        </div>
+      </div>
+      <!-- Text Primary -->
+      <div class="color-swatch">
+        <div class="swatch-visual" style="background:#1A1A2E;">
+          <span class="swatch-label">Texto</span>
+        </div>
+        <div class="swatch-info">
+          <div class="cname">Text Primary</div>
+          <div class="chex">#1A1A2E</div>
+          <div class="cusage">Texto principal</div>
+        </div>
+      </div>
+      <!-- Text Secondary -->
+      <div class="color-swatch">
+        <div class="swatch-visual" style="background:#4A4A5A;">
+          <span class="swatch-label">Texto</span>
+        </div>
+        <div class="swatch-info">
+          <div class="cname">Text Secondary</div>
+          <div class="chex">#4A4A5A</div>
+          <div class="cusage">Texto secundario</div>
+        </div>
+      </div>
+      <!-- WhatsApp -->
+      <div class="color-swatch">
+        <div class="swatch-visual" style="background:#1DA851;">
+          <span class="swatch-label">Social</span>
+        </div>
+        <div class="swatch-info">
+          <div class="cname">WhatsApp</div>
+          <div class="chex">#1DA851</div>
+          <div class="cusage">WhatsApp button, canal directo</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="color-notes fade-in">
+      <div class="color-note-card">
+        <h4>🎨 Regla de Contraste</h4>
+        <p>Todo texto sobre fondo de color debe cumplir WCAG AA. El <strong>Gold (#D4AF37)</strong> solo se usa sobre fondos oscuros (como Text Primary o Rose Functional). Sobre Cream no tiene contraste suficiente.</p>
+      </div>
+      <div class="color-note-card">
+        <h4>📱 Jerarquía de uso</h4>
+        <p><strong>Rose Functional</strong> es el color principal de interacción. <strong>Lavender Functional</strong> es para acciones secundarias. <strong>Rose Gold</strong> y <strong>Lavender</strong> son decorativos — no se usan para texto ni botones.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================================================================
+     03 — TIPOGRAFÍA
+     ================================================================ -->
+<section class="section" id="tipografia">
+  <div class="container">
+    <div class="section-header fade-in">
+      <span class="section-number">03</span>
+      <h2 class="section-title">Tipografía</h2>
+      <p class="section-subtitle">Letras que hablan con magia</p>
+      <div class="section-divider"></div>
+    </div>
+
+    <div class="font-sample fade-in">
+      <div class="font-preview">
+        <div class="demo-line demo-serif">Playfair Display</div>
+        <div class="demo-chars">ABCDEFGHIJKLMNOPQRSTUVWXYZ<br>abcdefghijklmnopqrstuvwxyz<br>0123456789 ¡!¿? áéíóú üñ</div>
+      </div>
+      <div class="font-details">
+        <div class="fname">Playfair Display</div>
+        <div class="fspecs">Serif · Google Fonts<br>Bold 700</div>
+        <div class="fusage">Títulos, hero, headers de sección</div>
+      </div>
+    </div>
+
+    <div class="font-sample fade-in fade-in-delay-1">
+      <div class="font-preview">
+        <div class="demo-line demo-sans">Nunito</div>
+        <div class="demo-chars">ABCDEFGHIJKLMNOPQRSTUVWXYZ<br>abcdefghijklmnopqrstuvwxyz<br>0123456789 ¡!¿? áéíóú üñ</div>
+      </div>
+      <div class="font-details">
+        <div class="fname">Nunito</div>
+        <div class="fspecs">Sans-serif · Google Fonts<br>Regular 400 · SemiBold 600 · Bold 700</div>
+        <div class="fusage">Párrafos, botones, navegación, body</div>
+      </div>
+    </div>
+
+    <div class="hierarchy-table-wrap fade-in">
+      <table class="hierarchy-table">
+        <thead>
+          <tr>
+            <th>Elemento</th>
+            <th>Tipografía</th>
+            <th>Peso</th>
+            <th>Tamaño</th>
+            <th>Color</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Hero Title</td>
+            <td>Playfair Display</td>
+            <td>Bold 700</td>
+            <td>clamp(44px, 10vw, 88px)</td>
+            <td>#1A1A2E</td>
+          </tr>
+          <tr>
+            <td>Section Title</td>
+            <td>Playfair Display</td>
+            <td>Bold 700</td>
+            <td>clamp(28px, 4vw, 40px)</td>
+            <td>#1A1A2E</td>
+          </tr>
+          <tr>
+            <td>Card Title</td>
+            <td>Playfair Display</td>
+            <td>Bold 700</td>
+            <td>18–22px</td>
+            <td>#1A1A2E</td>
+          </tr>
+          <tr>
+            <td>Body Text</td>
+            <td>Nunito</td>
+            <td>Regular 400</td>
+            <td>14–16px</td>
+            <td>#4A4A5A</td>
+          </tr>
+          <tr>
+            <td>Buttons</td>
+            <td>Nunito</td>
+            <td>SemiBold 600</td>
+            <td>14px</td>
+            <td>varía</td>
+          </tr>
+          <tr>
+            <td>Navigation</td>
+            <td>Nunito</td>
+            <td>SemiBold 600</td>
+            <td>13–14px</td>
+            <td>#4A4A5A</td>
+          </tr>
+          <tr>
+            <td>Labels / Meta</td>
+            <td>Nunito</td>
+            <td>Regular 400</td>
+            <td>11–13px</td>
+            <td>#4A4A5A</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ================================================================
+     04 — LOGO
+     ================================================================ -->
+<section class="section section-alt" id="logo">
+  <div class="container">
+    <div class="section-header fade-in">
+      <span class="section-number">04</span>
+      <h2 class="section-title">Logo</h2>
+      <p class="section-subtitle">La corona de la marca</p>
+      <div class="section-divider"></div>
+    </div>
+
+    <div class="logo-showcase">
+      <div class="logo-display fade-in">
+        <img src="/images/logo-spa.jpg" alt="Princesas &amp; Divinas Logo" class="logo-display-img" style="max-width:300px;width:100%;">
+        <p class="logo-caption">Logo principal — versión completa</p>
+      </div>
+
+      <div class="logo-sizes fade-in fade-in-delay-1">
+        <div class="logo-size-item">
+          <img src="/images/logo-spa.jpg" alt="Logo pequeño" style="width:60px;height:60px;object-fit:cover;">
+          <div class="size-label">60px · Favicon</div>
+        </div>
+        <div class="logo-size-item">
+          <img src="/images/logo-spa.jpg" alt="Logo mediano" style="width:120px;height:120px;object-fit:cover;">
+          <div class="size-label">120px · Navigation</div>
+        </div>
+        <div class="logo-size-item">
+          <img src="/images/logo-spa.jpg" alt="Logo grande" style="width:200px;height:200px;object-fit:cover;">
+          <div class="size-label">200px · Hero</div>
+        </div>
+      </div>
+
+      <div class="clearance-demo fade-in">
+        <div class="clearance-box">
+          <img src="/images/logo-spa.jpg" alt="Logo con área de resguardo">
+          <div class="clearance-label">20% resguardo</div>
+        </div>
+      </div>
+
+      <div class="logo-rules fade-in">
+        <div class="logo-rule-do">
+          <h4>✅ Correcto</h4>
+          <ul>
+            <li>Sobre fondo Cream (#FFF8F0)</li>
+            <li>Sobre fondo Rose Gold o Lavender</li>
+            <li>Sobre fondo blanco</li>
+            <li>Respetar el área de resguardo (20%)</li>
+            <li>Mantener proporciones originales</li>
+          </ul>
+        </div>
+        <div class="logo-rule-dont">
+          <h4>❌ Incorrecto</h4>
+          <ul>
+            <li>No distorsionar la imagen</li>
+            <li>No cambiar los colores originales</li>
+            <li>No rotar el logo</li>
+            <li>No aplicar efectos (sombras, filtros extremos)</li>
+            <li>No usar sobre fondos que compitan con el logo</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================================================================
+     05 — ICONOGRAFÍA
+     ================================================================ -->
+<section class="section" id="iconografia">
+  <div class="container">
+    <div class="section-header fade-in">
+      <span class="section-number">05</span>
+      <h2 class="section-title">Iconografía</h2>
+      <p class="section-subtitle">Sistema de íconos de la marca</p>
+      <div class="section-divider"></div>
+    </div>
+
+    <div class="icon-grid fade-in">
+      <div class="icon-item">
+        <span class="icon-symbol">👑</span>
+        <div class="icon-name">crown</div>
+        <div class="icon-set">Phosphor · Regular</div>
+      </div>
+      <div class="icon-item">
+        <span class="icon-symbol">⭐</span>
+        <div class="icon-name">star</div>
+        <div class="icon-set">Phosphor · Regular</div>
+      </div>
+      <div class="icon-item">
+        <span class="icon-symbol">✨</span>
+        <div class="icon-name">sparkle</div>
+        <div class="icon-set">Phosphor · Regular</div>
+      </div>
+      <div class="icon-item">
+        <span class="icon-symbol">💬</span>
+        <div class="icon-name">whatsapp-logo</div>
+        <div class="icon-set">Phosphor · Fill</div>
+      </div>
+      <div class="icon-item">
+        <span class="icon-symbol">❤️</span>
+        <div class="icon-name">heart</div>
+        <div class="icon-set">Phosphor · Regular</div>
+      </div>
+      <div class="icon-item">
+        <span class="icon-symbol">🌸</span>
+        <div class="icon-name">flower</div>
+        <div class="icon-set">Phosphor · Regular</div>
+      </div>
+      <div class="icon-item">
+        <span class="icon-symbol">📍</span>
+        <div class="icon-name">map-pin</div>
+        <div class="icon-set">Phosphor · Regular</div>
+      </div>
+      <div class="icon-item">
+        <span class="icon-symbol">🕐</span>
+        <div class="icon-name">clock</div>
+        <div class="icon-set">Phosphor · Regular</div>
+      </div>
+      <div class="icon-item">
+        <span class="icon-symbol">📞</span>
+        <div class="icon-name">phone</div>
+        <div class="icon-set">Phosphor · Regular</div>
+      </div>
+      <div class="icon-item">
+        <span class="icon-symbol">🪄</span>
+        <div class="icon-name">magic-wand</div>
+        <div class="icon-set">Phosphor · Regular</div>
+      </div>
+    </div>
+
+    <div class="icon-note fade-in">
+      <strong>Sistema:</strong> Phosphor Icons · <strong>Peso:</strong> Regular (default), Fill para WhatsApp.
+      Los emojis en esta guía representan los conceptos; en producción usar los SVG de Phosphor Icons.
+    </div>
+  </div>
+</section>
+
+<!-- ================================================================
+     06 — COMPONENTES
+     ================================================================ -->
+<section class="section section-alt" id="componentes">
+  <div class="container">
+    <div class="section-header fade-in">
+      <span class="section-number">06</span>
+      <h2 class="section-title">Componentes</h2>
+      <p class="section-subtitle">Elementos de interfaz reutilizables</p>
+      <div class="section-divider"></div>
+    </div>
+
+    <div class="component-showcase">
+      <!-- Botones -->
+      <div class="component-group fade-in">
+        <h3>Botones</h3>
+        <div class="component-row">
+          <button class="btn btn-primary">Reservar turno</button>
+          <button class="btn btn-secondary">Ver experiencias</button>
+          <button class="btn btn-whatsapp">💬 Consultar</button>
+          <button class="btn btn-ghost">Más info</button>
+        </div>
+      </div>
+
+      <!-- Cards -->
+      <div class="component-group fade-in fade-in-delay-1">
+        <h3>Cards</h3>
+        <div class="component-row">
+          <div class="component-card">
+            <div class="card-title">Fiesta de Princesas</div>
+            <div class="card-text">Incluye manicura, peinado, maquillaje artístico y sesión de fotos. La experiencia completa para tu princesa.</div>
+            <button class="btn btn-primary">Ver más</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- WhatsApp FAB -->
+      <div class="component-group fade-in fade-in-delay-2">
+        <h3>WhatsApp FAB</h3>
+        <p style="font-size:13px;color:var(--text-secondary);margin-bottom:12px;">
+          Fijo en la esquina inferior derecha. Siempre visible. w-16 h-16, rounded-full, shadow-2xl.
+        </p>
+        <div class="fab-demo">
+          <div class="fab-button">💬</div>
+        </div>
+      </div>
+
+      <!-- Formulario -->
+      <div class="component-group fade-in fade-in-delay-3">
+        <h3>Formulario</h3>
+        <div class="form-demo">
+          <div class="form-group">
+            <label class="form-label">Nombre de la princesa</label>
+            <input class="form-input" type="text" placeholder="Ej: Sofía" readonly>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Edad</label>
+            <input class="form-input" type="text" placeholder="Ej: 6 años" readonly>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Mensaje</label>
+            <textarea class="form-input form-textarea" placeholder="Contanos qué experiencia te gustaría..." readonly></textarea>
+          </div>
+          <button class="btn btn-primary" style="width:100%;">Enviar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================================================================
+     07 — TONO DE VOZ
+     ================================================================ -->
+<section class="section" id="tono">
+  <div class="container">
+    <div class="section-header fade-in">
+      <span class="section-number">07</span>
+      <h2 class="section-title">Tono de Voz</h2>
+      <p class="section-subtitle">Cómo habla Princesas &amp; Divinas</p>
+      <div class="section-divider"></div>
+    </div>
+
+    <div class="tone-pillars fade-in">
+      <div class="tone-guidelines">
+        <div class="tone-pillar">
+          <span class="pillar-icon">🔥</span>
+          <div class="pillar-name">Cálido</div>
+          <div class="pillar-desc">Pero no empalagoso. Cercano y genuino.</div>
+        </div>
+        <div class="tone-pillar">
+          <span class="pillar-icon">✨</span>
+          <div class="pillar-name">Mágico</div>
+          <div class="pillar-desc">Lenguaje que invita a soñar y emocionarse.</div>
+        </div>
+        <div class="tone-pillar">
+          <span class="pillar-icon">💬</span>
+          <div class="pillar-name">Cercano</div>
+          <div class="pillar-desc">Argentino, natural, como de amiga a amiga.</div>
+        </div>
+        <div class="tone-pillar">
+          <span class="pillar-icon">👶</span>
+          <div class="pillar-name">Inclusivo</div>
+          <div class="pillar-desc">"Mamá", "princesa", nunca "cliente" o "niña".</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tone-grid fade-in">
+      <div class="tone-card tone-card-do">
+        <h4>✅ Hacé así</h4>
+        <ul>
+          <li>"Reservá por WhatsApp y viví la experiencia"</li>
+          <li>"El cumpleaños más mágico de tu princesa"</li>
+          <li>"¿Soñadora o aventurera? Elegí el plan ideal"</li>
+          <li>"Te esperamos en Belgrano, mamá 🌸"</li>
+          <li>"Tu princesa se va a sentir una reina"</li>
+        </ul>
+      </div>
+      <div class="tone-card tone-card-dont">
+        <h4>❌ No hagas</h4>
+        <ul>
+          <li>"Somos líderes en el mercado de spas infantiles"</li>
+          <li>"Adquiera nuestro servicio premium"</li>
+          <li>"Contamos con instalaciones de primer nivel"</li>
+          <li>"Estimado cliente, le informamos..."</li>
+          <li>"Niños de 3 a 12 años" (usá "princesas")</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================================================================
+     08 — EJEMPLOS DE USO
+     ================================================================ -->
+<section class="section section-alt" id="ejemplos">
+  <div class="container">
+    <div class="section-header fade-in">
+      <span class="section-number">08</span>
+      <h2 class="section-title">Ejemplos de Uso</h2>
+      <p class="section-subtitle">La marca en acción</p>
+      <div class="section-divider"></div>
+    </div>
+
+    <div class="examples-grid">
+      <!-- Web -->
+      <div class="example-card fade-in">
+        <div class="example-visual web-preview">
+          <div class="mockup-card">
+            <div class="mockup-header">
+              <div class="mockup-avatar">P</div>
+              <div>
+                <div class="mockup-name">Princesas &amp; Divinas</div>
+                <div class="mockup-handle">spa infantil · CABA</div>
+              </div>
+            </div>
+            <div class="mockup-body">
+              🌸 <strong>Fiesta de Princesas</strong><br>
+              Manicura, peinado, maquillaje y más.<br>
+              <span style="color:var(--rose-functional);">Reservá por WhatsApp →</span>
+            </div>
+          </div>
+        </div>
+        <div class="example-label">🌐 Web — Home</div>
+      </div>
+
+      <!-- Instagram -->
+      <div class="example-card fade-in fade-in-delay-1">
+        <div class="example-visual insta-preview">
+          <div class="insta-post">
+            <div class="insta-header">
+              <div class="insta-avatar"></div>
+              <div>
+                <div style="font-weight:700;font-size:12px;">deprincesas_ydivas</div>
+                <div style="font-size:10px;color:var(--text-secondary);">CABA</div>
+              </div>
+            </div>
+            <div class="insta-image">👑✨</div>
+            <div class="insta-actions">
+              <span>❤️</span>
+              <span>💬</span>
+              <span>📤</span>
+            </div>
+            <div style="padding:0 12px 12px;font-size:12px;">
+              <strong>deprincesas_ydivas</strong> Hoy tu princesa merece mimitos 💕 Reservá su experiencia mágica ✨
+            </div>
+          </div>
+        </div>
+        <div class="example-label">📸 Instagram — Post cuadrado</div>
+      </div>
+
+      <!-- WhatsApp -->
+      <div class="example-card fade-in fade-in-delay-2">
+        <div class="example-visual wa-preview">
+          <div class="wa-message">
+            💬 ¡Hola, mamá! ✨<br><br>
+            Soy el hada de <strong>Princesas &amp; Divinas</strong> 🧚‍♀️<br><br>
+            ¿Qué experiencia soñada te gustaría regalarle hoy a tu princesa? 👑<br><br>
+            <em>Respondemos al toque 💕</em>
+            <div class="wa-time">12:34</div>
+          </div>
+        </div>
+        <div class="example-label">💬 WhatsApp — Mensaje de bienvenida</div>
+      </div>
+
+      <!-- Tarjeta Club Divinas -->
+      <div class="example-card fade-in fade-in-delay-3">
+        <div class="example-visual card-preview">
+          <div class="club-card">
+            <div class="club-title">Club Divinas</div>
+            <div class="club-subtitle">Tarjeta de fidelización</div>
+            <div class="club-stamps">
+              <div class="club-stamp filled">👑</div>
+              <div class="club-stamp filled">✨</div>
+              <div class="club-stamp filled">🌸</div>
+              <div class="club-stamp"> </div>
+              <div class="club-stamp"> </div>
+            </div>
+            <div style="font-size:10px;opacity:0.6;margin-top:16px;text-align:center;">
+              ¡Completá los 5 sellos y ganá una experiencia gratis!
+            </div>
+          </div>
+        </div>
+        <div class="example-label">💳 Club Divinas — Tarjeta física</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================================================================
+     09 — APLICACIONES
+     ================================================================ -->
+<section class="section" id="aplicaciones">
+  <div class="container">
+    <div class="section-header fade-in">
+      <span class="section-number">09</span>
+      <h2 class="section-title">Aplicaciones</h2>
+      <p class="section-subtitle">Dónde vive la marca</p>
+      <div class="section-divider"></div>
+    </div>
+
+    <div class="app-grid fade-in">
+      <div class="app-item">
+        <span class="app-icon">🌐</span>
+        <div class="app-name">Sitio Web</div>
+        <div class="app-desc">princesasdivinas.vercel.app<br>Landing page con reservas online</div>
+      </div>
+      <div class="app-item">
+        <span class="app-icon">📸</span>
+        <div class="app-name">Instagram</div>
+        <div class="app-desc">@deprincesas_ydivas<br>Contenido visual, promos, experiencias</div>
+      </div>
+      <div class="app-item">
+        <span class="app-icon">💬</span>
+        <div class="app-name">WhatsApp Business</div>
+        <div class="app-desc">Canal principal de reservas y consultas</div>
+      </div>
+      <div class="app-item">
+        <span class="app-icon">💳</span>
+        <div class="app-name">Tarjetas físicas</div>
+        <div class="app-desc">Club Divinas — programa de fidelización con sellos</div>
+      </div>
+      <div class="app-item">
+        <span class="app-icon">👜</span>
+        <div class="app-name">Bolsas / Kits spa</div>
+        <div class="app-desc">Packaging para llevar la experiencia a casa</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================================================================
+     FOOTER / BACK COVER
+     ================================================================ -->
+<footer class="footer">
+  <img src="/images/logo-spa.jpg" alt="Princesas &amp; Divinas" class="footer-logo" id="footerLogo">
+  <div class="footer-brand">Princesas <span class="footer-ampersand">&amp;</span> Divinas</div>
+  <div class="footer-divider"></div>
+  <p class="footer-tagline">El spa infantil más mágico de CABA</p>
+  <div class="footer-text">
+    Brand Guide v1.0 &middot; 2026<br>
+    <strong>Princesas &amp; Divinas</strong> &middot; Belgrano, CABA<br>
+    <span style="opacity:0.5;">Hecho con 💕 para mamás y princesas</span>
+  </div>
+</footer>
+
+<script>
+/* ======================================================
+   INTERACCIÓN MÍNIMA (sin dependencias)
+   ====================================================== */
+
+// --- Nav scroll effect ---
+const topNav = document.getElementById('topNav');
+let ticking = false;
+
+window.addEventListener('scroll', () => {
+  if (!ticking) {
+    window.requestAnimationFrame(() => {
+      topNav.classList.toggle('scrolled', window.scrollY > 80);
+      ticking = false;
+    });
+    ticking = true;
+  }
+});
+
+// --- Intersection Observer for fade-ins ---
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+// --- Nav link active state ---
+const sections = document.querySelectorAll('.section, .hero');
+const navLinks = document.querySelectorAll('.nav-link');
+
+const sectionObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const id = entry.target.getAttribute('id');
+      navLinks.forEach(link => {
+        link.classList.toggle('active', link.getAttribute('href') === '#' + id);
+      });
+    }
+  });
+}, { threshold: 0.3 });
+
+sections.forEach(section => sectionObserver.observe(section));
+</script>
+
+</body>
+</html>
