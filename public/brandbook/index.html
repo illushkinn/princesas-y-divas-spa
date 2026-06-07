@@ -4,10 +4,11 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Princesas &amp; Divinas — Brand Guide</title>
-<meta name="description" content="Brand guide de Princesas &amp; Divinas — El spa infantil más mágico de CABA.">
+<meta name="description" content="Brand guide de Princesas &amp; Divinas — Spa infantil en CABA.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Nunito:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<script src="https://unpkg.com/@phosphor-icons/web@2.1.1"></script>
 <style>
 /* ======================================================
    PRINCESAS & DIVINAS — BRAND GUIDE
@@ -185,8 +186,8 @@ body {
 }
 
 .hero-logo {
-  width: 140px;
-  height: 140px;
+  width: 100px;
+  height: 100px;
   border-radius: 50%;
   object-fit: cover;
   margin-bottom: 32px;
@@ -211,7 +212,7 @@ body {
 
 .hero h1 {
   font-family: var(--font-serif);
-  font-size: clamp(44px, 10vw, 88px);
+  font-size: clamp(32px, 5vw, 54px);
   font-weight: 700;
   line-height: 1;
   margin-bottom: 8px;
@@ -226,7 +227,7 @@ body {
 
 .hero .tagline {
   font-family: var(--font-sans);
-  font-size: clamp(16px, 2.5vw, 22px);
+  font-size: clamp(14px, 1.5vw, 18px);
   font-weight: 300;
   opacity: 0.85;
   margin-bottom: 16px;
@@ -319,7 +320,7 @@ body {
 
 .section-title {
   font-family: var(--font-serif);
-  font-size: clamp(28px, 4vw, 40px);
+  font-size: clamp(22px, 3vw, 32px);
   font-weight: 700;
   line-height: 1.2;
   margin-bottom: 8px;
@@ -450,15 +451,6 @@ body {
   font-size: 14px;
   color: var(--text-secondary);
   padding: 6px 0;
-  padding-left: 24px;
-  position: relative;
-}
-
-.target-card li::before {
-  content: '✦';
-  position: absolute;
-  left: 0;
-  color: var(--rose-gold);
 }
 
 /* ======================================================
@@ -774,22 +766,6 @@ body {
   font-size: 14px;
   color: var(--text-secondary);
   padding: 5px 0;
-  padding-left: 24px;
-  position: relative;
-}
-
-.logo-rule-do li::before {
-  content: '✅';
-  position: absolute;
-  left: 0;
-  font-size: 13px;
-}
-
-.logo-rule-dont li::before {
-  content: '❌';
-  position: absolute;
-  left: 0;
-  font-size: 13px;
 }
 
 /* Clearance area */
@@ -1120,25 +1096,7 @@ body {
   font-size: 14px;
   color: var(--text-secondary);
   padding: 8px 0;
-  padding-left: 20px;
-  position: relative;
   line-height: 1.5;
-}
-
-.tone-card-do li::before {
-  content: '✓';
-  position: absolute;
-  left: 0;
-  color: var(--whatsapp);
-  font-weight: 700;
-}
-
-.tone-card-dont li::before {
-  content: '✗';
-  position: absolute;
-  left: 0;
-  color: var(--rose-functional);
-  font-weight: 700;
 }
 
 .tone-guidelines {
@@ -1403,8 +1361,8 @@ body {
 }
 
 /* ======================================================
-   09 — APLICACIONES
-   ====================================================== */
+    08 — APLICACIONES
+    ====================================================== */
 .app-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -1666,8 +1624,7 @@ body {
     <a class="nav-link" href="#iconografia" title="Iconos">05</a>
     <a class="nav-link" href="#componentes" title="Componentes">06</a>
     <a class="nav-link" href="#tono" title="Tono">07</a>
-    <a class="nav-link" href="#ejemplos" title="Ejemplos">08</a>
-    <a class="nav-link" href="#aplicaciones" title="Apps">09</a>
+    <a class="nav-link" href="#aplicaciones" title="Apps">08</a>
   </nav>
 </header>
 
@@ -1687,7 +1644,7 @@ body {
     </p>
   </div>
   <div class="scroll-indicator">
-    <span>Desplazar</span>
+    <span>Deslizar</span>
     <div class="scroll-line"></div>
   </div>
 </section>
@@ -1705,7 +1662,7 @@ body {
     </div>
 
     <div class="brand-essence-card fade-in">
-      <h3>✨ Magia, cuidado y diversión para princesas</h3>
+      <h3><i class="ph ph-sparkle"></i> Magia, cuidado y diversión para princesas</h3>
       <p>
         <strong>Princesas &amp; Divinas</strong> es un spa infantil ubicado en CABA, donde la magia, el cuidado y la diversión
         se encuentran para crear experiencias únicas. Cada detalle está pensado para que las princesas vivan momentos
@@ -1715,36 +1672,36 @@ body {
 
     <div class="brand-grid">
       <div class="brand-trait fade-in fade-in-delay-1">
-        <span class="trait-icon">🌙</span>
+        <i class="ph ph-moon-stars trait-icon"></i>
         <div class="trait-name">Soñadora</div>
         <div class="trait-desc">Cada experiencia es un cuento de hadas hecho realidad. Invitamos a soñar.</div>
       </div>
       <div class="brand-trait fade-in fade-in-delay-2">
-        <span class="trait-icon">👑</span>
+        <i class="ph ph-crown trait-icon"></i>
         <div class="trait-name">Elegante</div>
         <div class="trait-desc">Sin perder la calidez, todo tiene un toque de distinción y buen gusto.</div>
       </div>
       <div class="brand-trait fade-in fade-in-delay-3">
-        <span class="trait-icon">✨</span>
+        <i class="ph ph-sparkle trait-icon"></i>
         <div class="trait-name">Divertida</div>
         <div class="trait-desc">La alegría es el ingrediente secreto. Juegos, risas y magia en cada visita.</div>
       </div>
       <div class="brand-trait fade-in fade-in-delay-4">
-        <span class="trait-icon">🛡️</span>
+        <i class="ph ph-shield-check trait-icon"></i>
         <div class="trait-name">Confiable</div>
         <div class="trait-desc">Mamás tranquilas porque sus princesas están en las mejores manos.</div>
       </div>
     </div>
 
     <div class="target-card fade-in">
-      <h4>🎯 Target</h4>
+      <h4><i class="ph ph-crosshair"></i> Target</h4>
       <ul>
-        <li><strong>Mamás</strong> de 25 a 45 años</li>
-        <li>Residentes de <strong>CABA</strong> (Belgrano, Palermo, Recoleta, Nuñez)</li>
-        <li>Poder adquisitivo <strong>medio-alto</strong></li>
-        <li>Valoran la calidad, la estética y la seguridad</li>
-        <li>Buscan experiencias únicas para sus hijas</li>
-        <li>Activas en Instagram y WhatsApp</li>
+        <li><i class="ph ph-star" style="color: #E8A0BF; margin-right: 8px;"></i><strong>Mamás</strong> de 25 a 45 años</li>
+        <li><i class="ph ph-star" style="color: #E8A0BF; margin-right: 8px;"></i>Residentes de <strong>CABA</strong> (Belgrano, Palermo, Recoleta, Nuñez)</li>
+        <li><i class="ph ph-star" style="color: #E8A0BF; margin-right: 8px;"></i>Poder adquisitivo <strong>medio-alto</strong></li>
+        <li><i class="ph ph-star" style="color: #E8A0BF; margin-right: 8px;"></i>Valoran la calidad, la estética y la seguridad</li>
+        <li><i class="ph ph-star" style="color: #E8A0BF; margin-right: 8px;"></i>Buscan experiencias únicas para sus hijas</li>
+        <li><i class="ph ph-star" style="color: #E8A0BF; margin-right: 8px;"></i>Activas en Instagram y WhatsApp</li>
       </ul>
     </div>
   </div>
@@ -1910,11 +1867,11 @@ body {
 
     <div class="color-notes fade-in">
       <div class="color-note-card">
-        <h4>🎨 Regla de Contraste</h4>
+        <h4><i class="ph ph-palette"></i> Regla de Contraste</h4>
         <p>Todo texto sobre fondo de color debe cumplir WCAG AA. El <strong>Gold (#D4AF37)</strong> solo se usa sobre fondos oscuros (como Text Primary o Rose Functional). Sobre Cream no tiene contraste suficiente.</p>
       </div>
       <div class="color-note-card">
-        <h4>📱 Jerarquía de uso</h4>
+        <h4><i class="ph ph-device-mobile"></i> Jerarquía de uso</h4>
         <p><strong>Rose Functional</strong> es el color principal de interacción. <strong>Lavender Functional</strong> es para acciones secundarias. <strong>Rose Gold</strong> y <strong>Lavender</strong> son decorativos — no se usan para texto ni botones.</p>
       </div>
     </div>
@@ -1973,14 +1930,14 @@ body {
             <td>Hero Title</td>
             <td>Playfair Display</td>
             <td>Bold 700</td>
-            <td>clamp(44px, 10vw, 88px)</td>
+            <td>clamp(32px, 5vw, 54px)</td>
             <td>#1A1A2E</td>
           </tr>
           <tr>
             <td>Section Title</td>
             <td>Playfair Display</td>
             <td>Bold 700</td>
-            <td>clamp(28px, 4vw, 40px)</td>
+            <td>clamp(22px, 3vw, 32px)</td>
             <td>#1A1A2E</td>
           </tr>
           <tr>
@@ -2066,23 +2023,23 @@ body {
 
       <div class="logo-rules fade-in">
         <div class="logo-rule-do">
-          <h4>✅ Correcto</h4>
+          <h4><i class="ph ph-check-circle" style="color: #1DA851; margin-right: 8px;"></i> Correcto</h4>
           <ul>
-            <li>Sobre fondo Cream (#FFF8F0)</li>
-            <li>Sobre fondo Rose Gold o Lavender</li>
-            <li>Sobre fondo blanco</li>
-            <li>Respetar el área de resguardo (20%)</li>
-            <li>Mantener proporciones originales</li>
+            <li><i class="ph ph-check-circle" style="color: #1DA851; margin-right: 8px;"></i>Sobre fondo Cream (#FFF8F0)</li>
+            <li><i class="ph ph-check-circle" style="color: #1DA851; margin-right: 8px;"></i>Sobre fondo Rose Gold o Lavender</li>
+            <li><i class="ph ph-check-circle" style="color: #1DA851; margin-right: 8px;"></i>Sobre fondo blanco</li>
+            <li><i class="ph ph-check-circle" style="color: #1DA851; margin-right: 8px;"></i>Respetar el área de resguardo (20%)</li>
+            <li><i class="ph ph-check-circle" style="color: #1DA851; margin-right: 8px;"></i>Mantener proporciones originales</li>
           </ul>
         </div>
         <div class="logo-rule-dont">
-          <h4>❌ Incorrecto</h4>
+          <h4><i class="ph ph-x-circle" style="color: #B0476B; margin-right: 8px;"></i> Incorrecto</h4>
           <ul>
-            <li>No distorsionar la imagen</li>
-            <li>No cambiar los colores originales</li>
-            <li>No rotar el logo</li>
-            <li>No aplicar efectos (sombras, filtros extremos)</li>
-            <li>No usar sobre fondos que compitan con el logo</li>
+            <li><i class="ph ph-x-circle" style="color: #B0476B; margin-right: 8px;"></i>No distorsionar la imagen</li>
+            <li><i class="ph ph-x-circle" style="color: #B0476B; margin-right: 8px;"></i>No cambiar los colores originales</li>
+            <li><i class="ph ph-x-circle" style="color: #B0476B; margin-right: 8px;"></i>No rotar el logo</li>
+            <li><i class="ph ph-x-circle" style="color: #B0476B; margin-right: 8px;"></i>No aplicar efectos (sombras, filtros extremos)</li>
+            <li><i class="ph ph-x-circle" style="color: #B0476B; margin-right: 8px;"></i>No usar sobre fondos que compitan con el logo</li>
           </ul>
         </div>
       </div>
@@ -2104,52 +2061,52 @@ body {
 
     <div class="icon-grid fade-in">
       <div class="icon-item">
-        <span class="icon-symbol">👑</span>
+        <i class="ph ph-crown icon-symbol"></i>
         <div class="icon-name">crown</div>
         <div class="icon-set">Phosphor · Regular</div>
       </div>
       <div class="icon-item">
-        <span class="icon-symbol">⭐</span>
+        <i class="ph ph-star icon-symbol"></i>
         <div class="icon-name">star</div>
         <div class="icon-set">Phosphor · Regular</div>
       </div>
       <div class="icon-item">
-        <span class="icon-symbol">✨</span>
+        <i class="ph ph-sparkle icon-symbol"></i>
         <div class="icon-name">sparkle</div>
         <div class="icon-set">Phosphor · Regular</div>
       </div>
       <div class="icon-item">
-        <span class="icon-symbol">💬</span>
+        <i class="ph ph-whatsapp-logo icon-symbol"></i>
         <div class="icon-name">whatsapp-logo</div>
         <div class="icon-set">Phosphor · Fill</div>
       </div>
       <div class="icon-item">
-        <span class="icon-symbol">❤️</span>
+        <i class="ph ph-heart icon-symbol"></i>
         <div class="icon-name">heart</div>
         <div class="icon-set">Phosphor · Regular</div>
       </div>
       <div class="icon-item">
-        <span class="icon-symbol">🌸</span>
+        <i class="ph ph-flower icon-symbol"></i>
         <div class="icon-name">flower</div>
         <div class="icon-set">Phosphor · Regular</div>
       </div>
       <div class="icon-item">
-        <span class="icon-symbol">📍</span>
+        <i class="ph ph-map-pin icon-symbol"></i>
         <div class="icon-name">map-pin</div>
         <div class="icon-set">Phosphor · Regular</div>
       </div>
       <div class="icon-item">
-        <span class="icon-symbol">🕐</span>
+        <i class="ph ph-clock icon-symbol"></i>
         <div class="icon-name">clock</div>
         <div class="icon-set">Phosphor · Regular</div>
       </div>
       <div class="icon-item">
-        <span class="icon-symbol">📞</span>
+        <i class="ph ph-phone icon-symbol"></i>
         <div class="icon-name">phone</div>
         <div class="icon-set">Phosphor · Regular</div>
       </div>
       <div class="icon-item">
-        <span class="icon-symbol">🪄</span>
+        <i class="ph ph-magic-wand icon-symbol"></i>
         <div class="icon-name">magic-wand</div>
         <div class="icon-set">Phosphor · Regular</div>
       </div>
@@ -2157,7 +2114,7 @@ body {
 
     <div class="icon-note fade-in">
       <strong>Sistema:</strong> Phosphor Icons · <strong>Peso:</strong> Regular (default), Fill para WhatsApp.
-      Los emojis en esta guía representan los conceptos; en producción usar los SVG de Phosphor Icons.
+      Los íconos en esta guía representan los conceptos usando Phosphor Icons.
     </div>
   </div>
 </section>
@@ -2181,7 +2138,7 @@ body {
         <div class="component-row">
           <button class="btn btn-primary">Reservar turno</button>
           <button class="btn btn-secondary">Ver experiencias</button>
-          <button class="btn btn-whatsapp">💬 Consultar</button>
+          <button class="btn btn-whatsapp"><i class="ph ph-whatsapp-logo"></i> Consultar</button>
           <button class="btn btn-ghost">Más info</button>
         </div>
       </div>
@@ -2205,7 +2162,7 @@ body {
           Fijo en la esquina inferior derecha. Siempre visible. w-16 h-16, rounded-full, shadow-2xl.
         </p>
         <div class="fab-demo">
-          <div class="fab-button">💬</div>
+          <div class="fab-button"><i class="ph ph-whatsapp-logo"></i></div>
         </div>
       </div>
 
@@ -2247,22 +2204,22 @@ body {
     <div class="tone-pillars fade-in">
       <div class="tone-guidelines">
         <div class="tone-pillar">
-          <span class="pillar-icon">🔥</span>
+          <i class="ph ph-fire pillar-icon"></i>
           <div class="pillar-name">Cálido</div>
           <div class="pillar-desc">Pero no empalagoso. Cercano y genuino.</div>
         </div>
         <div class="tone-pillar">
-          <span class="pillar-icon">✨</span>
+          <i class="ph ph-sparkle pillar-icon"></i>
           <div class="pillar-name">Mágico</div>
           <div class="pillar-desc">Lenguaje que invita a soñar y emocionarse.</div>
         </div>
         <div class="tone-pillar">
-          <span class="pillar-icon">💬</span>
+          <i class="ph ph-chat-circle-dots pillar-icon"></i>
           <div class="pillar-name">Cercano</div>
           <div class="pillar-desc">Argentino, natural, como de amiga a amiga.</div>
         </div>
         <div class="tone-pillar">
-          <span class="pillar-icon">👶</span>
+          <i class="ph ph-baby pillar-icon"></i>
           <div class="pillar-name">Inclusivo</div>
           <div class="pillar-desc">"Mamá", "princesa", nunca "cliente" o "niña".</div>
         </div>
@@ -2271,125 +2228,30 @@ body {
 
     <div class="tone-grid fade-in">
       <div class="tone-card tone-card-do">
-        <h4>✅ Hacé así</h4>
+        <h4><i class="ph ph-check" style="color: #1DA851; margin-right: 8px;"></i> Hacé así</h4>
         <ul>
-          <li>"Reservá por WhatsApp y viví la experiencia"</li>
-          <li>"El cumpleaños más mágico de tu princesa"</li>
-          <li>"¿Soñadora o aventurera? Elegí el plan ideal"</li>
-          <li>"Te esperamos en Belgrano, mamá 🌸"</li>
-          <li>"Tu princesa se va a sentir una reina"</li>
+          <li><i class="ph ph-check" style="color: #1DA851; margin-right: 8px;"></i>"Reservá por WhatsApp y viví la experiencia"</li>
+          <li><i class="ph ph-check" style="color: #1DA851; margin-right: 8px;"></i>"El cumpleaños más mágico de tu princesa"</li>
+          <li><i class="ph ph-check" style="color: #1DA851; margin-right: 8px;"></i>"¿Soñadora o aventurera? Elegí el plan ideal"</li>
+          <li><i class="ph ph-check" style="color: #1DA851; margin-right: 8px;"></i>"Te esperamos en Belgrano, mamá <i class="ph ph-flower"></i>"</li>
+          <li><i class="ph ph-check" style="color: #1DA851; margin-right: 8px;"></i>"Tu princesa se va a sentir una reina"</li>
         </ul>
       </div>
       <div class="tone-card tone-card-dont">
-        <h4>❌ No hagas</h4>
+        <h4><i class="ph ph-x" style="color: #B0476B; margin-right: 8px;"></i> No hagas</h4>
         <ul>
-          <li>"Somos líderes en el mercado de spas infantiles"</li>
-          <li>"Adquiera nuestro servicio premium"</li>
-          <li>"Contamos con instalaciones de primer nivel"</li>
-          <li>"Estimado cliente, le informamos..."</li>
-          <li>"Niños de 3 a 12 años" (usá "princesas")</li>
+          <li><i class="ph ph-x" style="color: #B0476B; margin-right: 8px;"></i>"Somos líderes en el mercado de spas infantiles"</li>
+          <li><i class="ph ph-x" style="color: #B0476B; margin-right: 8px;"></i>"Adquiera nuestro servicio premium"</li>
+          <li><i class="ph ph-x" style="color: #B0476B; margin-right: 8px;"></i>"Contamos con instalaciones de primer nivel"</li>
+          <li><i class="ph ph-x" style="color: #B0476B; margin-right: 8px;"></i>"Estimado cliente, le informamos..."</li>
+          <li><i class="ph ph-x" style="color: #B0476B; margin-right: 8px;"></i>"Niños de 3 a 12 años" (usá "princesas")</li>
         </ul>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ================================================================
-     08 — EJEMPLOS DE USO
-     ================================================================ -->
-<section class="section section-alt" id="ejemplos">
-  <div class="container">
-    <div class="section-header fade-in">
-      <span class="section-number">08</span>
-      <h2 class="section-title">Ejemplos de Uso</h2>
-      <p class="section-subtitle">La marca en acción</p>
-      <div class="section-divider"></div>
-    </div>
 
-    <div class="examples-grid">
-      <!-- Web -->
-      <div class="example-card fade-in">
-        <div class="example-visual web-preview">
-          <div class="mockup-card">
-            <div class="mockup-header">
-              <div class="mockup-avatar">P</div>
-              <div>
-                <div class="mockup-name">Princesas &amp; Divinas</div>
-                <div class="mockup-handle">spa infantil · CABA</div>
-              </div>
-            </div>
-            <div class="mockup-body">
-              🌸 <strong>Fiesta de Princesas</strong><br>
-              Manicura, peinado, maquillaje y más.<br>
-              <span style="color:var(--rose-functional);">Reservá por WhatsApp →</span>
-            </div>
-          </div>
-        </div>
-        <div class="example-label">🌐 Web — Home</div>
-      </div>
-
-      <!-- Instagram -->
-      <div class="example-card fade-in fade-in-delay-1">
-        <div class="example-visual insta-preview">
-          <div class="insta-post">
-            <div class="insta-header">
-              <div class="insta-avatar"></div>
-              <div>
-                <div style="font-weight:700;font-size:12px;">deprincesas_ydivas</div>
-                <div style="font-size:10px;color:var(--text-secondary);">CABA</div>
-              </div>
-            </div>
-            <div class="insta-image">👑✨</div>
-            <div class="insta-actions">
-              <span>❤️</span>
-              <span>💬</span>
-              <span>📤</span>
-            </div>
-            <div style="padding:0 12px 12px;font-size:12px;">
-              <strong>deprincesas_ydivas</strong> Hoy tu princesa merece mimitos 💕 Reservá su experiencia mágica ✨
-            </div>
-          </div>
-        </div>
-        <div class="example-label">📸 Instagram — Post cuadrado</div>
-      </div>
-
-      <!-- WhatsApp -->
-      <div class="example-card fade-in fade-in-delay-2">
-        <div class="example-visual wa-preview">
-          <div class="wa-message">
-            💬 ¡Hola, mamá! ✨<br><br>
-            Soy el hada de <strong>Princesas &amp; Divinas</strong> 🧚‍♀️<br><br>
-            ¿Qué experiencia soñada te gustaría regalarle hoy a tu princesa? 👑<br><br>
-            <em>Respondemos al toque 💕</em>
-            <div class="wa-time">12:34</div>
-          </div>
-        </div>
-        <div class="example-label">💬 WhatsApp — Mensaje de bienvenida</div>
-      </div>
-
-      <!-- Tarjeta Club Divinas -->
-      <div class="example-card fade-in fade-in-delay-3">
-        <div class="example-visual card-preview">
-          <div class="club-card">
-            <div class="club-title">Club Divinas</div>
-            <div class="club-subtitle">Tarjeta de fidelización</div>
-            <div class="club-stamps">
-              <div class="club-stamp filled">👑</div>
-              <div class="club-stamp filled">✨</div>
-              <div class="club-stamp filled">🌸</div>
-              <div class="club-stamp"> </div>
-              <div class="club-stamp"> </div>
-            </div>
-            <div style="font-size:10px;opacity:0.6;margin-top:16px;text-align:center;">
-              ¡Completá los 5 sellos y ganá una experiencia gratis!
-            </div>
-          </div>
-        </div>
-        <div class="example-label">💳 Club Divinas — Tarjeta física</div>
-      </div>
-    </div>
-  </div>
-</section>
 
 <!-- ================================================================
      09 — APLICACIONES
@@ -2405,27 +2267,27 @@ body {
 
     <div class="app-grid fade-in">
       <div class="app-item">
-        <span class="app-icon">🌐</span>
+        <i class="ph ph-globe app-icon"></i>
         <div class="app-name">Sitio Web</div>
         <div class="app-desc">princesasdivinas.vercel.app<br>Landing page con reservas online</div>
       </div>
       <div class="app-item">
-        <span class="app-icon">📸</span>
+        <i class="ph ph-camera app-icon"></i>
         <div class="app-name">Instagram</div>
         <div class="app-desc">@deprincesas_ydivas<br>Contenido visual, promos, experiencias</div>
       </div>
       <div class="app-item">
-        <span class="app-icon">💬</span>
+        <i class="ph ph-whatsapp-logo app-icon"></i>
         <div class="app-name">WhatsApp Business</div>
         <div class="app-desc">Canal principal de reservas y consultas</div>
       </div>
       <div class="app-item">
-        <span class="app-icon">💳</span>
+        <i class="ph ph-credit-card app-icon"></i>
         <div class="app-name">Tarjetas físicas</div>
         <div class="app-desc">Club Divinas — programa de fidelización con sellos</div>
       </div>
       <div class="app-item">
-        <span class="app-icon">👜</span>
+        <i class="ph ph-bag app-icon"></i>
         <div class="app-name">Bolsas / Kits spa</div>
         <div class="app-desc">Packaging para llevar la experiencia a casa</div>
       </div>
@@ -2444,7 +2306,7 @@ body {
   <div class="footer-text">
     Brand Guide v1.0 &middot; 2026<br>
     <strong>Princesas &amp; Divinas</strong> &middot; Belgrano, CABA<br>
-    <span style="opacity:0.5;">Hecho con 💕 para mamás y princesas</span>
+    <span style="opacity:0.5;">Hecho con <i class="ph ph-heart-straight"></i> para mamás y princesas</span>
   </div>
 </footer>
 
