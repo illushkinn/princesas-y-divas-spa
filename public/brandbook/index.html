@@ -41,8 +41,6 @@
   --section-padding: 100px 24px;
   --nav-height: 60px;
 
-  /* Image path — overridden in standalone version */
-  --logo-path: '/images/logo-spa.jpg';
 }
 
 html {
@@ -111,6 +109,7 @@ body {
   display: flex;
   gap: 6px;
   align-items: center;
+  margin-left: auto;
 }
 
 .top-nav .nav-link {
@@ -185,20 +184,6 @@ body {
   will-change: transform;
 }
 
-.hero-logo {
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
-  object-fit: cover;
-  margin-bottom: 32px;
-  box-shadow: 0 8px 32px rgba(0,0,0,0.2);
-  border: 3px solid rgba(255,255,255,0.3);
-  transition: transform 0.6s ease;
-}
-
-.hero-logo:hover {
-  transform: scale(1.05);
-}
 
 .hero-label {
   font-family: var(--font-sans);
@@ -1426,14 +1411,6 @@ body {
   pointer-events: none;
 }
 
-.footer .footer-logo {
-  width: 80px;
-  height: 80px;
-  border-radius: 50%;
-  object-fit: cover;
-  margin-bottom: 20px;
-  border: 2px solid rgba(255,255,255,0.15);
-}
 
 .footer .footer-brand {
   font-family: var(--font-serif);
@@ -1512,11 +1489,6 @@ body {
     overflow: hidden;
     text-overflow: ellipsis;
     max-width: 120px;
-  }
-
-  .hero-logo {
-    width: 100px;
-    height: 100px;
   }
 
   .hero h1 {
@@ -1649,7 +1621,7 @@ body {
      ================================================================ -->
 <section class="hero" id="hero">
   <div class="hero-content">
-    <img src="/images/logo-spa.jpg" alt="Princesas &amp; Divinas Logo" class="hero-logo" id="heroLogo">
+
     <div class="hero-label">Brand Guide</div>
     <h1>Princesas <span class="hero-ampersand">&amp;</span> Divinas</h1>
     <p class="meta">
@@ -2314,7 +2286,7 @@ body {
      FOOTER / BACK COVER
      ================================================================ -->
 <footer class="footer">
-  <img src="/images/logo-spa.jpg" alt="Princesas &amp; Divinas" class="footer-logo" id="footerLogo">
+
   <div class="footer-brand">Princesas <span class="footer-ampersand">&amp;</span> Divinas</div>
   <div class="footer-divider"></div>
   <div class="footer-text">
